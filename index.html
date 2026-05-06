@@ -1,0 +1,462 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nihongo Nest | Japanese Learning</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600;700;900&family=Inter:wght@400;600;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#home" aria-label="Nihongo Nest home">
+        <span class="brand-mark">日</span>
+        <span>
+          <strong>Nihongo Nest</strong>
+          <small>Japanese learning studio</small>
+        </span>
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="#course" data-course-tab="lessons">Lessons</a>
+        <a href="#course" data-course-tab="kana">Kana</a>
+        <a href="#course" data-course-tab="vocab">Vocabulary</a>
+        <a href="#course" data-course-tab="activities">Activities</a>
+        <a href="#course" data-course-tab="quiz">Quiz</a>
+      </nav>
+      <div class="profile-widget" id="profileWidget">
+        <button class="profile-chip" type="button" id="profileToggleButton">Guest profile</button>
+        <div class="profile-popover" id="profilePopover" hidden>
+          <label>
+            Name
+            <input id="profileNameInput" type="text" autocomplete="username" placeholder="Your name" />
+          </label>
+          <label>
+            4-digit password
+            <input
+              id="profilePinInput"
+              type="password"
+              inputmode="numeric"
+              maxlength="4"
+              autocomplete="current-password"
+              placeholder="1234"
+            />
+          </label>
+          <div class="profile-actions">
+            <button type="button" id="profileLoginButton">Open profile</button>
+            <button class="light" type="button" id="profileLogoutButton">Guest mode</button>
+          </div>
+          <p id="profileStatus" role="status">Create or open a profile to save progress by name.</p>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" id="home">
+        <div class="hero-copy">
+          <span class="eyebrow">Beginner friendly</span>
+          <h1>Learn Japanese in small, steady steps.</h1>
+          <p>
+            Practice hiragana, build core vocabulary, hear common phrases in your head, and
+            track your progress from one focused lesson dashboard.
+          </p>
+          <div class="hero-actions" aria-label="Primary actions">
+            <a class="button primary" href="#course" data-course-tab="kana">Start kana practice</a>
+            <a class="button secondary" href="#course" data-course-tab="lessons">View lessons</a>
+          </div>
+          <div class="class-welcome">
+            <strong>ようこそ, Minae Hayashi Sensei and classmates</strong>
+            <p>
+              Welcome Andrea, Lauren, Aaron, Tomo, Sam, Mario, and our class community.
+              Feel free to use this along your Japanese journeys.
+            </p>
+          </div>
+        </div>
+        <div class="hero-meter" aria-label="Study progress">
+          <span>今日の進み</span>
+          <strong id="heroProgress">0%</strong>
+          <div class="progress-track">
+            <span id="heroProgressBar"></span>
+          </div>
+        </div>
+      </section>
+
+      <section class="study-strip" aria-label="Learning stats">
+        <article>
+          <span id="knownKanaCount">0</span>
+          <p>Kana mastered</p>
+        </article>
+        <article>
+          <span id="knownWordCount">0</span>
+          <p>Words reviewed</p>
+        </article>
+        <article>
+          <span id="quizBest">0</span>
+          <p>Best quiz score</p>
+        </article>
+      </section>
+
+      <section class="course-shell" id="course" aria-label="Course workspace">
+        <div class="course-tabs" role="tablist" aria-label="Course sections">
+          <button class="active" type="button" role="tab" data-course-tab="lessons" aria-selected="true">Lessons</button>
+          <button type="button" role="tab" data-course-tab="weeks" aria-selected="false">Weeks</button>
+          <button type="button" role="tab" data-course-tab="kana" aria-selected="false">Kana</button>
+          <button type="button" role="tab" data-course-tab="kana-games" aria-selected="false">Kana Games</button>
+          <button type="button" role="tab" data-course-tab="vocab" aria-selected="false">Vocabulary</button>
+          <button type="button" role="tab" data-course-tab="flashcards" aria-selected="false">Flashcards</button>
+          <button type="button" role="tab" data-course-tab="activities" aria-selected="false">Activities</button>
+          <button type="button" role="tab" data-course-tab="grammar" aria-selected="false">Grammar Focus</button>
+          <button type="button" role="tab" data-course-tab="culture" aria-selected="false">Culture</button>
+          <button type="button" role="tab" data-course-tab="phrase" aria-selected="false">Phrases</button>
+          <button type="button" role="tab" data-course-tab="quiz" aria-selected="false">Quiz</button>
+        </div>
+
+        <div class="course-stage">
+      <section class="lessons-section course-panel active" id="lessons" data-course-panel="lessons">
+        <div class="section-heading">
+          <span class="eyebrow">Course path</span>
+          <h2>Choose a short lesson</h2>
+        </div>
+        <div class="lesson-grid" id="lessonGrid"></div>
+      </section>
+
+      <section class="weeks-section course-panel" id="weeks" data-course-panel="weeks">
+        <div class="section-heading">
+          <span class="eyebrow">Weekly lesson archive</span>
+          <h2>Keep each class organized</h2>
+        </div>
+        <section class="week-control-panel">
+          <div>
+            <span class="eyebrow">Current module</span>
+            <h3 id="selectedWeekTitle">Week overview</h3>
+            <p id="selectedWeekSummary">Choose a week to review its vocabulary, grammar, culture, and activities.</p>
+          </div>
+          <label>
+            Choose week
+            <select id="weekSelect"></select>
+          </label>
+        </section>
+        <div class="week-detail-grid" id="weekDetailGrid"></div>
+        <div class="week-card-grid" id="weekCardGrid"></div>
+      </section>
+
+      <section class="workspace course-panel" id="kana" data-course-panel="kana">
+        <div class="section-heading">
+          <span class="eyebrow">Kana trainer</span>
+          <h2>Read, reveal, repeat</h2>
+        </div>
+        <div class="trainer-layout">
+          <section class="kana-practice" aria-labelledby="kanaTitle">
+            <div class="panel-heading">
+              <div>
+                <span id="kanaSetLabel">Hiragana</span>
+                <h3 id="kanaTitle">Kana flashcard</h3>
+              </div>
+              <div class="segmented" role="group" aria-label="Kana set">
+                <button class="active" type="button" data-kana-set="hiragana">あ</button>
+                <button type="button" data-kana-set="katakana">ア</button>
+                <button type="button" data-kana-set="mixed">Mix</button>
+              </div>
+            </div>
+            <p class="round-note" id="kanaRoundNote">Practice set: Hiragana basics</p>
+            <button class="kana-card" id="kanaCard" type="button" aria-label="Reveal kana answer">
+              <span id="kanaCharacter">あ</span>
+              <small id="kanaAnswer">Tap to reveal</small>
+            </button>
+            <div class="practice-actions">
+              <button type="button" id="markKnownButton">I knew it</button>
+              <button class="light" type="button" id="nextKanaButton">Next card</button>
+            </div>
+          </section>
+
+          <section class="kana-chart" aria-labelledby="chartTitle">
+            <div class="panel-heading">
+              <div>
+                <span>Reference</span>
+                <h3 id="chartTitle">Kana chart</h3>
+              </div>
+              <button class="light" type="button" id="toggleKanaChartButton" aria-expanded="false">
+                Show chart
+              </button>
+            </div>
+            <div class="chart-grid" id="kanaChart" hidden></div>
+          </section>
+
+          <section class="kana-print-panel">
+            <div class="panel-heading">
+              <div>
+                <span>Printable practice</span>
+                <h3>PDF-style kana sheets</h3>
+              </div>
+            </div>
+            <p>Open a clean practice sheet, then use your browser print menu to save it as a PDF.</p>
+            <div class="practice-actions">
+              <button type="button" data-print-kana="hiragana">Hiragana sheet</button>
+              <button class="light" type="button" data-print-kana="katakana">Katakana sheet</button>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <section class="kana-games-section course-panel" id="kana-games" data-course-panel="kana-games">
+        <div class="section-heading">
+          <span class="eyebrow">Kana reinforcement</span>
+          <h2>Flashcards, matching, and mnemonic hints</h2>
+        </div>
+        <div class="game-layout">
+          <section class="mini-game-panel">
+            <div class="panel-heading">
+              <div>
+                <span id="kanaGameSetLabel">Hiragana</span>
+                <h3>Kana match</h3>
+              </div>
+              <button class="light" type="button" id="newKanaMatchButton">New round</button>
+            </div>
+            <div class="match-columns">
+              <div id="kanaSymbolChoices" class="choice-stack" aria-label="Kana choices"></div>
+              <div id="kanaReadingChoices" class="choice-stack" aria-label="Reading choices"></div>
+            </div>
+            <p class="feedback" id="kanaMatchFeedback" role="status">Match each kana to its reading.</p>
+          </section>
+
+          <section class="mini-game-panel">
+            <div class="panel-heading">
+              <div>
+                <span>Memory clue</span>
+                <h3>Mnemonic helper</h3>
+              </div>
+              <button class="light" type="button" id="kanaHintButton">Show hint</button>
+            </div>
+            <p class="jp hint-symbol" id="kanaHintSymbol">あ</p>
+            <p id="kanaHintText">Tap Show hint when a kana needs a memory hook.</p>
+          </section>
+
+          <section class="mini-game-panel kata-translation-panel">
+            <div class="panel-heading">
+              <div>
+                <span>Katakana translation</span>
+                <h3>What does the word say?</h3>
+              </div>
+            </div>
+            <label>
+              Choose katakana word
+              <select id="katakanaWordSelect"></select>
+            </label>
+            <p class="jp" id="katakanaPracticeWord">テレビ</p>
+            <div class="answer-grid" id="katakanaAnswerGrid"></div>
+            <p class="feedback" id="katakanaAnnotation" role="status">
+              Choose one answer. The note will explain the sound and meaning.
+            </p>
+          </section>
+        </div>
+      </section>
+
+      <section class="vocab-section course-panel" id="vocab" data-course-panel="vocab">
+        <div class="section-heading">
+          <span class="eyebrow">Vocabulary</span>
+          <h2>Flashcards, objects, definitions, and mnemonics</h2>
+        </div>
+        <div class="toolbar" aria-label="Vocabulary filters">
+          <button class="active" type="button" data-category="all">All</button>
+          <button type="button" data-category="greetings">Greetings</button>
+          <button type="button" data-category="food">Food</button>
+          <button type="button" data-category="travel">Travel</button>
+          <button type="button" data-category="time">Time</button>
+          <button type="button" data-category="family">Family</button>
+        </div>
+        <div class="word-grid" id="wordGrid"></div>
+      </section>
+
+      <section class="vocab-flash-section course-panel" id="flashcards" data-course-panel="flashcards">
+        <div class="section-heading">
+          <span class="eyebrow">Vocabulary flashcard</span>
+          <h2>Guess the meaning, then reveal</h2>
+        </div>
+        <div class="flash-layout">
+          <section class="vocab-flash-card" id="vocabFlashCard" aria-live="polite">
+            <span class="object-icon" id="flashObject">💧</span>
+            <p class="jp" id="flashJapanese">水</p>
+            <strong id="flashPrompt">What does this mean?</strong>
+            <p id="flashAnswer">Tap reveal to check yourself.</p>
+          </section>
+          <section class="mini-game-panel">
+            <div class="practice-actions">
+              <button type="button" id="revealFlashButton">Reveal</button>
+              <button class="light" type="button" id="nextFlashButton">Next flashcard</button>
+              <button class="light" type="button" id="flashHintButton">Mnemonic hint</button>
+            </div>
+            <p class="feedback" id="flashHintText" role="status">Hints use memory hooks to connect sound, meaning, and object.</p>
+          </section>
+        </div>
+      </section>
+
+      <section class="activities-section course-panel" id="activities" data-course-panel="activities">
+        <div class="section-heading">
+          <span class="eyebrow">Activity games</span>
+          <h2>Timed matching and sentence building</h2>
+        </div>
+        <div class="activity-grid">
+          <section class="timed-match-panel">
+            <div class="game-status">
+              <strong id="matchTimer">45</strong>
+              <span id="objectMatchScore">0 matches</span>
+            </div>
+            <h3>Match definitions to objects</h3>
+            <p>Choose an object, then choose the Japanese word that matches its definition.</p>
+            <div class="object-row" id="objectChoices"></div>
+            <div class="definition-row" id="definitionChoices"></div>
+            <div class="practice-actions">
+              <button type="button" id="startObjectMatchButton">Start timer</button>
+              <button class="light" type="button" id="resetObjectMatchButton">Reset game</button>
+              <button class="light" type="button" id="objectHintButton">Hint</button>
+            </div>
+            <p class="feedback" id="objectMatchFeedback" role="status">Start the timer when you are ready.</p>
+          </section>
+
+          <section class="sentence-game-panel">
+            <div class="panel-heading">
+              <div>
+                <span>Sentence builder</span>
+                <h3>Build the Japanese sentence</h3>
+              </div>
+              <button class="light" type="button" id="nextSentenceButton">Next sentence</button>
+            </div>
+            <p class="english-target" id="sentenceEnglish">I like tea.</p>
+            <div class="grammar-legend" aria-label="Parts of speech legend">
+              <span data-role="topic">Topic</span>
+              <span data-role="noun">Noun</span>
+              <span data-role="particle">Particle</span>
+              <span data-role="action">Action</span>
+              <span data-role="question">Question</span>
+              <span data-role="polite">Polite</span>
+            </div>
+            <div class="sentence-slots" id="sentenceSlots" aria-label="Sentence slots"></div>
+            <div class="word-bank" id="sentenceBank" aria-label="Japanese word bank"></div>
+            <div class="practice-actions">
+              <button type="button" id="checkSentenceButton">Check sentence</button>
+              <button class="light" type="button" id="clearSentenceButton">Clear</button>
+              <button class="light" type="button" id="sentenceHintButton">Hint</button>
+            </div>
+            <p class="feedback" id="sentenceFeedback" role="status">Pull words from the bank to complete the sentence.</p>
+          </section>
+        </div>
+        <section class="review-panel" aria-labelledby="reviewTitle">
+          <div class="panel-heading">
+            <div>
+              <span>Extra practice</span>
+              <h3 id="reviewTitle">Review missed answers</h3>
+            </div>
+            <button class="light" type="button" id="clearReviewButton">Clear review</button>
+          </div>
+          <div class="review-grid" id="reviewGrid">
+            <p>No missed answers yet. This area fills in as you practice.</p>
+          </div>
+        </section>
+      </section>
+
+      <section class="phrase-section course-panel" id="phrase" data-course-panel="phrase">
+        <div class="section-heading">
+          <span class="eyebrow">Phrase builder</span>
+          <h2>Swap one part and speak</h2>
+        </div>
+        <div class="phrase-builder">
+          <p class="jp" id="phraseJapanese">私は コーヒー が 好きです。</p>
+          <p id="phraseRomaji">Watashi wa koohii ga suki desu.</p>
+          <label>
+            Change the noun
+            <select id="phraseSelect"></select>
+          </label>
+        </div>
+      </section>
+
+      <section class="grammar-section course-panel" id="grammar" data-course-panel="grammar">
+        <div class="section-heading">
+          <span class="eyebrow">Grammar focus</span>
+          <h2>Particles and sentence patterns</h2>
+        </div>
+        <div class="grammar-focus-grid" id="grammarFocusGrid"></div>
+        <section class="grammar-practice-panel">
+          <div>
+            <span class="eyebrow">Mini practice</span>
+            <h3>Pick the missing particle</h3>
+          </div>
+          <p class="jp" id="grammarPracticeSentence">わたし ___ にほんじんです。</p>
+          <div class="answer-grid" id="grammarAnswerGrid"></div>
+          <p class="feedback" id="grammarFeedback" role="status">Choose the particle that fits the sentence.</p>
+        </section>
+      </section>
+
+      <section class="culture-section course-panel" id="culture" data-course-panel="culture">
+        <div class="section-heading">
+          <span class="eyebrow">Japanese society and culture</span>
+          <h2>Week 4 May 5 upload: family, ability, and Golden Week</h2>
+        </div>
+        <section class="culture-hero-card">
+          <div>
+            <span class="eyebrow">Narrative</span>
+            <h3>From classroom practice to cultural context</h3>
+            <p>
+              The class moved from warm conversation into survival-skill sentences using
+              できます and できません, then into the particle も for “also.” The second half
+              shifted toward family language and Japanese society: how family terms change when
+              speaking about your own family versus someone else’s, and how Golden Week shapes
+              travel, work, and everyday life in Japan.
+            </p>
+          </div>
+          <div class="culture-term-cloud" id="cultureTermCloud"></div>
+        </section>
+        <section class="class-community-card">
+          <div>
+            <span class="eyebrow">Class community</span>
+            <h3>Welcome to the shared study space</h3>
+            <p>
+              Minae Hayashi Sensei, Andrea, Lauren, Aaron, Tomo, Sam, Mario, and classmates:
+              this page is built from our class notes, practice moments, and cultural topics.
+              Feel free to use it along your Japanese journeys.
+            </p>
+          </div>
+          <div class="class-name-grid" aria-label="Class names">
+            <span>林先生</span>
+            <span>Andrea-san</span>
+            <span>Lauren-san</span>
+            <span>Aaron-san</span>
+            <span>Tomo-san</span>
+            <span>Sam-san</span>
+            <span>Mario-san</span>
+          </div>
+        </section>
+        <div class="class-recap-grid" id="classRecapGrid"></div>
+        <div class="culture-photo-grid" id="culturePhotoGrid"></div>
+      </section>
+
+      <section class="quiz-section course-panel" id="quiz" data-course-panel="quiz">
+        <div class="section-heading">
+          <span class="eyebrow">Quick quiz</span>
+          <h2>Five questions, instant feedback</h2>
+        </div>
+        <div class="quiz-panel">
+          <div class="quiz-topline">
+            <p id="quizProgress">Question 1 of 5</p>
+            <strong id="quizScore">0 correct</strong>
+          </div>
+          <h3 id="quizPrompt">What does ありがとう mean?</h3>
+          <div class="answer-grid" id="answerGrid"></div>
+          <p class="feedback" id="quizFeedback" role="status"></p>
+          <button type="button" id="resetQuizButton">Restart quiz</button>
+        </div>
+      </section>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>日本語は少しずつ。 Learn a little, return often, keep going.</p>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
