@@ -1,0 +1,1126 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Simone Pathway | Study Abroad and Washington D.C. Planning</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --navy-900: #102a43;
+        --navy-800: #183b5b;
+        --navy-700: #1f4e79;
+        --blue-100: #e8f1f8;
+        --gray-900: #1f2933;
+        --gray-700: #4b5563;
+        --gray-600: #52606d;
+        --gray-200: #d9e2ec;
+        --gray-100: #f4f6f8;
+        --white: #ffffff;
+        --gold: #b98b2e;
+        --gold-light: #f5ecd8;
+        --green: #1f6f5b;
+        --shadow: 0 12px 28px rgba(16, 42, 67, 0.12);
+        --radius: 8px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        color: var(--gray-900);
+        background: var(--gray-100);
+        font-family:
+          "Source Sans Pro", Inter, Arial, system-ui, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", sans-serif;
+        line-height: 1.55;
+      }
+
+      a {
+        color: #1a5a96;
+        text-decoration-thickness: 0.08em;
+        text-underline-offset: 0.16em;
+      }
+
+      a:hover {
+        color: var(--navy-900);
+      }
+
+      a:focus-visible,
+      button:focus-visible,
+      input:focus-visible {
+        outline: 3px solid #f6c84c;
+        outline-offset: 3px;
+      }
+
+      .skip-link {
+        position: absolute;
+        left: 16px;
+        top: -48px;
+        z-index: 100;
+        padding: 10px 14px;
+        color: var(--navy-900);
+        background: var(--white);
+        border: 2px solid var(--navy-900);
+        border-radius: var(--radius);
+        font-weight: 700;
+      }
+
+      .skip-link:focus {
+        top: 12px;
+      }
+
+      .official-note {
+        border-bottom: 1px solid var(--gray-200);
+        background: #eef3f8;
+        color: var(--navy-900);
+        font-size: 0.95rem;
+      }
+
+      .official-note .container {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        padding-block: 9px;
+      }
+
+      .flag-box {
+        display: inline-grid;
+        flex: 0 0 auto;
+        width: 28px;
+        height: 18px;
+        place-items: center;
+        border: 1px solid #9fb3c8;
+        background:
+          linear-gradient(#b22234 0 14%, #fff 14% 28%, #b22234 28% 42%, #fff 42% 56%, #b22234 56% 70%, #fff 70% 84%, #b22234 84%),
+          linear-gradient(90deg, #3c3b6e 0 42%, transparent 42%);
+      }
+
+      .site-header {
+        background: var(--white);
+        border-bottom: 1px solid var(--gray-200);
+      }
+
+      .container {
+        width: min(1180px, calc(100% - 32px));
+        margin-inline: auto;
+      }
+
+      .masthead {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 18px;
+        align-items: center;
+        justify-content: space-between;
+        padding: 22px 0;
+      }
+
+      .brand {
+        display: flex;
+        gap: 14px;
+        align-items: center;
+        color: var(--navy-900);
+        text-decoration: none;
+      }
+
+      .brand-mark {
+        display: grid;
+        width: 52px;
+        height: 52px;
+        place-items: center;
+        border: 2px solid var(--gold);
+        border-radius: var(--radius);
+        background: var(--navy-900);
+        color: var(--white);
+        font-size: 1.35rem;
+        font-weight: 800;
+        letter-spacing: 0.04em;
+      }
+
+      .brand strong,
+      .brand span {
+        display: block;
+      }
+
+      .brand strong {
+        font-size: clamp(1.25rem, 2vw, 1.55rem);
+        line-height: 1.1;
+      }
+
+      .brand span {
+        color: var(--gray-600);
+        font-size: 0.95rem;
+      }
+
+      .utility {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        align-items: center;
+        color: var(--gray-700);
+        font-size: 0.95rem;
+      }
+
+      .tag {
+        display: inline-flex;
+        min-height: 34px;
+        align-items: center;
+        border: 1px solid var(--gray-200);
+        border-radius: 999px;
+        padding: 6px 12px;
+        background: var(--gray-100);
+        font-weight: 700;
+      }
+
+      .primary-nav {
+        background: var(--navy-900);
+      }
+
+      .primary-nav .container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4px;
+      }
+
+      .primary-nav a {
+        display: inline-flex;
+        min-height: 48px;
+        align-items: center;
+        padding: 12px 16px;
+        color: var(--white);
+        font-weight: 700;
+        text-decoration: none;
+      }
+
+      .primary-nav a:hover {
+        background: var(--navy-700);
+        color: var(--white);
+      }
+
+      main {
+        background: var(--white);
+      }
+
+      .hero {
+        border-bottom: 1px solid var(--gray-200);
+        background:
+          linear-gradient(90deg, rgba(16, 42, 67, 0.96), rgba(24, 59, 91, 0.88) 56%, rgba(24, 59, 91, 0.74)),
+          linear-gradient(135deg, #d9e2ec, #f5ecd8);
+        color: var(--white);
+      }
+
+      .hero .container {
+        display: grid;
+        grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
+        gap: clamp(28px, 5vw, 64px);
+        align-items: center;
+        padding-block: clamp(42px, 7vw, 84px);
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 12px;
+        color: var(--gold-light);
+        font-size: 0.88rem;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .eyebrow::before {
+        content: "";
+        width: 30px;
+        height: 3px;
+        background: var(--gold);
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin-top: 0;
+      }
+
+      h1 {
+        max-width: 820px;
+        margin-bottom: 18px;
+        font-size: clamp(2rem, 5vw, 4rem);
+        line-height: 1.05;
+        letter-spacing: -0.02em;
+      }
+
+      .hero p {
+        max-width: 760px;
+        color: #eef3f8;
+        font-size: clamp(1.08rem, 1.8vw, 1.25rem);
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 28px;
+      }
+
+      .button {
+        display: inline-flex;
+        min-height: 48px;
+        align-items: center;
+        justify-content: center;
+        border: 2px solid transparent;
+        border-radius: var(--radius);
+        padding: 12px 18px;
+        font-weight: 800;
+        text-decoration: none;
+      }
+
+      .button.primary {
+        background: var(--gold);
+        color: #201504;
+      }
+
+      .button.secondary {
+        border-color: #b9c8d8;
+        color: var(--white);
+      }
+
+      .button:hover {
+        transform: translateY(-1px);
+      }
+
+      .hero-panel {
+        border: 1px solid rgba(255, 255, 255, 0.24);
+        border-radius: var(--radius);
+        padding: 22px;
+        background: rgba(255, 255, 255, 0.1);
+        box-shadow: 0 16px 42px rgba(0, 0, 0, 0.18);
+      }
+
+      .hero-panel h2 {
+        margin-bottom: 12px;
+        color: var(--white);
+        font-size: 1.25rem;
+      }
+
+      .summary-list {
+        display: grid;
+        gap: 12px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .summary-list li {
+        display: grid;
+        gap: 2px;
+        border-left: 4px solid var(--gold);
+        padding-left: 12px;
+      }
+
+      .summary-list strong {
+        color: var(--white);
+      }
+
+      .summary-list span {
+        color: #dce8f2;
+      }
+
+      .section {
+        padding-block: clamp(42px, 6vw, 76px);
+      }
+
+      .section.alt {
+        background: var(--gray-100);
+      }
+
+      .section-header {
+        max-width: 820px;
+        margin-bottom: 28px;
+      }
+
+      .section-header .eyebrow {
+        color: var(--navy-700);
+      }
+
+      .section-header h2 {
+        margin-bottom: 10px;
+        color: var(--navy-900);
+        font-size: clamp(1.75rem, 3vw, 2.45rem);
+        line-height: 1.15;
+      }
+
+      .section-header p {
+        color: var(--gray-600);
+        font-size: 1.06rem;
+      }
+
+      .notice {
+        border-left: 6px solid var(--gold);
+        border-radius: var(--radius);
+        padding: 18px 20px;
+        background: var(--gold-light);
+      }
+
+      .notice strong {
+        color: var(--navy-900);
+      }
+
+      .card-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 18px;
+      }
+
+      .path-card,
+      .info-card,
+      .source-card {
+        border: 1px solid var(--gray-200);
+        border-radius: var(--radius);
+        background: var(--white);
+        box-shadow: 0 4px 14px rgba(16, 42, 67, 0.08);
+      }
+
+      .path-card {
+        display: grid;
+        overflow: hidden;
+        transition:
+          box-shadow 160ms ease,
+          transform 160ms ease;
+      }
+
+      .path-card:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--shadow);
+      }
+
+      .image-placeholder {
+        min-height: 150px;
+        border-bottom: 1px solid var(--gray-200);
+        background:
+          linear-gradient(135deg, rgba(16, 42, 67, 0.78), rgba(31, 78, 121, 0.54)),
+          var(--blue-100);
+        color: var(--white);
+        display: grid;
+        align-content: end;
+        padding: 18px;
+      }
+
+      .image-placeholder.study {
+        background:
+          linear-gradient(135deg, rgba(16, 42, 67, 0.78), rgba(185, 139, 46, 0.52)),
+          linear-gradient(45deg, #e7edf3, #f5ecd8);
+      }
+
+      .image-placeholder.dc {
+        background:
+          linear-gradient(135deg, rgba(16, 42, 67, 0.82), rgba(96, 116, 137, 0.56)),
+          linear-gradient(45deg, #e4e9ef, #ffffff);
+      }
+
+      .image-placeholder.scholarship {
+        background:
+          linear-gradient(135deg, rgba(31, 111, 91, 0.8), rgba(185, 139, 46, 0.58)),
+          linear-gradient(45deg, #e7f3ef, #fff8e8);
+      }
+
+      .image-placeholder span {
+        display: inline-block;
+        max-width: 230px;
+        font-weight: 800;
+        text-shadow: 0 2px 6px rgba(0, 0, 0, 0.24);
+      }
+
+      .card-body {
+        display: grid;
+        gap: 14px;
+        padding: 20px;
+      }
+
+      .card-kicker {
+        color: var(--navy-700);
+        font-size: 0.82rem;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .path-card h3,
+      .info-card h3 {
+        margin-bottom: 0;
+        color: var(--navy-900);
+        font-size: 1.18rem;
+        line-height: 1.25;
+      }
+
+      .path-card ul,
+      .checklist,
+      .source-list {
+        margin: 0;
+        padding-left: 1.15rem;
+      }
+
+      .path-card li,
+      .checklist li {
+        margin-bottom: 9px;
+      }
+
+      .meta {
+        display: grid;
+        gap: 8px;
+        border-top: 1px solid var(--gray-200);
+        padding-top: 14px;
+        color: var(--gray-600);
+        font-size: 0.94rem;
+      }
+
+      .recommended {
+        display: grid;
+        grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+        gap: 24px;
+        align-items: start;
+      }
+
+      .recommendation-panel {
+        border-radius: var(--radius);
+        padding: 26px;
+        background: var(--navy-900);
+        color: var(--white);
+        box-shadow: var(--shadow);
+      }
+
+      .recommendation-panel h3 {
+        margin-bottom: 12px;
+        font-size: 1.45rem;
+      }
+
+      .recommendation-panel p {
+        color: #dce8f2;
+      }
+
+      .cost-box {
+        display: grid;
+        gap: 12px;
+        margin-top: 22px;
+      }
+
+      .cost-item {
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+        border-top: 1px solid rgba(255, 255, 255, 0.18);
+        padding-top: 12px;
+      }
+
+      .cost-item strong {
+        color: var(--white);
+      }
+
+      .timeline {
+        position: relative;
+        display: grid;
+        gap: 16px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .timeline::before {
+        content: "";
+        position: absolute;
+        top: 12px;
+        bottom: 12px;
+        left: 18px;
+        width: 3px;
+        background: var(--gray-200);
+      }
+
+      .timeline li {
+        position: relative;
+        display: grid;
+        gap: 6px;
+        border: 1px solid var(--gray-200);
+        border-radius: var(--radius);
+        padding: 16px 18px 16px 58px;
+        background: var(--white);
+      }
+
+      .timeline li::before {
+        content: attr(data-step);
+        position: absolute;
+        top: 16px;
+        left: 0;
+        display: grid;
+        width: 38px;
+        height: 38px;
+        place-items: center;
+        border: 3px solid var(--white);
+        border-radius: 50%;
+        background: var(--navy-700);
+        color: var(--white);
+        font-weight: 800;
+        box-shadow: 0 0 0 1px var(--gray-200);
+      }
+
+      .timeline strong {
+        color: var(--navy-900);
+        font-size: 1.06rem;
+      }
+
+      .info-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
+      }
+
+      .info-card {
+        padding: 22px;
+      }
+
+      .info-card.accent {
+        border-top: 5px solid var(--gold);
+      }
+
+      .checklist-card {
+        border: 1px solid var(--gray-200);
+        border-radius: var(--radius);
+        padding: 24px;
+        background: var(--white);
+        box-shadow: var(--shadow);
+      }
+
+      .checklist {
+        display: grid;
+        gap: 12px;
+        padding-left: 0;
+        list-style: none;
+      }
+
+      .checklist li {
+        position: relative;
+        margin: 0;
+        padding-left: 34px;
+      }
+
+      .checklist li::before {
+        content: "";
+        position: absolute;
+        top: 2px;
+        left: 0;
+        width: 22px;
+        height: 22px;
+        border: 2px solid var(--navy-700);
+        border-radius: 4px;
+        background: var(--white);
+      }
+
+      .sources {
+        background: var(--navy-900);
+        color: var(--white);
+      }
+
+      .sources .section-header h2,
+      .sources .section-header p {
+        color: var(--white);
+      }
+
+      .sources .section-header .eyebrow {
+        color: var(--gold-light);
+      }
+
+      .source-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+      }
+
+      .source-card {
+        padding: 18px;
+        background: rgba(255, 255, 255, 0.08);
+        border-color: rgba(255, 255, 255, 0.22);
+        box-shadow: none;
+      }
+
+      .source-card h3 {
+        margin-bottom: 8px;
+        color: var(--white);
+        font-size: 1.05rem;
+      }
+
+      .source-card a {
+        color: #f8d66d;
+        overflow-wrap: anywhere;
+      }
+
+      .site-footer {
+        border-top: 1px solid var(--gray-200);
+        background: var(--white);
+        color: var(--gray-600);
+      }
+
+      .site-footer .container {
+        padding-block: 24px;
+      }
+
+      @media (max-width: 1040px) {
+        .hero .container,
+        .recommended {
+          grid-template-columns: 1fr;
+        }
+
+        .card-grid,
+        .info-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+
+      @media (max-width: 720px) {
+        .container {
+          width: min(100% - 24px, 1180px);
+        }
+
+        .masthead,
+        .official-note .container {
+          align-items: flex-start;
+        }
+
+        .primary-nav .container {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+        }
+
+        .primary-nav a {
+          border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+        }
+
+        .hero .container {
+          padding-block: 36px;
+        }
+
+        .hero-actions,
+        .cost-item {
+          display: grid;
+        }
+
+        .button {
+          width: 100%;
+        }
+
+        .card-grid,
+        .info-grid,
+        .source-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .timeline::before {
+          left: 16px;
+        }
+      }
+
+      @media print {
+        .skip-link,
+        .primary-nav,
+        .hero-actions {
+          display: none;
+        }
+
+        body,
+        main,
+        .section.alt {
+          background: var(--white);
+        }
+
+        .hero,
+        .sources {
+          color: var(--gray-900);
+          background: var(--white);
+        }
+
+        .hero p,
+        .sources .section-header h2,
+        .sources .section-header p,
+        .source-card h3 {
+          color: var(--gray-900);
+        }
+
+        .path-card,
+        .info-card,
+        .checklist-card,
+        .recommendation-panel {
+          box-shadow: none;
+          break-inside: avoid;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <div class="official-note" role="note">
+      <div class="container">
+        <span class="flag-box" aria-hidden="true"></span>
+        <span>
+          This is a student advising and planning resource. It is not an official government
+          website and does not represent a government agency.
+        </span>
+      </div>
+    </div>
+
+    <header class="site-header">
+      <div class="container masthead">
+        <a class="brand" href="#main" aria-label="Simone Pathway home">
+          <span class="brand-mark" aria-hidden="true">SP</span>
+          <span>
+            <strong>Simone Pathway Planning Guide</strong>
+            <span>Study abroad, public service internships, and scholarship planning</span>
+          </span>
+        </a>
+        <div class="utility" aria-label="Page information">
+          <span class="tag">Advising Resource</span>
+          <span class="tag">Updated Planning Estimates</span>
+        </div>
+      </div>
+      <nav class="primary-nav" aria-label="Main navigation">
+        <div class="container">
+          <a href="#overview">Overview</a>
+          <a href="#pathway">Pathway</a>
+          <a href="#timeline">Timeline</a>
+          <a href="#scholarships">Scholarships</a>
+          <a href="#next-steps">Next Steps</a>
+          <a href="#sources">Sources</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="hero" id="overview" aria-labelledby="page-title">
+        <div class="container">
+          <div>
+            <span class="eyebrow">Education and Career Planning</span>
+            <h1 id="page-title">A structured pathway for France study abroad and a Washington, D.C. internship.</h1>
+            <p>
+              This guide organizes Simone's academic, international, and career development
+              options into a recommended sequence that supports a Political Science degree,
+              language growth, federal career exploration, and responsible financial planning.
+            </p>
+            <div class="hero-actions" aria-label="Primary actions">
+              <a class="button primary" href="#pathway">Review the Pathway</a>
+              <a class="button secondary" href="#next-steps">See Next Steps</a>
+            </div>
+          </div>
+
+          <aside class="hero-panel" aria-label="Planning summary">
+            <h2>Planning Snapshot</h2>
+            <ul class="summary-list">
+              <li>
+                <strong>Recommended sequence</strong>
+                <span>Study abroad first; Washington, D.C. internship closer to graduation.</span>
+              </li>
+              <li>
+                <strong>France planning estimate</strong>
+                <span>Approximately $6,000, with listed examples ranging from $4,300-$7,700.</span>
+              </li>
+              <li>
+                <strong>D.C. program estimate</strong>
+                <span>Summer 2026: $12,550 before personal expenses; Spring/Fall 2026: $16,330 before personal expenses.</span>
+              </li>
+              <li>
+                <strong>Funding focus</strong>
+                <span>Scholarships, academic advising, early deadlines, and written cost planning.</span>
+              </li>
+            </ul>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section" id="pathway" aria-labelledby="pathway-title">
+        <div class="container">
+          <div class="section-header">
+            <span class="eyebrow">Recommended Pathway</span>
+            <h2 id="pathway-title">Four planning areas to coordinate before making commitments.</h2>
+            <p>
+              The original workflow has been organized into advisory cards that can be used in
+              meetings with academic advisors, career services, study abroad staff, and family
+              financial planning discussions.
+            </p>
+          </div>
+
+          <div class="card-grid">
+            <article class="path-card">
+              <div class="image-placeholder academic" role="img" aria-label="Placeholder image area for college campus or academic advising">
+                <span>College campus and academic advising</span>
+              </div>
+              <div class="card-body">
+                <span class="card-kicker">Step 1</span>
+                <h3>Academic Pathway</h3>
+                <ul>
+                  <li>Confirm the Bachelor of Arts in Political Science degree plan.</li>
+                  <li>Meet with an APSU academic advisor to review requirements and sequencing.</li>
+                  <li>Confirm the language focus and expected graduation timeline.</li>
+                  <li>Ask how study abroad credits may apply to the degree plan.</li>
+                  <li>Meet with Career Services for long-term planning toward public service, law, government, or international affairs.</li>
+                </ul>
+                <div class="meta">
+                  <strong>Primary source:</strong>
+                  <a href="https://www.apsu.edu/programs/undergraduate/political-science.php">APSU Political Science</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="path-card">
+              <div class="image-placeholder study" role="img" aria-label="Placeholder image area for study abroad in France">
+                <span>Study abroad and France experience</span>
+              </div>
+              <div class="card-body">
+                <span class="card-kicker">Step 2</span>
+                <h3>France Study Abroad</h3>
+                <ul>
+                  <li>Best timing: freshman or sophomore year.</li>
+                  <li>Recommended length: a two-week short-term program.</li>
+                  <li>Supports language development, cultural exposure, and international experience.</li>
+                  <li>Estimated cost range: $4,300-$7,700.</li>
+                  <li>Planning estimate: approximately $6,000.</li>
+                </ul>
+                <div class="meta">
+                  <strong>Primary sources:</strong>
+                  <a href="https://www.apsu.edu/study-abroad-exchange/study-abroad/">APSU Study Abroad</a>
+                  <a href="https://worldstrides.com/en-us/higher-ed/programs/europe/france/paris">France Program Example</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="path-card">
+              <div class="image-placeholder dc" role="img" aria-label="Placeholder image area for Washington D.C. government internship">
+                <span>Washington, D.C. public service internship</span>
+              </div>
+              <div class="card-body">
+                <span class="card-kicker">Step 3</span>
+                <h3>Washington, D.C. Program</h3>
+                <ul>
+                  <li>Best timing: junior or senior year.</li>
+                  <li>Program: The Washington Center Academic Internship Program.</li>
+                  <li>Supports government, public policy, law, and international affairs goals.</li>
+                  <li>Summer 2026 fees: $7,500 program, $4,990 housing, and $60 application.</li>
+                  <li>Spring/Fall 2026 fees: $9,700 program, $6,570 housing, and $60 application.</li>
+                </ul>
+                <div class="meta">
+                  <strong>Primary sources:</strong>
+                  <a href="https://twc.edu/programs/academic-internship-program">The Washington Center Fees</a>
+                  <a href="https://www.kuleuven.be/global/going-abroad/outgoingstudentmobility/twc">TWC Cost Example</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="path-card">
+              <div class="image-placeholder scholarship" role="img" aria-label="Placeholder image area for scholarship or financial planning">
+                <span>Scholarship and financial planning</span>
+              </div>
+              <div class="card-body">
+                <span class="card-kicker">Step 4</span>
+                <h3>Recommended Sequence</h3>
+                <ul>
+                  <li>Do not compress both programs into one summer unless funding is already secured.</li>
+                  <li>Year 1-2: complete France study abroad planning and continue language coursework.</li>
+                  <li>Year 3-4: pursue Washington, D.C. internship experience closer to graduation.</li>
+                  <li>This sequence spreads out cost, deadlines, travel demands, and academic planning.</li>
+                  <li>It also creates a stronger career narrative for graduate school or federal employment.</li>
+                </ul>
+                <div class="meta">
+                  <strong>Advising note:</strong>
+                  Study abroad first; D.C. internship closer to graduation.
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section alt" id="timeline" aria-labelledby="timeline-title">
+        <div class="container recommended">
+          <div class="recommendation-panel">
+            <span class="eyebrow">Advising Recommendation</span>
+            <h2 id="timeline-title">Recommended Pathway</h2>
+            <p>
+              The recommended pathway is to use the first two academic years to strengthen
+              coursework, language exposure, and international experience through a shorter France
+              program, then use the final two years to pursue a Washington, D.C. internship aligned
+              with career goals.
+            </p>
+            <div class="cost-box" aria-label="Planning cost estimates">
+              <div class="cost-item">
+                <span>France study abroad planning estimate</span>
+                <strong>About $6,000</strong>
+              </div>
+              <div class="cost-item">
+                <span>France listed cost range</span>
+                <strong>$4,300-$7,700</strong>
+              </div>
+              <div class="cost-item">
+                <span>TWC Summer 2026 listed fees</span>
+                <strong>$12,550</strong>
+              </div>
+              <div class="cost-item">
+                <span>TWC Spring/Fall 2026 listed fees</span>
+                <strong>$16,330</strong>
+              </div>
+            </div>
+          </div>
+
+          <ol class="timeline" aria-label="Recommended academic and career timeline">
+            <li data-step="1">
+              <strong>First advising appointment</strong>
+              <span>Confirm the Political Science degree plan, expected graduation date, language plans, and how experiential credits may apply.</span>
+            </li>
+            <li data-step="2">
+              <strong>Freshman or sophomore year</strong>
+              <span>Plan for a two-week France study abroad program that supports language learning, confidence, and international exposure.</span>
+            </li>
+            <li data-step="3">
+              <strong>One year before D.C. application</strong>
+              <span>Build a resume, identify policy interests, meet Career Services, and compare Washington, D.C. program terms and costs.</span>
+            </li>
+            <li data-step="4">
+              <strong>Junior or senior year</strong>
+              <span>Apply for The Washington Center or a comparable D.C.-based internship program when the experience can support post-graduation goals.</span>
+            </li>
+            <li data-step="5">
+              <strong>Before final commitment</strong>
+              <span>Confirm scholarships, credit transfer, housing, travel, food, local transportation, and emergency funds in writing.</span>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="section" id="scholarships" aria-labelledby="scholarships-title">
+        <div class="container">
+          <div class="section-header">
+            <span class="eyebrow">Funding and Support</span>
+            <h2 id="scholarships-title">Scholarship planning should begin before program selection is final.</h2>
+            <p>
+              Funding decisions should be treated as part of the academic plan, not as a final step
+              after travel plans are already fixed. Simone should document deadlines, eligibility,
+              award amounts, and whether each award can apply to program fees, housing, travel, or
+              personal expenses.
+            </p>
+          </div>
+
+          <div class="info-grid">
+            <article class="info-card accent">
+              <h3>Gilman Scholarship</h3>
+              <p>
+                The Benjamin A. Gilman International Scholarship may support eligible U.S.
+                undergraduate students with financial need who study or intern abroad.
+              </p>
+              <a href="https://www.gilmanscholarship.org/program/program-overview/">Review Gilman program overview</a>
+            </article>
+
+            <article class="info-card accent">
+              <h3>Campus Funding Questions</h3>
+              <p>
+                Ask whether institutional scholarships, departmental awards, financial aid, or
+                external grants may apply to short-term study abroad or internship programs.
+              </p>
+            </article>
+
+            <article class="info-card accent">
+              <h3>Cost Review</h3>
+              <p>
+                Compare published program fees with additional expenses such as flights, passports,
+                meals, local transportation, course materials, and emergency funds.
+              </p>
+            </article>
+          </div>
+
+          <div class="notice" style="margin-top: 24px;">
+            <strong>Planning caution:</strong>
+            Do not schedule France study abroad and a Washington, D.C. internship in the same summer
+            unless scholarships, aid, and family contributions are already confirmed.
+          </div>
+        </div>
+      </section>
+
+      <section class="section alt" id="next-steps" aria-labelledby="next-steps-title">
+        <div class="container">
+          <div class="section-header">
+            <span class="eyebrow">Action Plan</span>
+            <h2 id="next-steps-title">Next Steps Checklist</h2>
+            <p>
+              Use this checklist to prepare for advising conversations and avoid committing to
+              programs before academic credit, cost, and timing are clear.
+            </p>
+          </div>
+
+          <div class="checklist-card">
+            <ul class="checklist">
+              <li>Schedule an APSU academic advising meeting to confirm degree requirements and course sequencing.</li>
+              <li>Ask how study abroad credits would apply to Simone's Political Science degree plan.</li>
+              <li>Meet with the study abroad office to review France program options, deadlines, deposits, and cancellation terms.</li>
+              <li>Create a written cost estimate for France using the $6,000 planning figure and any updated program quote.</li>
+              <li>Meet with Career Services to map Washington, D.C. internship timing to career goals.</li>
+              <li>Review The Washington Center fees for the intended term and add housing, travel, food, and local transportation estimates.</li>
+              <li>Research Gilman and campus scholarship deadlines at least one term before applying.</li>
+              <li>Decide whether the preferred sequence remains Year 1-2 for France and Year 3-4 for Washington, D.C.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section sources" id="sources" aria-labelledby="sources-title">
+        <div class="container">
+          <div class="section-header">
+            <span class="eyebrow">Sources and References</span>
+            <h2 id="sources-title">Reference links used for this planning guide.</h2>
+            <p>
+              Source links are provided so Simone can verify current requirements, fees, and
+              deadlines before making academic or financial decisions.
+            </p>
+          </div>
+
+          <div class="source-grid">
+            <article class="source-card">
+              <h3>APSU Study Abroad</h3>
+              <a href="https://www.apsu.edu/study-abroad-exchange/study-abroad/">https://www.apsu.edu/study-abroad-exchange/study-abroad/</a>
+            </article>
+            <article class="source-card">
+              <h3>APSU Political Science / Washington Center</h3>
+              <a href="https://www.apsu.edu/programs/undergraduate/political-science.php">https://www.apsu.edu/programs/undergraduate/political-science.php</a>
+            </article>
+            <article class="source-card">
+              <h3>The Washington Center Fees</h3>
+              <a href="https://twc.edu/programs/academic-internship-program">https://twc.edu/programs/academic-internship-program</a>
+            </article>
+            <article class="source-card">
+              <h3>Gilman Scholarship</h3>
+              <a href="https://www.gilmanscholarship.org/program/program-overview/">https://www.gilmanscholarship.org/program/program-overview/</a>
+            </article>
+            <article class="source-card">
+              <h3>KU Leuven TWC Cost Example</h3>
+              <a href="https://www.kuleuven.be/global/going-abroad/outgoingstudentmobility/twc">https://www.kuleuven.be/global/going-abroad/outgoingstudentmobility/twc</a>
+            </article>
+            <article class="source-card">
+              <h3>France Program Example</h3>
+              <a href="https://worldstrides.com/en-us/higher-ed/programs/europe/france/paris">https://worldstrides.com/en-us/higher-ed/programs/europe/france/paris</a>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>
+          Simone Pathway Planning Guide. This page is an independent advising resource and should
+          be verified with official program, university, and scholarship offices before decisions
+          are made.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
