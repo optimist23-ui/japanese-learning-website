@@ -44,7 +44,7 @@ header{display:flex;align-items:center;justify-content:space-between;background:
 .sentence-front{background:transparent}.sentence-front button{border:0;background:#e8b44ae8;color:var(--ink);font-weight:800;padding:8px 11px;border-radius:8px;cursor:pointer;box-shadow:0 2px 8px #0003}
 .sentence-back{transform:rotateY(180deg);justify-content:center;background:#fffdf8f5;border:3px solid var(--gold);text-align:center;padding:10px;overflow:auto;scrollbar-width:thin}
 .sentence-back .ajp{font-size:clamp(20px,1.85vw,32px);line-height:1.24;font-weight:500;letter-spacing:0;overflow-wrap:anywhere}.sentence-back .ajp.answer-medium{font-size:clamp(18px,1.55vw,27px)}.sentence-back .ajp.answer-long{font-size:clamp(15px,1.25vw,22px);line-height:1.18}.sentence-back .romaji{font-size:clamp(13px,1vw,17px);font-style:normal;font-weight:650;color:var(--teal);margin-top:7px;line-height:1.38}.sentence-back button{margin-top:8px;border:0;background:var(--teal);color:white;border-radius:7px;padding:6px 11px;cursor:pointer;flex:0 0 auto}
-.mora-word{display:inline-block;white-space:nowrap;margin:.04em .14em}.mora-dot{color:#bd851b;font-weight:900;padding:0 .01em}.mora-punctuation{display:inline-block;margin:0 .06em;color:var(--muted)}
+.mora-word{display:inline-block;white-space:nowrap;margin:.04em .18em}.mora-dot{color:#bd851b;font-weight:900;padding:0 .015em}.mora-punctuation{display:inline-block;margin:0 .06em;color:var(--muted)}
 .custom-note{display:none;background:#eef7f4;border-radius:10px;padding:12px;margin-top:14px;white-space:pre-wrap;line-height:1.45}.video-link{display:none;background:#4361a8}.edit-btn{width:100%;border:1px solid var(--teal);background:white;color:var(--teal);font-weight:800;padding:10px;border-radius:9px;margin-top:14px;cursor:pointer}
 .slide-browser{width:min(1100px,94vw);height:min(760px,90vh);border:0;border-radius:16px;padding:0}.dialog-head{position:sticky;top:0;background:var(--teal);color:white;padding:18px 22px;display:flex;justify-content:space-between;align-items:center;z-index:2}.thumb-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;padding:20px}.thumb{border:2px solid transparent;background:white;border-radius:10px;padding:7px;cursor:pointer;text-align:left}.thumb.current{border-color:var(--rust)}.thumb img{width:100%;height:105px;object-fit:contain;background:#fafafa}.thumb b{display:block;margin-top:6px;font-size:13px}
 .edit-dialog{width:min(600px,92vw);border:0;border-radius:16px;padding:22px}.edit-dialog label{display:block;font-weight:800;margin:14px 0 5px}.edit-dialog input,.edit-dialog textarea{width:100%;padding:10px;border:1px solid var(--line);border-radius:8px}.edit-dialog textarea{height:110px}.dialog-actions{display:flex;justify-content:flex-end;gap:9px;margin-top:18px}.dialog-actions button{padding:9px 14px;border-radius:8px;border:0;cursor:pointer}.save{background:var(--teal);color:white}
@@ -217,6 +217,42 @@ function getEdit(s){try{return JSON.parse(localStorage.getItem(editKey(s))||"{}"
 function safeText(x){const d=document.createElement("div");d.textContent=x||"";return d.innerHTML}
 function vocabularyFocus(value){const text=value||"";const quoted=[...text.matchAll(/「([^」]+)」/g)].map(match=>match[1]);return quoted.length?quoted.join(" "):text}
 function reviewAnswerClass(value){const length=[...(value||"")].length;return length>20?"answer-long":length>11?"answer-medium":""}
+const PRONUNCIATION_OVERRIDES={
+ "a":"ah","i":"ee","u":"oo","e":"eh","o":"oh","wa":"wah","ha":"wah","no":"noh","ni":"nee","to":"toh","ga":"gah","de":"deh","ka":"kah","mo":"moh",
+ "desu":"dess","masu":"mahss","imasu":"ee-mahss","arimasu":"ah-ree-mahss","ja":"jah","nai":"nigh","naidesu":"nigh-dess",
+ "watashi":"wah-tah-shee","watakushi":"wah-tah-koo-shee","kore":"koh-reh","sore":"soh-reh","are":"ah-reh","kono":"koh-noh","sono":"soh-noh","ano":"ah-noh",
+ "hito":"hee-toh","dare":"dah-reh","doko":"doh-koh","nani":"nah-nee","nan":"nahn","namae":"nah-mah-eh","nihon":"nee-hohn","amerika":"ah-meh-ree-kah","jin":"jeen","aisatsu":"eye-saht-soo","toire":"toh-ee-reh",
+ "ohayou":"oh-hah-yoh","gozaimasu":"goh-zah-ee-mahss","konnichiwa":"kohn-nee-chee-wah","konbanwa":"kohn-bahn-wah","sayounara":"sah-yoh-nah-rah",
+ "arigatou":"ah-ree-gah-toh","sumimasen":"soo-mee-mah-sehn","gomennasai":"goh-mehn-nah-sigh","oyasumi":"oh-yah-soo-mee","nasai":"nah-sigh","douzo":"doh-zoh",
+ "hai":"high","iie":"ee-eh","daijoubu":"dye-joh-boo","kudasai":"koo-dah-sigh","mata":"mah-tah","ne":"neh",
+ "suki":"skee","daisuki":"dye-skee","ichiban":"ee-chee-bahn","itsumo":"eet-soo-moh","yoku":"yoh-koo","amari":"ah-mah-ree",
+ "tabemasu":"tah-beh-mahss","tabemasen":"tah-beh-mah-sehn","nomimasu":"noh-mee-mahss","nomimasen":"noh-mee-mah-sehn","tabemono":"tah-beh-moh-noh","nomimono":"noh-mee-moh-noh",
+ "gohan":"goh-hahn","mizu":"mee-zoo","koohii":"koh-hee","ocha":"oh-chah","koucha":"koh-chah","osake":"oh-sah-keh","pan":"pahn",
+ "shigoto":"shee-goh-toh","kaishain":"kigh-shah-een","koumuin":"koh-moo-een","keisatsukan":"keh-ee-saht-soo-kahn","enjinia":"ehn-jee-nee-ah",
+ "kazoku":"kah-zoh-koo","chichi":"chee-chee","haha":"hah-hah","otousan":"oh-toh-sahn","okaasan":"oh-kah-sahn","otto":"oht-toh","tsuma":"tsoo-mah",
+ "otokonohito":"oh-toh-koh-noh-hee-toh","onnanohito":"ohn-nah-noh-hee-toh","otokonoko":"oh-toh-koh-noh-koh","onnanoko":"ohn-nah-noh-koh","akachan":"ah-kah-chahn",
+ "sunde":"soon-deh","renshuu":"rehn-shoo","kyou":"kyoh","ashita":"ah-shee-tah","yasumi":"yah-soo-mee","koko":"koh-koh","asoko":"ah-soh-koh"
+};
+const PRONUNCIATION_LEXICON=[
+ "gozaimasu","keisatsukan","tabemasen","nomimasen","tabemono","nomimono","otokonohito","onnanohito","otokonoko","onnanoko",
+ "arigatou","sumimasen","gomennasai","daijoubu","sayounara","konnichiwa","konbanwa","watakushi","watashi","amerika","kaishain","koumuin",
+ "tabemasu","nomimasu","arimasu","naidesu","oyasumi","otousan","okaasan","ichiban","daisuki","shigoto","kazoku","renshuu","kudasai",
+ "kore","sore","kono","sono","nihon","namae","sunde","imasu","desu","masu","dare","doko","hito","gohan","mizu","koohii","koucha",
+ "itsumo","amari","yoku","suki","chichi","haha","otto","tsuma","akachan","kyou","ashita","yasumi","koko","asoko","douzo","nasai","mata",
+ "iie","hai","nani","nan","jin","pan","ocha","osake","aisatsu","toire","wa","ha","ga","no","ni","de","to","mo","o","ka","ja"
+].sort((a,b)=>b.length-a.length);
+function splitRomajiWord(word){
+ const lower=word.toLowerCase();
+ if(PRONUNCIATION_OVERRIDES[lower])return [lower];
+ const parts=[];let position=0;
+ while(position<lower.length){
+   const match=PRONUNCIATION_LEXICON.find(item=>lower.startsWith(item,position));
+   if(match){parts.push(match);position+=match.length;continue}
+   const next=PRONUNCIATION_LEXICON.map(item=>lower.indexOf(item,position+1)).filter(index=>index>position).sort((a,b)=>a-b)[0];
+   const end=next||lower.length;parts.push(lower.slice(position,end));position=end;
+ }
+ return parts.filter(Boolean);
+}
 function morae(word){
  const letters=[...word],units=[];let i=0;
  const vowel=char=>/[aeiouāīūēō]/i.test(char||"");
@@ -237,12 +273,23 @@ function morae(word){
  }
  return units.filter(Boolean);
 }
+function soundMora(value){
+ const exact={"a":"ah","i":"ee","u":"oo","e":"eh","o":"oh","shi":"shee","chi":"chee","tsu":"tsoo","fu":"foo","ji":"jee","zu":"zoo","n":"n","r":"r"};
+ if(exact[value])return exact[value];
+ return value
+   .replace(/ā/g,"ah").replace(/ī/g,"ee").replace(/ū/g,"oo").replace(/ē/g,"eh").replace(/ō/g,"oh")
+   .replace(/a$/,"ah").replace(/i$/,"ee").replace(/u$/,"oo").replace(/e$/,"eh").replace(/o$/,"oh");
+}
+function pronunciationWord(word){
+ const lower=word.toLowerCase();
+ if(PRONUNCIATION_OVERRIDES[lower])return PRONUNCIATION_OVERRIDES[lower];
+ return morae(lower).map(soundMora).join("-");
+}
 function romajiGuide(value){
  const tokens=String(value||"").match(/[A-Za-zĀĪŪĒŌāīūēō-]+|[^A-Za-zĀĪŪĒŌāīūēō\s-]+/g)||[];
  return tokens.map(token=>{
    if(/^[A-Za-zĀĪŪĒŌāīūēō-]+$/.test(token)){
-     const sounds=morae(token).map(safeText);
-     return `<span class="mora-word">${sounds.join('<span class="mora-dot">・</span>')}</span>`;
+     return splitRomajiWord(token).map(word=>`<span class="mora-word">${safeText(pronunciationWord(word))}</span>`).join("");
    }
    return `<span class="mora-punctuation">${safeText(token)}</span>`;
  }).join("");

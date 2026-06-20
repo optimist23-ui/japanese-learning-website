@@ -1,4 +1,4 @@
-const CACHE_NAME="japanese-lessons-2026-06-20-v8";
+const CACHE_NAME="japanese-lessons-2026-06-20-v9";
 const APP_SHELL=["./","./index.html","./manifest.webmanifest","./icons/icon-192.png","./icons/icon-512.png"];
 
 self.addEventListener("install",event=>{
