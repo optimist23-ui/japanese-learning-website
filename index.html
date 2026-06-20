@@ -22,7 +22,7 @@ aside{background:var(--teal);color:white;overflow:auto;padding:20px 14px}
 main{min-width:0;display:grid;grid-template-rows:60px 1fr 88px;height:100vh}
 header{display:flex;align-items:center;justify-content:space-between;background:white;border-bottom:1px solid var(--line);padding:0 22px}
 .crumb{font-weight:800;color:var(--teal)}.page-label{font-size:13px;color:var(--muted);margin-top:3px}
-.header-actions{display:flex;gap:8px;align-items:center}.icon-btn{border:1px solid var(--line);background:white;border-radius:9px;padding:8px 12px;cursor:pointer;white-space:nowrap}.language-btn{background:var(--teal);border-color:var(--teal);color:white;font-weight:800}
+.header-actions{display:flex;gap:8px;align-items:center}.icon-btn{border:1px solid var(--line);background:white;border-radius:9px;padding:8px 12px;cursor:pointer;white-space:nowrap}.how-to-btn{background:var(--gold);border:2px solid #c78e20;color:var(--ink);font-weight:900;box-shadow:0 3px 10px #a86f1938;transform:translateY(-1px)}.how-to-btn::before{content:"▶";margin-right:7px}.how-to-btn:hover{background:#f2c65f;box-shadow:0 5px 14px #a86f1950}.language-btn{background:var(--teal);border-color:var(--teal);color:white;font-weight:800}
 .stage{min-height:0;display:grid;grid-template-columns:minmax(0,1fr) 230px;gap:16px;padding:16px 20px}
 .stage.quiz-stage{grid-template-columns:1fr}.stage.quiz-stage .side-card{display:none!important}
 .visual{background:white;border:1px solid var(--line);border-radius:15px;display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative}
@@ -69,7 +69,7 @@ footer{background:white;border-top:1px solid var(--line);display:grid;grid-templ
 <main>
   <header>
     <div><div class="crumb" id="crumb"></div><div class="page-label" id="pageLabel"></div></div>
-    <div class="header-actions"><button class="icon-btn language-btn" id="languageBtn">日本語</button><button class="icon-btn mobile-lessons" id="menuBtn" data-i18n="lessons">Lessons</button><button class="icon-btn" id="slidesBtn" data-i18n="allSlides">All Slides</button><button class="icon-btn" id="helpBtn" data-i18n="howToUse">How to Use</button><button class="icon-btn" id="editBtn" data-i18n="editSlide">Edit Slide</button><button class="icon-btn" id="utilizeBtn" data-i18n="utilizeAll">Utilize All</button><button class="icon-btn" id="installBtn" data-i18n="installApp">Install App</button><button class="icon-btn" id="fullscreenBtn" data-i18n="fullscreen">Fullscreen</button></div>
+    <div class="header-actions"><button class="icon-btn how-to-btn" id="helpBtn" data-i18n="howToUse">How to Use</button><button class="icon-btn language-btn" id="languageBtn">日本語</button><button class="icon-btn mobile-lessons" id="menuBtn" data-i18n="lessons">Lessons</button><button class="icon-btn" id="slidesBtn" data-i18n="allSlides">All Slides</button><button class="icon-btn" id="editBtn" data-i18n="editSlide">Edit Slide</button><button class="icon-btn" id="utilizeBtn" data-i18n="utilizeAll">Utilize All</button><button class="icon-btn" id="installBtn" data-i18n="installApp">Install App</button><button class="icon-btn" id="fullscreenBtn" data-i18n="fullscreen">Fullscreen</button></div>
   </header>
   <section class="stage" id="stage">
     <div class="visual" id="visual">
