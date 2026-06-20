@@ -1,0 +1,28 @@
+{
+  "name": "Interactive Japanese Lessons and Cultural Exchange",
+  "short_name": "Japanese Lessons",
+  "description": "Interactive Japanese teaching lessons with native audio, anime decoding reviews, audio guessing cards, and Cultural Exchange modules.",
+  "id": "./index.html",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#f7f3ea",
+  "theme_color": "#2f6f65",
+  "lang": "en",
+  "categories": ["education", "language"],
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

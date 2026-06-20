@@ -1,462 +1,378 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nihongo Nest | Japanese Learning</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600;700;900&family=Inter:wght@400;600;700;900&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <header class="topbar">
-      <a class="brand" href="#home" aria-label="Nihongo Nest home">
-        <span class="brand-mark">日</span>
-        <span>
-          <strong>Nihongo Nest</strong>
-          <small>Japanese learning studio</small>
-        </span>
-      </a>
-      <nav aria-label="Main navigation">
-        <a href="#course" data-course-tab="lessons">Lessons</a>
-        <a href="#course" data-course-tab="kana">Kana</a>
-        <a href="#course" data-course-tab="vocab">Vocabulary</a>
-        <a href="#course" data-course-tab="activities">Activities</a>
-        <a href="#course" data-course-tab="quiz">Quiz</a>
-      </nav>
-      <div class="profile-widget" id="profileWidget">
-        <button class="profile-chip" type="button" id="profileToggleButton">Guest profile</button>
-        <div class="profile-popover" id="profilePopover" hidden>
-          <label>
-            Name
-            <input id="profileNameInput" type="text" autocomplete="username" placeholder="Your name" />
-          </label>
-          <label>
-            4-digit password
-            <input
-              id="profilePinInput"
-              type="password"
-              inputmode="numeric"
-              maxlength="4"
-              autocomplete="current-password"
-              placeholder="1234"
-            />
-          </label>
-          <div class="profile-actions">
-            <button type="button" id="profileLoginButton">Open profile</button>
-            <button class="light" type="button" id="profileLogoutButton">Guest mode</button>
-          </div>
-          <p id="profileStatus" role="status">Create or open a profile to save progress by name.</p>
-        </div>
-      </div>
-    </header>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#2f6f65">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Japanese Lessons">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<title>Japanese Lessons and Cultural Exchange</title>
+<style>
+:root{--teal:#2f6f65;--rust:#a94428;--cream:#f7f3ea;--gold:#e8b44a;--ink:#253238;--muted:#6b655c;--panel:#fff;--line:#d9d2c5}
+*{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--ink);font-family:Arial,"Hiragino Sans","Yu Gothic",sans-serif;overflow:hidden}
+button,a{font:inherit}.app{height:100vh;display:grid;grid-template-columns:280px 1fr}
+aside{background:var(--teal);color:white;overflow:auto;padding:20px 14px}
+.brand{padding:6px 10px 20px;border-bottom:1px solid #ffffff35}.brand .jp{font-size:32px;font-weight:800}.brand small{display:block;margin-top:7px;opacity:.8}
+.nav-group{font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);padding:22px 10px 7px;border-top:1px solid #ffffff2b;margin-top:10px}
+.lesson-btn{width:100%;text-align:left;border:0;color:white;background:transparent;border-radius:11px;padding:12px;margin:5px 0;cursor:pointer}
+.lesson-btn:hover,.lesson-btn.active{background:#ffffff1d}.lesson-btn b{display:block;font-size:15px}.lesson-btn span{display:block;font-size:12px;opacity:.78;margin-top:4px}.lesson-btn em{display:block;font-style:italic;color:#d9f2e9;margin:3px 0 5px}
+main{min-width:0;display:grid;grid-template-rows:60px 1fr 88px;height:100vh}
+header{display:flex;align-items:center;justify-content:space-between;background:white;border-bottom:1px solid var(--line);padding:0 22px}
+.crumb{font-weight:800;color:var(--teal)}.page-label{font-size:13px;color:var(--muted);margin-top:3px}
+.header-actions{display:flex;gap:8px;align-items:center}.icon-btn{border:1px solid var(--line);background:white;border-radius:9px;padding:8px 12px;cursor:pointer;white-space:nowrap}.language-btn{background:var(--teal);border-color:var(--teal);color:white;font-weight:800}
+.stage{min-height:0;display:grid;grid-template-columns:minmax(0,1fr) 230px;gap:16px;padding:16px 20px}
+.stage.quiz-stage{grid-template-columns:1fr}.stage.quiz-stage .side-card{display:none!important}
+.visual{background:white;border:1px solid var(--line);border-radius:15px;display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative}
+.visual img{max-width:100%;max-height:100%;object-fit:contain;display:block}.visual.review{background:#fff9f2}
+.visual.quiz-mode{display:block;overflow:auto;padding:18px;background:#f1ece3}.visual.quiz-mode>img,.visual.quiz-mode>.review-card-grid{display:none!important}
+.quiz-grid{display:grid;grid-template-columns:repeat(3,minmax(210px,1fr));gap:14px;width:100%}.quiz-card{height:285px;perspective:1000px}
+.quiz-inner{height:100%;position:relative;transform-style:preserve-3d;transition:transform .5s}.quiz-card.flipped .quiz-inner{transform:rotateY(180deg)}
+.quiz-face{position:absolute;inset:0;backface-visibility:hidden;background:white;border:1px solid var(--line);border-radius:14px;padding:15px;display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 3px 10px #00000010}
+.quiz-back{transform:rotateY(180deg);justify-content:flex-start;overflow:auto}.quiz-number{position:absolute;left:12px;top:10px;background:var(--teal);color:white;border-radius:50%;width:34px;height:34px;display:grid;place-items:center;font-weight:800}
+.quiz-face audio{width:90%;margin:20px 0}.flip-btn{border:0;background:var(--gold);color:var(--ink);font-weight:800;padding:10px 15px;border-radius:9px;cursor:pointer}
+.quiz-back img{width:100%;height:128px;object-fit:contain;border-radius:8px;background:#fafafa}.quiz-sentence{font-size:15px;font-weight:500;margin:9px 0 4px;line-height:1.35;text-align:center}.quiz-romaji{font-size:14px;font-style:normal;font-weight:600;color:var(--teal);text-align:center;margin-bottom:6px;line-height:1.55}
+.side-card{background:white;border:1px solid var(--line);border-radius:15px;padding:18px;overflow:auto}
+.audio-wrap{margin-top:18px;padding:15px;background:#fff2ec;border-radius:12px}.audio-wrap strong{display:block;color:var(--rust);margin-bottom:10px}audio{width:100%}
+.no-audio{color:var(--muted);font-size:13px}.review-link{display:inline-block;background:var(--rust);color:white;text-decoration:none;padding:10px 13px;border-radius:9px;margin-top:14px}
+.review-card-grid{display:none;position:absolute;inset:0;z-index:3;grid-template-columns:repeat(4,1fr);grid-template-rows:repeat(2,1fr);pointer-events:none}
+.review-card-grid.ten{grid-template-columns:repeat(5,1fr)}
+.sentence-card{perspective:900px;pointer-events:auto;position:relative}.sentence-inner{position:absolute;inset:4px;transform-style:preserve-3d;transition:transform .48s}.sentence-card.flipped .sentence-inner{transform:rotateY(180deg)}
+.sentence-face{position:absolute;inset:0;backface-visibility:hidden;border-radius:9px;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding:9px}
+.sentence-front{background:transparent}.sentence-front button{border:0;background:#e8b44ae8;color:var(--ink);font-weight:800;padding:8px 11px;border-radius:8px;cursor:pointer;box-shadow:0 2px 8px #0003}
+.sentence-back{transform:rotateY(180deg);justify-content:center;background:#fffdf8f5;border:3px solid var(--gold);text-align:center;padding:16px;overflow:auto}
+.sentence-back .ajp{font-size:clamp(25px,2.45vw,42px);line-height:1.32;font-weight:500;letter-spacing:.01em;overflow-wrap:anywhere}.sentence-back .romaji{font-size:clamp(15px,1.18vw,20px);font-style:normal;font-weight:600;color:var(--teal);margin-top:12px;line-height:1.65}.sentence-back button{margin-top:13px;border:0;background:var(--teal);color:white;border-radius:7px;padding:7px 12px;cursor:pointer}
+.mora-word{display:inline-block;white-space:nowrap;margin:.08em .38em}.mora-dot{color:var(--gold);font-weight:900;padding:0 .05em}.mora-punctuation{display:inline-block;margin-right:.18em;color:var(--muted)}
+.custom-note{display:none;background:#eef7f4;border-radius:10px;padding:12px;margin-top:14px;white-space:pre-wrap;line-height:1.45}.video-link{display:none;background:#4361a8}.edit-btn{width:100%;border:1px solid var(--teal);background:white;color:var(--teal);font-weight:800;padding:10px;border-radius:9px;margin-top:14px;cursor:pointer}
+.slide-browser{width:min(1100px,94vw);height:min(760px,90vh);border:0;border-radius:16px;padding:0}.dialog-head{position:sticky;top:0;background:var(--teal);color:white;padding:18px 22px;display:flex;justify-content:space-between;align-items:center;z-index:2}.thumb-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;padding:20px}.thumb{border:2px solid transparent;background:white;border-radius:10px;padding:7px;cursor:pointer;text-align:left}.thumb.current{border-color:var(--rust)}.thumb img{width:100%;height:105px;object-fit:contain;background:#fafafa}.thumb b{display:block;margin-top:6px;font-size:13px}
+.edit-dialog{width:min(600px,92vw);border:0;border-radius:16px;padding:22px}.edit-dialog label{display:block;font-weight:800;margin:14px 0 5px}.edit-dialog input,.edit-dialog textarea{width:100%;padding:10px;border:1px solid var(--line);border-radius:8px}.edit-dialog textarea{height:110px}.dialog-actions{display:flex;justify-content:flex-end;gap:9px;margin-top:18px}.dialog-actions button{padding:9px 14px;border-radius:8px;border:0;cursor:pointer}.save{background:var(--teal);color:white}
+.nav-subgroup{margin:16px 10px 4px;padding-left:9px;border-left:3px solid var(--gold);font-size:11px;font-weight:800;line-height:1.35;color:#fff;text-transform:none;letter-spacing:.02em}
+.utilize-dialog{width:min(920px,94vw);max-height:88vh;border:0;border-radius:18px;padding:0;overflow:hidden}.utilize-body{padding:22px;overflow:auto;max-height:calc(88vh - 66px)}.utilize-intro{background:#eef7f4;border-radius:12px;padding:14px;line-height:1.5}.editor-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}.editor-action{min-height:92px;border:1px solid var(--line);background:white;border-radius:12px;padding:13px;text-align:left;cursor:pointer}.editor-action:hover{border-color:var(--teal);box-shadow:0 3px 12px #0001}.editor-action b{display:block;color:var(--teal);margin-bottom:6px}.editor-action span{font-size:12px;color:var(--muted);line-height:1.35}.editor-action.danger b{color:var(--rust)}.utilize-status{margin-top:16px;padding:11px;border-radius:9px;background:#f6f1e8;font-size:13px}.utilize-current{font-weight:800;color:var(--rust)}.hidden-input{display:none}
+.help-dialog{width:min(980px,94vw);max-height:90vh;border:0;border-radius:18px;padding:0;overflow:hidden}.help-body{padding:22px;overflow:auto;max-height:calc(90vh - 66px)}.help-intro{margin:0 0 18px;color:var(--muted);line-height:1.5}.help-videos{display:grid;grid-template-columns:1fr 1fr;gap:18px}.help-video{background:#f7f3ea;border:1px solid var(--line);border-radius:14px;padding:14px}.help-video h3{margin:0 0 10px;color:var(--teal)}.help-video video{display:block;width:100%;border-radius:10px;background:#111}
+footer{background:white;border-top:1px solid var(--line);display:grid;grid-template-columns:120px 1fr 120px;align-items:center;gap:18px;padding:13px 20px}
+.nav-btn{border:0;border-radius:10px;background:var(--teal);color:white;padding:13px 16px;font-weight:700;cursor:pointer}.nav-btn:disabled{opacity:.35}
+.progress-wrap{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center}.progress{height:9px;background:#e6e0d6;border-radius:9px;overflow:hidden}.progress div{height:100%;background:var(--gold)}
+.counter{font-size:13px;color:var(--muted);white-space:nowrap}.mobile-lessons{display:none}
+@media(max-width:1000px){.quiz-grid{grid-template-columns:repeat(2,minmax(200px,1fr))}}
+@media(max-width:850px){body{overflow:auto}.app{display:block;height:auto}aside{display:none}main{height:100vh}header{padding:0 10px;overflow-x:auto;justify-content:flex-start}header>div:first-child{display:none}.header-actions{min-width:max-content}.stage{grid-template-columns:1fr;grid-template-rows:minmax(0,1fr) auto}.side-card{max-height:210px}.mobile-lessons{display:inline-block}.quiz-grid{grid-template-columns:1fr}.thumb-grid{grid-template-columns:repeat(2,1fr)}.sentence-back .ajp{font-size:26px}.sentence-back .romaji{font-size:15px}.editor-grid,.help-videos{grid-template-columns:1fr}}
+@media print{aside,header,footer,.side-card{display:none!important}.app,main,.stage{display:block;height:auto}.visual{border:0;height:auto}.visual img{width:100%;max-height:none}}
+</style>
+</head>
+<body>
+<div class="app">
+<aside>
+  <div class="brand"><div class="jp">日本語</div><b data-i18n="brandCourse">Interactive Teaching Course</b><small data-i18n="brandDetails">Lessons 1–9 • Cultural Exchange • Audio included</small></div>
+  <nav id="lessonNav"></nav>
+</aside>
+<main>
+  <header>
+    <div><div class="crumb" id="crumb"></div><div class="page-label" id="pageLabel"></div></div>
+    <div class="header-actions"><button class="icon-btn language-btn" id="languageBtn">日本語</button><button class="icon-btn mobile-lessons" id="menuBtn" data-i18n="lessons">Lessons</button><button class="icon-btn" id="slidesBtn" data-i18n="allSlides">All Slides</button><button class="icon-btn" id="helpBtn" data-i18n="howToUse">How to Use</button><button class="icon-btn" id="editBtn" data-i18n="editSlide">Edit Slide</button><button class="icon-btn" id="utilizeBtn" data-i18n="utilizeAll">Utilize All</button><button class="icon-btn" id="installBtn" data-i18n="installApp">Install App</button><button class="icon-btn" id="fullscreenBtn" data-i18n="fullscreen">Fullscreen</button></div>
+  </header>
+  <section class="stage" id="stage">
+    <div class="visual" id="visual">
+      <img id="slideImage" alt="Japanese lesson slide">
+      <div class="review-card-grid" id="reviewCardGrid"></div>
+    </div>
+    <aside class="side-card" style="display:block;background:white;color:var(--ink)">
+      <div class="audio-wrap" id="audioWrap"><strong data-i18n="nativeAudio">Native Japanese audio</strong><audio id="audio" controls preload="metadata"></audio><div class="no-audio" id="noAudio"></div></div>
+      <div class="custom-note" id="customNote"></div>
+      <a class="review-link video-link" id="videoLink" target="_blank" data-i18n="openVideo">Open Video</a>
+      <a class="review-link" id="reviewLink" target="_blank" data-i18n="openKanjiKey">Open kanji caption key</a>
+      <a class="review-link" id="sourceLink" target="_blank" data-i18n="openCulturalPdf">Open original cultural PDF</a>
+      <button class="edit-btn" id="sideEditBtn" data-i18n="editThisSlide">Edit This Slide</button>
+    </aside>
+  </section>
+  <footer>
+    <button class="nav-btn" id="prevBtn" data-i18n="previous">← Previous</button>
+    <div class="progress-wrap"><div class="progress"><div id="progressBar"></div></div><div class="counter" id="counter"></div></div>
+    <button class="nav-btn" id="nextBtn" data-i18n="next">Next →</button>
+  </footer>
+</main>
+</div>
+<dialog id="lessonDialog"><h2 data-i18n="chooseLesson">Choose a lesson</h2><div id="mobileNav"></div><button onclick="this.closest('dialog').close()" data-i18n="close">Close</button></dialog>
+<dialog class="slide-browser" id="slideDialog"><div class="dialog-head"><b id="slideDialogTitle" data-i18n="lessonSlides">Lesson Slides</b><button onclick="this.closest('dialog').close()" data-i18n="close">Close</button></div><div class="thumb-grid" id="thumbGrid"></div></dialog>
+<dialog class="edit-dialog" id="editDialog"><h2 data-i18n="editSlideContent">Edit Slide Content</h2>
+<label data-i18n="customTitle">Custom slide title</label><input id="editTitle" placeholder="Leave blank to use the original title" data-i18n-placeholder="customTitlePlaceholder">
+<label data-i18n="teacherNote">Teacher/student note</label><textarea id="editNote" placeholder="Add instructions, explanation, or discussion notes" data-i18n-placeholder="teacherNotePlaceholder"></textarea>
+<label data-i18n="videoLink">Video link</label><input id="editVideo" type="url" placeholder="https://youtube.com/...">
+<label data-i18n="replacementImage">Replacement image link (optional)</label><input id="editImage" type="url" placeholder="https://example.com/image.jpg">
+<div class="dialog-actions"><button onclick="this.closest('dialog').close()" data-i18n="cancel">Cancel</button><button class="save" id="saveEditBtn" data-i18n="saveChanges">Save Changes</button></div></dialog>
+<dialog class="utilize-dialog" id="utilizeDialog">
+  <div class="dialog-head"><b data-i18n="completeEditor">Utilize All - Complete Slide Editor</b><button onclick="this.closest('dialog').close()" data-i18n="close">Close</button></div>
+  <div class="utilize-body">
+    <div class="utilize-intro"><span data-i18n="editorIntro">PowerPoint-style controls for the complete HTML course. Current slide:</span> <span class="utilize-current" id="utilizeCurrent"></span></div>
+    <div class="editor-grid">
+      <button class="editor-action" id="uploadSlidesBtn"><b data-i18n="uploadSlides">Upload Slides</b><span data-i18n="uploadSlidesHelp">Add one or more image slides after the current slide.</span></button>
+      <button class="editor-action" id="duplicateSlideBtn"><b data-i18n="duplicateSlide">Duplicate Slide</b><span data-i18n="duplicateSlideHelp">Create an editable copy of the current slide.</span></button>
+      <button class="editor-action danger" id="deleteSlideBtn"><b data-i18n="deleteSlide">Delete Slide</b><span data-i18n="deleteSlideHelp">Remove the current slide from the presentation.</span></button>
+      <button class="editor-action" id="moveSlideUpBtn"><b data-i18n="moveEarlier">Move Earlier</b><span data-i18n="moveEarlierHelp">Move the current slide one position earlier.</span></button>
+      <button class="editor-action" id="moveSlideDownBtn"><b data-i18n="moveLater">Move Later</b><span data-i18n="moveLaterHelp">Move the current slide one position later.</span></button>
+      <button class="editor-action" id="editAllCurrentBtn"><b data-i18n="editContent">Edit Content</b><span data-i18n="editContentHelp">Edit the slide title, notes, image link, or video.</span></button>
+      <button class="editor-action" id="restoreDeletedBtn"><b data-i18n="restoreDeleted">Restore Last Deleted</b><span data-i18n="restoreDeletedHelp">Return the most recently deleted slide.</span></button>
+      <button class="editor-action" id="exportEditsBtn"><b data-i18n="exportEdits">Export Course Edits</b><span data-i18n="exportEditsHelp">Download edits and uploaded slides as a portable JSON file.</span></button>
+      <button class="editor-action" id="importEditsBtn"><b data-i18n="importEdits">Import Course Edits</b><span data-i18n="importEditsHelp">Load a previously exported course-editing JSON file.</span></button>
+      <button class="editor-action danger" id="restoreCourseBtn"><b data-i18n="restoreCourse">Restore Original Course</b><span data-i18n="restoreCourseHelp">Remove structural edits and return all original slides.</span></button>
+    </div>
+    <div class="utilize-status" id="utilizeStatus" data-i18n="noAction">No editing action performed yet.</div>
+    <input class="hidden-input" id="slideUploadInput" type="file" accept="image/*" multiple>
+    <input class="hidden-input" id="courseImportInput" type="file" accept="application/json,.json">
+  </div>
+</dialog>
+<dialog class="help-dialog" id="helpDialog">
+  <div class="dialog-head"><b data-i18n="instructionVideos">Instruction Videos</b><button id="closeHelpBtn" data-i18n="close">Close</button></div>
+  <div class="help-body">
+    <p class="help-intro" data-i18n="instructionIntro">Choose the English or Japanese walkthrough. Both videos explain lesson navigation, All Slides, audio practice, Cultural Exchange, and Utilize All editing tools.</p>
+    <div class="help-videos">
+      <section class="help-video"><h3 data-i18n="englishWalkthrough">English walkthrough</h3><video controls preload="metadata" playsinline src="videos/how-to-use-english.mp4"></video></section>
+      <section class="help-video"><h3 data-i18n="japaneseWalkthrough">Japanese walkthrough</h3><video controls preload="metadata" playsinline src="videos/how-to-use-japanese.mp4"></video></section>
+    </div>
+  </div>
+</dialog>
+<script>
+const COURSE_DATA={"lessons":[{"id":"01","title":"Japanese Greetings","subtitle":"挨拶（あいさつ）","start":0,"count":29,"pageCount":27,"hasReview":true,"hasAudioQuiz":true,"group":"language","romaji":"Aisatsu"},{"id":"02","title":"Jobs and Identifying Things","subtitle":"仕事と「A は B です」","start":29,"count":40,"pageCount":38,"hasReview":true,"hasAudioQuiz":true,"group":"language","romaji":"Shigoto to A wa B desu"},{"id":"03","title":"My Family","subtitle":"私の家族（わたしのかぞく）","start":69,"count":13,"pageCount":11,"hasReview":true,"hasAudioQuiz":true,"group":"language","romaji":"Watashi no kazoku"},{"id":"04","title":"Counting People","subtitle":"人の数え方（ひとのかぞえかた）","start":82,"count":13,"pageCount":11,"hasReview":true,"hasAudioQuiz":true,"group":"language","romaji":"Hito no kazoekata"},{"id":"05","title":"Golden Week","subtitle":"Cultural reference lesson","start":95,"count":7,"pageCount":7,"hasReview":false,"hasAudioQuiz":false,"group":"culture","cultureGroup":"Lesson 5 - Seasonal Culture","romaji":"Gooruden Wiiku"},{"id":"06","title":"Where People Live","subtitle":"どこに住んでいますか","start":102,"count":28,"pageCount":26,"hasReview":true,"hasAudioQuiz":true,"group":"language","romaji":"Doko ni sunde imasu ka"},{"id":"07","title":"Possession and Age","subtitle":"「の」と年齢（ねんれい）","start":130,"count":9,"pageCount":7,"hasReview":true,"hasAudioQuiz":true,"group":"language","romaji":"No to nenrei"},{"id":"08","title":"Food and Drinks","subtitle":"食べ物と飲み物","start":139,"count":28,"pageCount":26,"hasReview":true,"hasAudioQuiz":true,"group":"language","romaji":"Tabemono to nomimono"},{"id":"09","title":"Likes and Habits","subtitle":"好き・一番・いつも・よく・あまり","start":167,"count":33,"pageCount":31,"hasReview":true,"hasAudioQuiz":true,"group":"language","romaji":"Suki, ichiban, itsumo, yoku, amari"},{"id":"C01","title":"Japanese-Inspired Foods at Trader Joe’s","subtitle":"Food and cultural adaptation","start":200,"count":12,"pageCount":12,"hasReview":false,"group":"culture","cultureGroup":"Lesson 8 - Food and Drinks","romaji":"Nihon-fuu no tabemono"},{"id":"C02","title":"Frozen Foods in Japan","subtitle":"冷凍食品（れいとうしょくひん）","start":212,"count":7,"pageCount":7,"hasReview":false,"group":"culture","cultureGroup":"Lesson 8 - Food and Drinks","romaji":"Reitou shokuhin"},{"id":"C03","title":"The Story of Punch-kun","subtitle":"Japanese snow-monkey culture","start":219,"count":7,"pageCount":7,"hasReview":false,"group":"culture","cultureGroup":"Lesson 7 - Animals and Daily Life","romaji":"Panchi-kun no monogatari"},{"id":"C04","title":"Japan in April","subtitle":"School, business, and renewal","start":226,"count":11,"pageCount":11,"hasReview":false,"group":"culture","cultureGroup":"Lesson 5 - Seasonal Culture","romaji":"Nihon no shigatsu"},{"id":"C05","title":"Cherry Blossoms: U.S. and Japan","subtitle":"桜（さくら） cultural exchange","start":237,"count":12,"pageCount":12,"hasReview":false,"group":"culture","cultureGroup":"Lesson 5 - Seasonal Culture","romaji":"Sakura: Amerika to Nihon"}],"slides":[{"kind":"lesson","lesson":"01","lessonTitle":"Japanese Greetings","subtitle":"挨拶（あいさつ）","page":1,"pageCount":27,"image":"assets/01/pages/page-01.jpg","audio":"assets/01/audio/page-01.mp3"},{"kind":"lesson","lesson":"01","lessonTitle":"Japanese Greetings","subtitle":"挨拶（あいさつ）","page":2,"pageCount":27,"image":"assets/01/pages/page-02.jpg","audio":"assets/01/audio/page-02.mp3"},{"kind":"lesson","lesson":"01","lessonTitle":"Japanese Greetings","subtitle":"挨拶（あいさつ）","page":3,"pageCount":27,"image":"assets/01/pages/page-03.jpg","audio":"assets/01/audio/page-03.mp3"},{"kind":"lesson","lesson":"01","lessonTitle":"Japanese Greetings","subtitle":"挨拶（あいさつ）","page":4,"pageCount":27,"image":"assets/01/pages/page-04.jpg","audio":"assets/01/audio/page-04.mp3"},{"kind":"lesson","lesson":"01","lessonTitle":"Japanese Greetings","subtitle":"挨拶（あいさつ）","page":5,"pageCount":27,"image":"assets/01/pages/page-05.jpg","audio":"assets/01/audio/page-05.mp3"},{"kind":"lesson","lesson":"01","lessonTitle":"Japanese Greetings","subtitle":"挨拶（あいさつ）","page":6,"pageCount":27,"image":"assets/01/pages/page-06.jpg","audio":"assets/01/audio/page-06.mp3"},{"kind":"lesson","lesson":"01","lessonTitle":"Japanese Greetings","subtitle":"挨拶（あいさつ）","page":7,"pageCount":27,"image":"assets/01/pages/page-07.jpg","audio":"assets/01/audio/page-07.mp3"},{"kind":"lesson","lesson":"01","lessonTitle":"Japanese Greetings","subtitle":"挨拶（あいさつ）","page":8,"pageCount":27,"image":"assets/01/pages/page-08.jpg","audio":"assets/01/audio/page-08.mp3"},{"kind":"lesson","lesson":"01","lessonTitle":"Japanese Greetings","subtitle":"挨拶（あいさつ）","page":9,"pageCount":27,"image":"assets/01/pages/page-09.jpg","audio":"assets/01/audio/page-09.mp3"},{"kind":"lesson","lesson":"01","lessonTitle":"Japanese Greetings","subtitle":"挨拶（あいさつ）","page":10,"pageCount":27,"image":"assets/01/pages/page-10.jpg","audio":"assets/01/audio/page-10.mp3"},{"kind":"lesson","lesson":"01","lessonTitle":"Japanese Greetings","subtitle":"挨拶（あいさつ）","page":11,"pageCount":27,"image":"assets/01/pages/page-11.jpg","audio":"assets/01/audio/page-11.mp3"},{"kind":"lesson","lesson":"01","lessonTitle":"Japanese Greetings","subtitle":"挨拶（あいさつ）","page":12,"pageCount":27,"image":"assets/01/pages/page-12.jpg","audio":"assets/01/audio/page-12.mp3"},{"kind":"lesson","lesson":"01","lessonTitle":"Japanese Greetings","subtitle":"挨拶（あいさつ）","page":13,"pageCount":27,"image":"assets/01/pages/page-13.jpg","audio":"assets/01/audio/page-13.mp3"},{"kind":"lesson","lesson":"01","lessonTitle":"Japanese Greetings","subtitle":"挨拶（あいさつ）","page":14,"pageCount":27,"image":"assets/01/pages/page-14.jpg","audio":"assets/01/audio/page-14.mp3"},{"kind":"lesson","lesson":"01","lessonTitle":"Japanese Greetings","subtitle":"挨拶（あいさつ）","page":15,"pageCount":27,"image":"assets/01/pages/page-15.jpg","audio":"assets/01/audio/page-15.mp3"},{"kind":"lesson","lesson":"01","lessonTitle":"Japanese Greetings","subtitle":"挨拶（あいさつ）","page":16,"pageCount":27,"image":"assets/01/pages/page-16.jpg","audio":"assets/01/audio/page-16.mp3"},{"kind":"lesson","lesson":"01","lessonTitle":"Japanese Greetings","subtitle":"挨拶（あいさつ）","page":17,"pageCount":27,"image":"assets/01/pages/page-17.jpg","audio":"assets/01/audio/page-17.mp3"},{"kind":"lesson","lesson":"01","lessonTitle":"Japanese Greetings","subtitle":"挨拶（あいさつ）","page":18,"pageCount":27,"image":"assets/01/pages/page-18.jpg","audio":"assets/01/audio/page-18.mp3"},{"kind":"lesson","lesson":"01","lessonTitle":"Japanese Greetings","subtitle":"挨拶（あいさつ）","page":19,"pageCount":27,"image":"assets/01/pages/page-19.jpg","audio":"assets/01/audio/page-19.mp3"},{"kind":"lesson","lesson":"01","lessonTitle":"Japanese Greetings","subtitle":"挨拶（あいさつ）","page":20,"pageCount":27,"image":"assets/01/pages/page-20.jpg","audio":"assets/01/audio/page-20.mp3"},{"kind":"lesson","lesson":"01","lessonTitle":"Japanese Greetings","subtitle":"挨拶（あいさつ）","page":21,"pageCount":27,"image":"assets/01/pages/page-21.jpg","audio":"assets/01/audio/page-21.mp3"},{"kind":"lesson","lesson":"01","lessonTitle":"Japanese Greetings","subtitle":"挨拶（あいさつ）","page":22,"pageCount":27,"image":"assets/01/pages/page-22.jpg","audio":"assets/01/audio/page-22.mp3"},{"kind":"lesson","lesson":"01","lessonTitle":"Japanese Greetings","subtitle":"挨拶（あいさつ）","page":23,"pageCount":27,"image":"assets/01/pages/page-23.jpg","audio":"assets/01/audio/page-23.mp3"},{"kind":"lesson","lesson":"01","lessonTitle":"Japanese Greetings","subtitle":"挨拶（あいさつ）","page":24,"pageCount":27,"image":"assets/01/pages/page-24.jpg","audio":"assets/01/audio/page-24.mp3"},{"kind":"lesson","lesson":"01","lessonTitle":"Japanese Greetings","subtitle":"挨拶（あいさつ）","page":25,"pageCount":27,"image":"assets/01/pages/page-25.jpg","audio":null},{"kind":"lesson","lesson":"01","lessonTitle":"Japanese Greetings","subtitle":"挨拶（あいさつ）","page":26,"pageCount":27,"image":"assets/01/pages/page-26.jpg","audio":null},{"kind":"lesson","lesson":"01","lessonTitle":"Japanese Greetings","subtitle":"挨拶（あいさつ）","page":27,"pageCount":27,"image":"assets/01/pages/page-27.jpg","audio":null},{"kind":"review","lesson":"01","lessonTitle":"Japanese Greetings","subtitle":"挨拶（あいさつ）","page":"Review","pageCount":27,"image":"assets/01/anime-review.png","reviewPdf":"assets/01/anime-decoding-review.pdf","answers":[{"number":"1","japanese":"朝、同僚に「おはようございます」と挨拶します。","reading":"（あさ、どうりょうに「おはようございます」とあいさつします。）","english":"In the morning, coworkers greet each other politely.","romaji":"ohayou gozaimasu"},{"number":"2","japanese":"昼、友達に「こんにちは」と挨拶します。","reading":"（ひる、ともだちに「こんにちは」とあいさつします。）","english":"During the day, friends say hello.","romaji":"konnichiwa"},{"number":"3","japanese":"夜、近所の人に「こんばんは」と挨拶します。","reading":"（よる、きんじょのひとに「こんばんは」とあいさつします。）","english":"In the evening, neighbors say good evening.","romaji":"konbanwa"},{"number":"4","japanese":"駅で友達に「さようなら。またね」と言います。","reading":"（えきでともだちに「さようなら。またね」といいます。）","english":"At the station, friends say goodbye and see you again.","romaji":"sayounara. mata ne"},{"number":"5","japanese":"寝る前に「おやすみなさい」と言います。","reading":"（ねるまえに「おやすみなさい」といいます。）","english":"Before sleeping, someone says good night.","romaji":"oyasumi nasai"},{"number":"6","japanese":"店員が水を渡し、客が「ありがとうございます」と言います。","reading":"（てんいんがみずをわたし、きゃくが「ありがとうございます」といいます。）","english":"A server offers water and the guest says thank you.","romaji":"arigatou gozaimasu"},{"number":"7","japanese":"「すみません。トイレはどこですか」と尋ねます。","reading":"（「すみません。トイレはどこですか」とたずねます。）","english":"Someone politely asks where the restroom is.","romaji":"sumimasen. toire wa doko desu ka"},{"number":"8","japanese":"遅れた学生が先生に「遅れてすみません」と謝ります。","reading":"（おくれたがくせいがせんせいに「おくれてすみません」とあやまります。）","english":"A late student apologizes to the teacher.","romaji":"okurete sumimasen"}],"audio":null},{"kind":"audioQuiz","lesson":"01","lessonTitle":"Japanese Greetings","subtitle":"挨拶（あいさつ）","page":"Audio Cards","pageCount":27,"cards":[{"number":1,"audio":"assets/01/audio/page-01.mp3","image":"assets/01/pages/page-01.jpg","sentence":"にほんのあいさつ。","romaji":"nihonnoaisatsu"},{"number":2,"audio":"assets/01/audio/page-02.mp3","image":"assets/01/pages/page-02.jpg","sentence":"おはよう。","romaji":"ohayou"},{"number":3,"audio":"assets/01/audio/page-03.mp3","image":"assets/01/pages/page-03.jpg","sentence":"おはようございます。","romaji":"ohayou gozaimasu"},{"number":4,"audio":"assets/01/audio/page-04.mp3","image":"assets/01/pages/page-04.jpg","sentence":"こんにちは。","romaji":"konnichiwa"},{"number":5,"audio":"assets/01/audio/page-05.mp3","image":"assets/01/pages/page-05.jpg","sentence":"こんばんは。","romaji":"konbanwa"},{"number":6,"audio":"assets/01/audio/page-06.mp3","image":"assets/01/pages/page-06.jpg","sentence":"さようなら。またね！。","romaji":"sayounara. mata ne!"},{"number":7,"audio":"assets/01/audio/page-07.mp3","image":"assets/01/pages/page-07.jpg","sentence":"おやすみなさい。おやすみ。","romaji":"oyasumi nasai. oyasumi"},{"number":8,"audio":"assets/01/audio/page-08.mp3","image":"assets/01/pages/page-08.jpg","sentence":"どうぞ。","romaji":"douzo"},{"number":9,"audio":"assets/01/audio/page-09.mp3","image":"assets/01/pages/page-09.jpg","sentence":"ありがとう。","romaji":"arigatou"},{"number":10,"audio":"assets/01/audio/page-10.mp3","image":"assets/01/pages/page-10.jpg","sentence":"どうぞ。","romaji":"douzo"},{"number":11,"audio":"assets/01/audio/page-11.mp3","image":"assets/01/pages/page-11.jpg","sentence":"ありがとうございます。","romaji":"arigatou gozaimasu"},{"number":12,"audio":"assets/01/audio/page-12.mp3","image":"assets/01/pages/page-12.jpg","sentence":"すみません。","romaji":"sumimasen"},{"number":13,"audio":"assets/01/audio/page-13.mp3","image":"assets/01/pages/page-13.jpg","sentence":"すみません。","romaji":"sumimasen"},{"number":14,"audio":"assets/01/audio/page-14.mp3","image":"assets/01/pages/page-14.jpg","sentence":"トイレは。どこですか。","romaji":"toireha. dokodesu ka"},{"number":15,"audio":"assets/01/audio/page-15.mp3","image":"assets/01/pages/page-15.jpg","sentence":"あそこです。","romaji":"asokodesu"},{"number":16,"audio":"assets/01/audio/page-16.mp3","image":"assets/01/pages/page-16.jpg","sentence":"ありがとうございます。","romaji":"arigatou gozaimasu"},{"number":17,"audio":"assets/01/audio/page-17.mp3","image":"assets/01/pages/page-17.jpg","sentence":"すみません。すみません、みずをください。","romaji":"sumimasen. sumimasen, mizuokudasai"},{"number":18,"audio":"assets/01/audio/page-18.mp3","image":"assets/01/pages/page-18.jpg","sentence":"だいじょうぶですか。","romaji":"daijoubudesu ka"},{"number":19,"audio":"assets/01/audio/page-19.mp3","image":"assets/01/pages/page-19.jpg","sentence":"すみません。","romaji":"sumimasen"},{"number":20,"audio":"assets/01/audio/page-20.mp3","image":"assets/01/pages/page-20.jpg","sentence":"ごめんなさい。","romaji":"gomennasai"},{"number":21,"audio":"assets/01/audio/page-21.mp3","image":"assets/01/pages/page-21.jpg","sentence":"すみません。おくれてすみません。","romaji":"sumimasen. okurete sumimasen"},{"number":22,"audio":"assets/01/audio/page-22.mp3","image":"assets/01/pages/page-22.jpg","sentence":"れんしゅう。どうぞ。","romaji":"renshuu. douzo"},{"number":23,"audio":"assets/01/audio/page-23.mp3","image":"assets/01/pages/page-23.jpg","sentence":"すみません。","romaji":"sumimasen"},{"number":24,"audio":"assets/01/audio/page-24.mp3","image":"assets/01/pages/page-24.jpg","sentence":"すみません。","romaji":"sumimasen"}],"audio":null},{"kind":"lesson","lesson":"02","lessonTitle":"Jobs and Identifying Things","subtitle":"仕事と「A は B です」","page":1,"pageCount":38,"image":"assets/02/pages/page-01.jpg","audio":"assets/02/audio/page-01.mp3"},{"kind":"lesson","lesson":"02","lessonTitle":"Jobs and Identifying Things","subtitle":"仕事と「A は B です」","page":2,"pageCount":38,"image":"assets/02/pages/page-02.jpg","audio":null},{"kind":"lesson","lesson":"02","lessonTitle":"Jobs and Identifying Things","subtitle":"仕事と「A は B です」","page":3,"pageCount":38,"image":"assets/02/pages/page-03.jpg","audio":"assets/02/audio/page-03.mp3"},{"kind":"lesson","lesson":"02","lessonTitle":"Jobs and Identifying Things","subtitle":"仕事と「A は B です」","page":4,"pageCount":38,"image":"assets/02/pages/page-04.jpg","audio":"assets/02/audio/page-04.mp3"},{"kind":"lesson","lesson":"02","lessonTitle":"Jobs and Identifying Things","subtitle":"仕事と「A は B です」","page":5,"pageCount":38,"image":"assets/02/pages/page-05.jpg","audio":"assets/02/audio/page-05.mp3"},{"kind":"lesson","lesson":"02","lessonTitle":"Jobs and Identifying Things","subtitle":"仕事と「A は B です」","page":6,"pageCount":38,"image":"assets/02/pages/page-06.jpg","audio":"assets/02/audio/page-06.mp3"},{"kind":"lesson","lesson":"02","lessonTitle":"Jobs and Identifying Things","subtitle":"仕事と「A は B です」","page":7,"pageCount":38,"image":"assets/02/pages/page-07.jpg","audio":"assets/02/audio/page-07.mp3"},{"kind":"lesson","lesson":"02","lessonTitle":"Jobs and Identifying Things","subtitle":"仕事と「A は B です」","page":8,"pageCount":38,"image":"assets/02/pages/page-08.jpg","audio":"assets/02/audio/page-08.mp3"},{"kind":"lesson","lesson":"02","lessonTitle":"Jobs and Identifying Things","subtitle":"仕事と「A は B です」","page":9,"pageCount":38,"image":"assets/02/pages/page-09.jpg","audio":"assets/02/audio/page-09.mp3"},{"kind":"lesson","lesson":"02","lessonTitle":"Jobs and Identifying Things","subtitle":"仕事と「A は B です」","page":10,"pageCount":38,"image":"assets/02/pages/page-10.jpg","audio":"assets/02/audio/page-10.mp3"},{"kind":"lesson","lesson":"02","lessonTitle":"Jobs and Identifying Things","subtitle":"仕事と「A は B です」","page":11,"pageCount":38,"image":"assets/02/pages/page-11.jpg","audio":"assets/02/audio/page-11.mp3"},{"kind":"lesson","lesson":"02","lessonTitle":"Jobs and Identifying Things","subtitle":"仕事と「A は B です」","page":12,"pageCount":38,"image":"assets/02/pages/page-12.jpg","audio":"assets/02/audio/page-12.mp3"},{"kind":"lesson","lesson":"02","lessonTitle":"Jobs and Identifying Things","subtitle":"仕事と「A は B です」","page":13,"pageCount":38,"image":"assets/02/pages/page-13.jpg","audio":"assets/02/audio/page-13.mp3"},{"kind":"lesson","lesson":"02","lessonTitle":"Jobs and Identifying Things","subtitle":"仕事と「A は B です」","page":14,"pageCount":38,"image":"assets/02/pages/page-14.jpg","audio":"assets/02/audio/page-14.mp3"},{"kind":"lesson","lesson":"02","lessonTitle":"Jobs and Identifying Things","subtitle":"仕事と「A は B です」","page":15,"pageCount":38,"image":"assets/02/pages/page-15.jpg","audio":"assets/02/audio/page-15.mp3"},{"kind":"lesson","lesson":"02","lessonTitle":"Jobs and Identifying Things","subtitle":"仕事と「A は B です」","page":16,"pageCount":38,"image":"assets/02/pages/page-16.jpg","audio":"assets/02/audio/page-16.mp3"},{"kind":"lesson","lesson":"02","lessonTitle":"Jobs and Identifying Things","subtitle":"仕事と「A は B です」","page":17,"pageCount":38,"image":"assets/02/pages/page-17.jpg","audio":"assets/02/audio/page-17.mp3"},{"kind":"lesson","lesson":"02","lessonTitle":"Jobs and Identifying Things","subtitle":"仕事と「A は B です」","page":18,"pageCount":38,"image":"assets/02/pages/page-18.jpg","audio":"assets/02/audio/page-18.mp3"},{"kind":"lesson","lesson":"02","lessonTitle":"Jobs and Identifying Things","subtitle":"仕事と「A は B です」","page":19,"pageCount":38,"image":"assets/02/pages/page-19.jpg","audio":"assets/02/audio/page-19.mp3"},{"kind":"lesson","lesson":"02","lessonTitle":"Jobs and Identifying Things","subtitle":"仕事と「A は B です」","page":20,"pageCount":38,"image":"assets/02/pages/page-20.jpg","audio":"assets/02/audio/page-20.mp3"},{"kind":"lesson","lesson":"02","lessonTitle":"Jobs and Identifying Things","subtitle":"仕事と「A は B です」","page":21,"pageCount":38,"image":"assets/02/pages/page-21.jpg","audio":"assets/02/audio/page-21.mp3"},{"kind":"lesson","lesson":"02","lessonTitle":"Jobs and Identifying Things","subtitle":"仕事と「A は B です」","page":22,"pageCount":38,"image":"assets/02/pages/page-22.jpg","audio":"assets/02/audio/page-22.mp3"},{"kind":"lesson","lesson":"02","lessonTitle":"Jobs and Identifying Things","subtitle":"仕事と「A は B です」","page":23,"pageCount":38,"image":"assets/02/pages/page-23.jpg","audio":"assets/02/audio/page-23.mp3"},{"kind":"lesson","lesson":"02","lessonTitle":"Jobs and Identifying Things","subtitle":"仕事と「A は B です」","page":24,"pageCount":38,"image":"assets/02/pages/page-24.jpg","audio":"assets/02/audio/page-24.mp3"},{"kind":"lesson","lesson":"02","lessonTitle":"Jobs and Identifying Things","subtitle":"仕事と「A は B です」","page":25,"pageCount":38,"image":"assets/02/pages/page-25.jpg","audio":"assets/02/audio/page-25.mp3"},{"kind":"lesson","lesson":"02","lessonTitle":"Jobs and Identifying Things","subtitle":"仕事と「A は B です」","page":26,"pageCount":38,"image":"assets/02/pages/page-26.jpg","audio":"assets/02/audio/page-26.mp3"},{"kind":"lesson","lesson":"02","lessonTitle":"Jobs and Identifying Things","subtitle":"仕事と「A は B です」","page":27,"pageCount":38,"image":"assets/02/pages/page-27.jpg","audio":"assets/02/audio/page-27.mp3"},{"kind":"lesson","lesson":"02","lessonTitle":"Jobs and Identifying Things","subtitle":"仕事と「A は B です」","page":28,"pageCount":38,"image":"assets/02/pages/page-28.jpg","audio":"assets/02/audio/page-28.mp3"},{"kind":"lesson","lesson":"02","lessonTitle":"Jobs and Identifying Things","subtitle":"仕事と「A は B です」","page":29,"pageCount":38,"image":"assets/02/pages/page-29.jpg","audio":"assets/02/audio/page-29.mp3"},{"kind":"lesson","lesson":"02","lessonTitle":"Jobs and Identifying Things","subtitle":"仕事と「A は B です」","page":30,"pageCount":38,"image":"assets/02/pages/page-30.jpg","audio":"assets/02/audio/page-30.mp3"},{"kind":"lesson","lesson":"02","lessonTitle":"Jobs and Identifying Things","subtitle":"仕事と「A は B です」","page":31,"pageCount":38,"image":"assets/02/pages/page-31.jpg","audio":"assets/02/audio/page-31.mp3"},{"kind":"lesson","lesson":"02","lessonTitle":"Jobs and Identifying Things","subtitle":"仕事と「A は B です」","page":32,"pageCount":38,"image":"assets/02/pages/page-32.jpg","audio":"assets/02/audio/page-32.mp3"},{"kind":"lesson","lesson":"02","lessonTitle":"Jobs and Identifying Things","subtitle":"仕事と「A は B です」","page":33,"pageCount":38,"image":"assets/02/pages/page-33.jpg","audio":"assets/02/audio/page-33.mp3"},{"kind":"lesson","lesson":"02","lessonTitle":"Jobs and Identifying Things","subtitle":"仕事と「A は B です」","page":34,"pageCount":38,"image":"assets/02/pages/page-34.jpg","audio":"assets/02/audio/page-34.mp3"},{"kind":"lesson","lesson":"02","lessonTitle":"Jobs and Identifying Things","subtitle":"仕事と「A は B です」","page":35,"pageCount":38,"image":"assets/02/pages/page-35.jpg","audio":"assets/02/audio/page-35.mp3"},{"kind":"lesson","lesson":"02","lessonTitle":"Jobs and Identifying Things","subtitle":"仕事と「A は B です」","page":36,"pageCount":38,"image":"assets/02/pages/page-36.jpg","audio":"assets/02/audio/page-36.mp3"},{"kind":"lesson","lesson":"02","lessonTitle":"Jobs and Identifying Things","subtitle":"仕事と「A は B です」","page":37,"pageCount":38,"image":"assets/02/pages/page-37.jpg","audio":"assets/02/audio/page-37.mp3"},{"kind":"lesson","lesson":"02","lessonTitle":"Jobs and Identifying Things","subtitle":"仕事と「A は B です」","page":38,"pageCount":38,"image":"assets/02/pages/page-38.jpg","audio":"assets/02/audio/page-38.mp3"},{"kind":"review","lesson":"02","lessonTitle":"Jobs and Identifying Things","subtitle":"仕事と「A は B です」","page":"Review","pageCount":38,"image":"assets/02/anime-review.png","reviewPdf":"assets/02/anime-decoding-review.pdf","answers":[{"number":"1","japanese":"私は会社員です。","reading":"（わたしはかいしゃいんです。）","english":"I am a company employee.","romaji":"watashi wakaishaindesu"},{"number":"2","japanese":"私は技術者です。","reading":"（わたしはぎじゅつしゃです。）","english":"I am an engineer.","romaji":"watashi wagijutsushadesu"},{"number":"3","japanese":"私は公務員です。","reading":"（わたしはこうむいんです。）","english":"I am a public servant.","romaji":"watashi wakoumuindesu"},{"number":"4","japanese":"私は警察官です。","reading":"（わたしはけいさつかんです。）","english":"I am a police officer.","romaji":"watashi wakeisatsukandesu"},{"number":"5","japanese":"私はアメリカ人です。","reading":"（わたしはアメリカじんです。）","english":"I am American.","romaji":"watashi waamerikajindesu"},{"number":"6","japanese":"これは寿司じゃないです。これはラーメンです。","reading":"（これはすしじゃないです。これはラーメンです。）","english":"This is not sushi. This is ramen.","romaji":"kore wasushija naidesu. kore waraamendesu"},{"number":"7","japanese":"ここは公園じゃないです。ここは商店街です。","reading":"（ここはこうえんじゃないです。ここはしょうてんがいです。）","english":"This is not a park. This is a shopping area.","romaji":"kokohakouenja naidesu. kokohashoutengaidesu"},{"number":"8","japanese":"今日は雨じゃないです。今日は晴れです。","reading":"（きょうはあめじゃないです。きょうははれです。）","english":"It is not rainy today. It is clear/sunny.","romaji":"kyouhaameja naidesu. kyouhaharedesu"}],"audio":null},{"kind":"audioQuiz","lesson":"02","lessonTitle":"Jobs and Identifying Things","subtitle":"仕事と「A は B です」","page":"Audio Cards","pageCount":38,"cards":[{"number":1,"audio":"assets/02/audio/page-01.mp3","image":"assets/02/pages/page-01.jpg","sentence":"わたしはかいしゃいんです。","romaji":"watashi wakaishaindesu"},{"number":3,"audio":"assets/02/audio/page-03.mp3","image":"assets/02/pages/page-03.jpg","sentence":"たなかさん、。おしごとは？。","romaji":"tanakasan, . oshigotoha?"},{"number":4,"audio":"assets/02/audio/page-04.mp3","image":"assets/02/pages/page-04.jpg","sentence":"わたしは。かいしゃいんです。","romaji":"watashi wa. kaishaindesu"},{"number":5,"audio":"assets/02/audio/page-05.mp3","image":"assets/02/pages/page-05.jpg","sentence":"そうですか。わたしはエンジニアです。","romaji":"soudesu ka. watashi waenjiniadesu"},{"number":6,"audio":"assets/02/audio/page-06.mp3","image":"assets/02/pages/page-06.jpg","sentence":"わたしは、かいしゃいんです。","romaji":"watashi wa, kaishaindesu"},{"number":7,"audio":"assets/02/audio/page-07.mp3","image":"assets/02/pages/page-07.jpg","sentence":"わたしは、なまえです。わたしは、しょくぎょうです。これは、めいしです。","romaji":"watashi wa, namaedesu. watashi wa, shokugyoudesu. kore wa, meishidesu"},{"number":8,"audio":"assets/02/audio/page-08.mp3","image":"assets/02/pages/page-08.jpg","sentence":"さとうさん、。おしごとは？。","romaji":"satousan, . oshigotoha?"},{"number":9,"audio":"assets/02/audio/page-09.mp3","image":"assets/02/pages/page-09.jpg","sentence":"こうむいんです。","romaji":"koumuindesu"},{"number":10,"audio":"assets/02/audio/page-10.mp3","image":"assets/02/pages/page-10.jpg","sentence":"けいさつかんですか。","romaji":"keisatsukandesu ka"},{"number":11,"audio":"assets/02/audio/page-11.mp3","image":"assets/02/pages/page-11.jpg","sentence":"いいえ。けいさつかんじゃないです。","romaji":"iie. keisatsukanja naidesu"},{"number":12,"audio":"assets/02/audio/page-12.mp3","image":"assets/02/pages/page-12.jpg","sentence":"わたしは、けいさつかんじゃないです。","romaji":"watashi wa, keisatsukanja naidesu"},{"number":13,"audio":"assets/02/audio/page-13.mp3","image":"assets/02/pages/page-13.jpg","sentence":"わたしはアメリカじんです。","romaji":"watashi waamerikajindesu"},{"number":14,"audio":"assets/02/audio/page-14.mp3","image":"assets/02/pages/page-14.jpg","sentence":"わたしはアメリカじんじゃないです。","romaji":"watashi waamerikajinja naidesu"},{"number":15,"audio":"assets/02/audio/page-15.mp3","image":"assets/02/pages/page-15.jpg","sentence":"これはすしです。","romaji":"kore wasushidesu"},{"number":16,"audio":"assets/02/audio/page-16.mp3","image":"assets/02/pages/page-16.jpg","sentence":"これはすしじゃないです。これはラーメンです。","romaji":"kore wasushija naidesu. kore waraamendesu"},{"number":17,"audio":"assets/02/audio/page-17.mp3","image":"assets/02/pages/page-17.jpg","sentence":"これはコーラです。","romaji":"kore wakooradesu"},{"number":18,"audio":"assets/02/audio/page-18.mp3","image":"assets/02/pages/page-18.jpg","sentence":"これはコーラじゃないです。これはペプシです。","romaji":"kore wakooraja naidesu. kore wapepushidesu"},{"number":19,"audio":"assets/02/audio/page-19.mp3","image":"assets/02/pages/page-19.jpg","sentence":"これはいぬです。","romaji":"kore wainudesu"},{"number":20,"audio":"assets/02/audio/page-20.mp3","image":"assets/02/pages/page-20.jpg","sentence":"これはいぬじゃないです。これはビーバーです。","romaji":"kore wainuja naidesu. kore wabiibaadesu"},{"number":21,"audio":"assets/02/audio/page-21.mp3","image":"assets/02/pages/page-21.jpg","sentence":"これは、ポパイズです。","romaji":"kore wa, popaizudesu"},{"number":22,"audio":"assets/02/audio/page-22.mp3","image":"assets/02/pages/page-22.jpg","sentence":"これは、ポパイズじゃないです。これは、ケー・エフ・シーです。","romaji":"kore wa, popaizuja naidesu. kore wa, kee・efu・shiidesu"},{"number":23,"audio":"assets/02/audio/page-23.mp3","image":"assets/02/pages/page-23.jpg","sentence":"これはパンケーキです。","romaji":"kore wapankeekidesu"},{"number":24,"audio":"assets/02/audio/page-24.mp3","image":"assets/02/pages/page-24.jpg","sentence":"これはパンケーキじゃないです。これはワッフルです。","romaji":"kore wapankeekija naidesu. kore wawaffurudesu"},{"number":25,"audio":"assets/02/audio/page-25.mp3","image":"assets/02/pages/page-25.jpg","sentence":"これはタコスです。","romaji":"kore watakosudesu"},{"number":26,"audio":"assets/02/audio/page-26.mp3","image":"assets/02/pages/page-26.jpg","sentence":"これはタコスじゃないです。これはブリトーです。","romaji":"kore watakosuja naidesu. kore waburitoodesu"},{"number":27,"audio":"assets/02/audio/page-27.mp3","image":"assets/02/pages/page-27.jpg","sentence":"これはレタスです。","romaji":"kore waretasudesu"},{"number":28,"audio":"assets/02/audio/page-28.mp3","image":"assets/02/pages/page-28.jpg","sentence":"これはレタスじゃないです。これはキャベツです。","romaji":"kore waretasuja naidesu. kore wakyabetsudesu"},{"number":29,"audio":"assets/02/audio/page-29.mp3","image":"assets/02/pages/page-29.jpg","sentence":"これはズッキーニです。","romaji":"kore wazukkiinidesu"},{"number":30,"audio":"assets/02/audio/page-30.mp3","image":"assets/02/pages/page-30.jpg","sentence":"これはズッキーニじゃないです。これはきゅうりです。","romaji":"kore wazukkiinija naidesu. kore wakyuuridesu"},{"number":31,"audio":"assets/02/audio/page-31.mp3","image":"assets/02/pages/page-31.jpg","sentence":"ここはこうえんです。","romaji":"kokohakouendesu"},{"number":32,"audio":"assets/02/audio/page-32.mp3","image":"assets/02/pages/page-32.jpg","sentence":"ここはこうえんじゃないです。ここはモールです。","romaji":"kokohakouenja naidesu. kokohamoorudesu"},{"number":33,"audio":"assets/02/audio/page-33.mp3","image":"assets/02/pages/page-33.jpg","sentence":"きょうはあめです。","romaji":"kyouhaamedesu"},{"number":34,"audio":"assets/02/audio/page-34.mp3","image":"assets/02/pages/page-34.jpg","sentence":"きょうはあめじゃないです。きょうははれです。","romaji":"kyouhaameja naidesu. kyouhaharedesu"},{"number":35,"audio":"assets/02/audio/page-35.mp3","image":"assets/02/pages/page-35.jpg","sentence":"あしたはやすみです。","romaji":"ashitahayasumidesu"},{"number":36,"audio":"assets/02/audio/page-36.mp3","image":"assets/02/pages/page-36.jpg","sentence":"あしたはやすみじゃないです。あしたはしごとです。","romaji":"ashitahayasumija naidesu. ashitahashigotodesu"},{"number":37,"audio":"assets/02/audio/page-37.mp3","image":"assets/02/pages/page-37.jpg","sentence":"これはドーナツです。","romaji":"kore wadoonatsudesu"},{"number":38,"audio":"assets/02/audio/page-38.mp3","image":"assets/02/pages/page-38.jpg","sentence":"これはドーナツじゃないです。これはベーグルです。","romaji":"kore wadoonatsuja naidesu. kore wabeegurudesu"}],"audio":null},{"kind":"lesson","lesson":"03","lessonTitle":"My Family","subtitle":"私の家族（わたしのかぞく）","page":1,"pageCount":11,"image":"assets/03/pages/page-01.jpg","audio":"assets/03/audio/page-01.mp3"},{"kind":"lesson","lesson":"03","lessonTitle":"My Family","subtitle":"私の家族（わたしのかぞく）","page":2,"pageCount":11,"image":"assets/03/pages/page-02.jpg","audio":"assets/03/audio/page-02.mp3"},{"kind":"lesson","lesson":"03","lessonTitle":"My Family","subtitle":"私の家族（わたしのかぞく）","page":3,"pageCount":11,"image":"assets/03/pages/page-03.jpg","audio":"assets/03/audio/page-03.mp3"},{"kind":"lesson","lesson":"03","lessonTitle":"My Family","subtitle":"私の家族（わたしのかぞく）","page":4,"pageCount":11,"image":"assets/03/pages/page-04.jpg","audio":"assets/03/audio/page-04.mp3"},{"kind":"lesson","lesson":"03","lessonTitle":"My Family","subtitle":"私の家族（わたしのかぞく）","page":5,"pageCount":11,"image":"assets/03/pages/page-05.jpg","audio":"assets/03/audio/page-05.mp3"},{"kind":"lesson","lesson":"03","lessonTitle":"My Family","subtitle":"私の家族（わたしのかぞく）","page":6,"pageCount":11,"image":"assets/03/pages/page-06.jpg","audio":"assets/03/audio/page-06.mp3"},{"kind":"lesson","lesson":"03","lessonTitle":"My Family","subtitle":"私の家族（わたしのかぞく）","page":7,"pageCount":11,"image":"assets/03/pages/page-07.jpg","audio":"assets/03/audio/page-07.mp3"},{"kind":"lesson","lesson":"03","lessonTitle":"My Family","subtitle":"私の家族（わたしのかぞく）","page":8,"pageCount":11,"image":"assets/03/pages/page-08.jpg","audio":"assets/03/audio/page-08.mp3"},{"kind":"lesson","lesson":"03","lessonTitle":"My Family","subtitle":"私の家族（わたしのかぞく）","page":9,"pageCount":11,"image":"assets/03/pages/page-09.jpg","audio":"assets/03/audio/page-09.mp3"},{"kind":"lesson","lesson":"03","lessonTitle":"My Family","subtitle":"私の家族（わたしのかぞく）","page":10,"pageCount":11,"image":"assets/03/pages/page-10.jpg","audio":"assets/03/audio/page-10.mp3"},{"kind":"lesson","lesson":"03","lessonTitle":"My Family","subtitle":"私の家族（わたしのかぞく）","page":11,"pageCount":11,"image":"assets/03/pages/page-11.jpg","audio":"assets/03/audio/page-11.mp3"},{"kind":"review","lesson":"03","lessonTitle":"My Family","subtitle":"私の家族（わたしのかぞく）","page":"Review","pageCount":11,"image":"assets/03/anime-review.png","reviewPdf":"assets/03/anime-decoding-review.pdf","answers":[{"number":"1","japanese":"父と母です。","reading":"（ちちとははです。）","english":"They are my father and mother.","romaji":"chichitohahadesu"},{"number":"2","japanese":"夫と妻です。","reading":"（おっととつまです。）","english":"They are husband and wife.","romaji":"ottototsumadesu"},{"number":"3","japanese":"息子と娘がいます。","reading":"（むすことむすめがいます。）","english":"There is a son and a daughter.","romaji":"musukotomusumegaimasu"},{"number":"4","japanese":"兄が弟に宿題を教えます。","reading":"（あにがおとうとにしゅくだいをおしえます。）","english":"The older brother helps the younger brother with homework.","romaji":"anigaotoutonishukudaiooshiemasu"},{"number":"5","japanese":"姉と妹が一緒に歩きます。","reading":"（あねといもうとがいっしょにあるきます。）","english":"The older and younger sisters walk together.","romaji":"anetoimoutogaisshoniarukimasu"},{"number":"6","japanese":"祖父と祖母が写真を見ています。","reading":"（そふとそぼがしゃしんをみています。）","english":"Grandfather and grandmother look at photographs.","romaji":"sofutosobogashashinomiteimasu"},{"number":"7","japanese":"祖母が孫を抱いています。","reading":"（そぼがまごをだいています。）","english":"The grandmother is holding her grandchild.","romaji":"sobogamagoodaiteimasu"},{"number":"8","japanese":"男の人、女の人、男の子、女の子、赤ちゃん、猫、子猫です。","reading":"（おとこのひと、おんなのひと、おとこのこ、おんなのこ、あかちゃん、ねこ、こねこです。）","english":"An adult man, woman, boy, girl, baby, cat, and kitten.","romaji":"otokonohito, onnanohito, otokonoko, onnanoko, akachan, neko, konekodesu"}],"audio":null},{"kind":"audioQuiz","lesson":"03","lessonTitle":"My Family","subtitle":"私の家族（わたしのかぞく）","page":"Audio Cards","pageCount":11,"cards":[{"number":1,"audio":"assets/03/audio/page-01.mp3","image":"assets/03/pages/page-01.jpg","sentence":"わたしのかぞく。","romaji":"watashinokazoku"},{"number":2,"audio":"assets/03/audio/page-02.mp3","image":"assets/03/pages/page-02.jpg","sentence":"ちち。はは。おとうさん。おかあさん。","romaji":"chichi. haha. otousan. okaasan"},{"number":3,"audio":"assets/03/audio/page-03.mp3","image":"assets/03/pages/page-03.jpg","sentence":"おっと。しゅじん。つま。ごしゅじん。おくさん。","romaji":"otto. shujin. tsuma. goshujin. okusan"},{"number":4,"audio":"assets/03/audio/page-04.mp3","image":"assets/03/pages/page-04.jpg","sentence":"こども。おこさん。","romaji":"kodomo. okosan"},{"number":5,"audio":"assets/03/audio/page-05.mp3","image":"assets/03/pages/page-05.jpg","sentence":"むすこ。むすこさん。むすめ。むすめさん。","romaji":"musuko. musukosan. musume. musumesan"},{"number":6,"audio":"assets/03/audio/page-06.mp3","image":"assets/03/pages/page-06.jpg","sentence":"あに。おとうと。おにいさん。おとうとさん。","romaji":"ani. otouto. oniisan. otoutosan"},{"number":7,"audio":"assets/03/audio/page-07.mp3","image":"assets/03/pages/page-07.jpg","sentence":"あね。いもうと。おねえさん。いもうとさん。","romaji":"ane. imouto. oneesan. imoutosan"},{"number":8,"audio":"assets/03/audio/page-08.mp3","image":"assets/03/pages/page-08.jpg","sentence":"そふ。そぼ。おじいさん。おばあさん。","romaji":"sofu. sobo. ojiisan. obaasan"},{"number":9,"audio":"assets/03/audio/page-09.mp3","image":"assets/03/pages/page-09.jpg","sentence":"まご。おまごさん。","romaji":"mago. omagosan"},{"number":10,"audio":"assets/03/audio/page-10.mp3","image":"assets/03/pages/page-10.jpg","sentence":"おとこのひと。おとこのこ。おんなのひと。おんなのこ。","romaji":"otokonohito. otokonoko. onnanohito. onnanoko"},{"number":11,"audio":"assets/03/audio/page-11.mp3","image":"assets/03/pages/page-11.jpg","sentence":"あかちゃん。ねこ。こねこ。","romaji":"akachan. neko. koneko"}],"audio":null},{"kind":"lesson","lesson":"04","lessonTitle":"Counting People","subtitle":"人の数え方（ひとのかぞえかた）","page":1,"pageCount":11,"image":"assets/04/pages/page-01.jpg","audio":"assets/04/audio/page-01.mp3"},{"kind":"lesson","lesson":"04","lessonTitle":"Counting People","subtitle":"人の数え方（ひとのかぞえかた）","page":2,"pageCount":11,"image":"assets/04/pages/page-02.jpg","audio":"assets/04/audio/page-02.mp3"},{"kind":"lesson","lesson":"04","lessonTitle":"Counting People","subtitle":"人の数え方（ひとのかぞえかた）","page":3,"pageCount":11,"image":"assets/04/pages/page-03.jpg","audio":"assets/04/audio/page-03.mp3"},{"kind":"lesson","lesson":"04","lessonTitle":"Counting People","subtitle":"人の数え方（ひとのかぞえかた）","page":4,"pageCount":11,"image":"assets/04/pages/page-04.jpg","audio":"assets/04/audio/page-04.mp3"},{"kind":"lesson","lesson":"04","lessonTitle":"Counting People","subtitle":"人の数え方（ひとのかぞえかた）","page":5,"pageCount":11,"image":"assets/04/pages/page-05.jpg","audio":"assets/04/audio/page-05.mp3"},{"kind":"lesson","lesson":"04","lessonTitle":"Counting People","subtitle":"人の数え方（ひとのかぞえかた）","page":6,"pageCount":11,"image":"assets/04/pages/page-06.jpg","audio":"assets/04/audio/page-06.mp3"},{"kind":"lesson","lesson":"04","lessonTitle":"Counting People","subtitle":"人の数え方（ひとのかぞえかた）","page":7,"pageCount":11,"image":"assets/04/pages/page-07.jpg","audio":"assets/04/audio/page-07.mp3"},{"kind":"lesson","lesson":"04","lessonTitle":"Counting People","subtitle":"人の数え方（ひとのかぞえかた）","page":8,"pageCount":11,"image":"assets/04/pages/page-08.jpg","audio":"assets/04/audio/page-08.mp3"},{"kind":"lesson","lesson":"04","lessonTitle":"Counting People","subtitle":"人の数え方（ひとのかぞえかた）","page":9,"pageCount":11,"image":"assets/04/pages/page-09.jpg","audio":"assets/04/audio/page-09.mp3"},{"kind":"lesson","lesson":"04","lessonTitle":"Counting People","subtitle":"人の数え方（ひとのかぞえかた）","page":10,"pageCount":11,"image":"assets/04/pages/page-10.jpg","audio":"assets/04/audio/page-10.mp3"},{"kind":"lesson","lesson":"04","lessonTitle":"Counting People","subtitle":"人の数え方（ひとのかぞえかた）","page":11,"pageCount":11,"image":"assets/04/pages/page-11.jpg","audio":"assets/04/audio/page-11.mp3"},{"kind":"review","lesson":"04","lessonTitle":"Counting People","subtitle":"人の数え方（ひとのかぞえかた）","page":"Review","pageCount":11,"image":"assets/04/anime-review.png","reviewPdf":"assets/04/anime-decoding-review.pdf","answers":[{"number":"1","japanese":"一人です。","reading":"（ひとりです。）","english":"There is one person.","romaji":"hitoridesu"},{"number":"2","japanese":"二人です。","reading":"（ふたりです。）","english":"There are two people.","romaji":"futaridesu"},{"number":"3","japanese":"三人です。","reading":"（さんにんです。）","english":"There are three people.","romaji":"sannindesu"},{"number":"4","japanese":"四人です。","reading":"（よにんです。）","english":"There are four people.","romaji":"yonindesu"},{"number":"5","japanese":"五人です。","reading":"（ごにんです。）","english":"There are five people.","romaji":"gonindesu"},{"number":"6","japanese":"六人です。","reading":"（ろくにんです。）","english":"There are six people.","romaji":"rokunindesu"},{"number":"7","japanese":"七人です。","reading":"（ななにんです。）","english":"There are seven people.","romaji":"nananindesu"},{"number":"8","japanese":"八人です。","reading":"（はちにんです。）","english":"There are eight people.","romaji":"hachinindesu"},{"number":"9","japanese":"九人です。","reading":"（きゅうにんです。）","english":"There are nine people.","romaji":"kyuunindesu"},{"number":"10","japanese":"十人です。","reading":"（じゅうにんです。）","english":"There are ten people.","romaji":"juunindesu"}],"audio":null},{"kind":"audioQuiz","lesson":"04","lessonTitle":"Counting People","subtitle":"人の数え方（ひとのかぞえかた）","page":"Audio Cards","pageCount":11,"cards":[{"number":1,"audio":"assets/04/audio/page-01.mp3","image":"assets/04/pages/page-01.jpg","sentence":"ひとのかぞえかた。","romaji":"hitonokazoekata"},{"number":2,"audio":"assets/04/audio/page-02.mp3","image":"assets/04/pages/page-02.jpg","sentence":"ひとり。","romaji":"hitori"},{"number":3,"audio":"assets/04/audio/page-03.mp3","image":"assets/04/pages/page-03.jpg","sentence":"ふたり。","romaji":"futari"},{"number":4,"audio":"assets/04/audio/page-04.mp3","image":"assets/04/pages/page-04.jpg","sentence":"さんにん。","romaji":"sannin"},{"number":5,"audio":"assets/04/audio/page-05.mp3","image":"assets/04/pages/page-05.jpg","sentence":"よにん。","romaji":"yonin"},{"number":6,"audio":"assets/04/audio/page-06.mp3","image":"assets/04/pages/page-06.jpg","sentence":"ごにん。","romaji":"gonin"},{"number":7,"audio":"assets/04/audio/page-07.mp3","image":"assets/04/pages/page-07.jpg","sentence":"ろくにん。","romaji":"rokunin"},{"number":8,"audio":"assets/04/audio/page-08.mp3","image":"assets/04/pages/page-08.jpg","sentence":"ななにん。","romaji":"nananin"},{"number":9,"audio":"assets/04/audio/page-09.mp3","image":"assets/04/pages/page-09.jpg","sentence":"はちにん。","romaji":"hachinin"},{"number":10,"audio":"assets/04/audio/page-10.mp3","image":"assets/04/pages/page-10.jpg","sentence":"きゅうにん。","romaji":"kyuunin"},{"number":11,"audio":"assets/04/audio/page-11.mp3","image":"assets/04/pages/page-11.jpg","sentence":"じゅうにん。","romaji":"juunin"}],"audio":null},{"kind":"lesson","lesson":"05","lessonTitle":"Golden Week","subtitle":"Cultural reference lesson","page":1,"pageCount":7,"image":"assets/05/pages/page-1.jpg","audio":null},{"kind":"lesson","lesson":"05","lessonTitle":"Golden Week","subtitle":"Cultural reference lesson","page":2,"pageCount":7,"image":"assets/05/pages/page-2.jpg","audio":null},{"kind":"lesson","lesson":"05","lessonTitle":"Golden Week","subtitle":"Cultural reference lesson","page":3,"pageCount":7,"image":"assets/05/pages/page-3.jpg","audio":null},{"kind":"lesson","lesson":"05","lessonTitle":"Golden Week","subtitle":"Cultural reference lesson","page":4,"pageCount":7,"image":"assets/05/pages/page-4.jpg","audio":null},{"kind":"lesson","lesson":"05","lessonTitle":"Golden Week","subtitle":"Cultural reference lesson","page":5,"pageCount":7,"image":"assets/05/pages/page-5.jpg","audio":null},{"kind":"lesson","lesson":"05","lessonTitle":"Golden Week","subtitle":"Cultural reference lesson","page":6,"pageCount":7,"image":"assets/05/pages/page-6.jpg","audio":null},{"kind":"lesson","lesson":"05","lessonTitle":"Golden Week","subtitle":"Cultural reference lesson","page":7,"pageCount":7,"image":"assets/05/pages/page-7.jpg","audio":null},{"kind":"lesson","lesson":"06","lessonTitle":"Where People Live","subtitle":"どこに住んでいますか","page":1,"pageCount":26,"image":"assets/06/pages/page-01.jpg","audio":"assets/06/audio/page-01.mp3"},{"kind":"lesson","lesson":"06","lessonTitle":"Where People Live","subtitle":"どこに住んでいますか","page":2,"pageCount":26,"image":"assets/06/pages/page-02.jpg","audio":null},{"kind":"lesson","lesson":"06","lessonTitle":"Where People Live","subtitle":"どこに住んでいますか","page":3,"pageCount":26,"image":"assets/06/pages/page-03.jpg","audio":"assets/06/audio/page-03.mp3"},{"kind":"lesson","lesson":"06","lessonTitle":"Where People Live","subtitle":"どこに住んでいますか","page":4,"pageCount":26,"image":"assets/06/pages/page-04.jpg","audio":"assets/06/audio/page-04.mp3"},{"kind":"lesson","lesson":"06","lessonTitle":"Where People Live","subtitle":"どこに住んでいますか","page":5,"pageCount":26,"image":"assets/06/pages/page-05.jpg","audio":"assets/06/audio/page-05.mp3"},{"kind":"lesson","lesson":"06","lessonTitle":"Where People Live","subtitle":"どこに住んでいますか","page":6,"pageCount":26,"image":"assets/06/pages/page-06.jpg","audio":"assets/06/audio/page-06.mp3"},{"kind":"lesson","lesson":"06","lessonTitle":"Where People Live","subtitle":"どこに住んでいますか","page":7,"pageCount":26,"image":"assets/06/pages/page-07.jpg","audio":"assets/06/audio/page-07.mp3"},{"kind":"lesson","lesson":"06","lessonTitle":"Where People Live","subtitle":"どこに住んでいますか","page":8,"pageCount":26,"image":"assets/06/pages/page-08.jpg","audio":"assets/06/audio/page-08.mp3"},{"kind":"lesson","lesson":"06","lessonTitle":"Where People Live","subtitle":"どこに住んでいますか","page":9,"pageCount":26,"image":"assets/06/pages/page-09.jpg","audio":"assets/06/audio/page-09.mp3"},{"kind":"lesson","lesson":"06","lessonTitle":"Where People Live","subtitle":"どこに住んでいますか","page":10,"pageCount":26,"image":"assets/06/pages/page-10.jpg","audio":"assets/06/audio/page-10.mp3"},{"kind":"lesson","lesson":"06","lessonTitle":"Where People Live","subtitle":"どこに住んでいますか","page":11,"pageCount":26,"image":"assets/06/pages/page-11.jpg","audio":"assets/06/audio/page-11.mp3"},{"kind":"lesson","lesson":"06","lessonTitle":"Where People Live","subtitle":"どこに住んでいますか","page":12,"pageCount":26,"image":"assets/06/pages/page-12.jpg","audio":"assets/06/audio/page-12.mp3"},{"kind":"lesson","lesson":"06","lessonTitle":"Where People Live","subtitle":"どこに住んでいますか","page":13,"pageCount":26,"image":"assets/06/pages/page-13.jpg","audio":"assets/06/audio/page-13.mp3"},{"kind":"lesson","lesson":"06","lessonTitle":"Where People Live","subtitle":"どこに住んでいますか","page":14,"pageCount":26,"image":"assets/06/pages/page-14.jpg","audio":"assets/06/audio/page-14.mp3"},{"kind":"lesson","lesson":"06","lessonTitle":"Where People Live","subtitle":"どこに住んでいますか","page":15,"pageCount":26,"image":"assets/06/pages/page-15.jpg","audio":"assets/06/audio/page-15.mp3"},{"kind":"lesson","lesson":"06","lessonTitle":"Where People Live","subtitle":"どこに住んでいますか","page":16,"pageCount":26,"image":"assets/06/pages/page-16.jpg","audio":"assets/06/audio/page-16.mp3"},{"kind":"lesson","lesson":"06","lessonTitle":"Where People Live","subtitle":"どこに住んでいますか","page":17,"pageCount":26,"image":"assets/06/pages/page-17.jpg","audio":"assets/06/audio/page-17.mp3"},{"kind":"lesson","lesson":"06","lessonTitle":"Where People Live","subtitle":"どこに住んでいますか","page":18,"pageCount":26,"image":"assets/06/pages/page-18.jpg","audio":"assets/06/audio/page-18.mp3"},{"kind":"lesson","lesson":"06","lessonTitle":"Where People Live","subtitle":"どこに住んでいますか","page":19,"pageCount":26,"image":"assets/06/pages/page-19.jpg","audio":"assets/06/audio/page-19.mp3"},{"kind":"lesson","lesson":"06","lessonTitle":"Where People Live","subtitle":"どこに住んでいますか","page":20,"pageCount":26,"image":"assets/06/pages/page-20.jpg","audio":"assets/06/audio/page-20.mp3"},{"kind":"lesson","lesson":"06","lessonTitle":"Where People Live","subtitle":"どこに住んでいますか","page":21,"pageCount":26,"image":"assets/06/pages/page-21.jpg","audio":"assets/06/audio/page-21.mp3"},{"kind":"lesson","lesson":"06","lessonTitle":"Where People Live","subtitle":"どこに住んでいますか","page":22,"pageCount":26,"image":"assets/06/pages/page-22.jpg","audio":"assets/06/audio/page-22.mp3"},{"kind":"lesson","lesson":"06","lessonTitle":"Where People Live","subtitle":"どこに住んでいますか","page":23,"pageCount":26,"image":"assets/06/pages/page-23.jpg","audio":"assets/06/audio/page-23.mp3"},{"kind":"lesson","lesson":"06","lessonTitle":"Where People Live","subtitle":"どこに住んでいますか","page":24,"pageCount":26,"image":"assets/06/pages/page-24.jpg","audio":"assets/06/audio/page-24.mp3"},{"kind":"lesson","lesson":"06","lessonTitle":"Where People Live","subtitle":"どこに住んでいますか","page":25,"pageCount":26,"image":"assets/06/pages/page-25.jpg","audio":"assets/06/audio/page-25.mp3"},{"kind":"lesson","lesson":"06","lessonTitle":"Where People Live","subtitle":"どこに住んでいますか","page":26,"pageCount":26,"image":"assets/06/pages/page-26.jpg","audio":"assets/06/audio/page-26.mp3"},{"kind":"review","lesson":"06","lessonTitle":"Where People Live","subtitle":"どこに住んでいますか","page":"Review","pageCount":26,"image":"assets/06/anime-review.png","reviewPdf":"assets/06/anime-decoding-review.pdf","answers":[{"number":"1","japanese":"この人は誰ですか。","reading":"（このひとはだれですか。）","english":"Who is this person?","romaji":"konohitohadaredesu ka"},{"number":"2","japanese":"この人は私の姉です。","reading":"（このひとはわたしのあねです。）","english":"This person is my older sister.","romaji":"konohitohawatashinoanedesu"},{"number":"3","japanese":"姉は日本に住んでいます。","reading":"（あねはにほんにすんでいます。）","english":"My older sister lives in Japan.","romaji":"anehanihonnisunde imasu"},{"number":"4","japanese":"どこに住んでいますか。","reading":"（どこにすんでいますか。）","english":"Where do you live?","romaji":"dokonisunde imasu ka"},{"number":"5","japanese":"クリスマスはどこに行きますか。","reading":"（クリスマスはどこにいきますか。）","english":"Where are you going for Christmas?","romaji":"kurisumasuhadokoniikimasu ka"},{"number":"6","japanese":"大切な写真はどこにありますか。","reading":"（たいせつなしゃしんはどこにありますか。）","english":"Where is the important photograph?","romaji":"taisetsunashashinhadokoniarimasu ka"},{"number":"7","japanese":"サンドイッチと何を飲みますか。","reading":"（サンドイッチとなにをのみますか。）","english":"What will you drink with the sandwich?","romaji":"sandoicchitonanionomimasu ka"},{"number":"8","japanese":"この人は誰ですか。名前を言ってください。","reading":"（このひとはだれですか。なまえをいってください。）","english":"Who is this person? Say the name.","romaji":"konohitohadaredesu ka. namaeoittekudasai"}],"audio":null},{"kind":"audioQuiz","lesson":"06","lessonTitle":"Where People Live","subtitle":"どこに住んでいますか","page":"Audio Cards","pageCount":26,"cards":[{"number":1,"audio":"assets/06/audio/page-01.mp3","image":"assets/06/pages/page-01.jpg","sentence":"どこにすんでいますか。","romaji":"dokonisunde imasu ka"},{"number":3,"audio":"assets/06/audio/page-03.mp3","image":"assets/06/pages/page-03.jpg","sentence":"このひとはだれですか。","romaji":"konohitohadaredesu ka"},{"number":4,"audio":"assets/06/audio/page-04.mp3","image":"assets/06/pages/page-04.jpg","sentence":"あねです。","romaji":"anedesu"},{"number":5,"audio":"assets/06/audio/page-05.mp3","image":"assets/06/pages/page-05.jpg","sentence":"おねえさんはどこに。すんでいますか。","romaji":"oneesanhadokoni. sunde imasu ka"},{"number":6,"audio":"assets/06/audio/page-06.mp3","image":"assets/06/pages/page-06.jpg","sentence":"にほんにすんでいます。","romaji":"nihonnisunde imasu"},{"number":7,"audio":"assets/06/audio/page-07.mp3","image":"assets/06/pages/page-07.jpg","sentence":"どこにすんでいますか。","romaji":"dokonisunde imasu ka"},{"number":8,"audio":"assets/06/audio/page-08.mp3","image":"assets/06/pages/page-08.jpg","sentence":"どこにすんでいますか。ばしょにすんでいます。","romaji":"dokonisunde imasu ka. bashonisunde imasu"},{"number":9,"audio":"assets/06/audio/page-09.mp3","image":"assets/06/pages/page-09.jpg","sentence":"どこにすんでいますか。ばしょにすんでいます。","romaji":"dokonisunde imasu ka. bashonisunde imasu"},{"number":10,"audio":"assets/06/audio/page-10.mp3","image":"assets/06/pages/page-10.jpg","sentence":"クリスマスはどこにいきますか。クリスマスはばしょにいきます。","romaji":"kurisumasuhadokoniikimasu ka. kurisumasuhabashoniikimasu"},{"number":11,"audio":"assets/06/audio/page-11.mp3","image":"assets/06/pages/page-11.jpg","sentence":"しゃしんはばしょにあります。たいせつなしゃしんはどこにありますか。","romaji":"shashinhabashoniarimasu. taisetsunashashinhadokoniarimasu ka"},{"number":12,"audio":"assets/06/audio/page-12.mp3","image":"assets/06/pages/page-12.jpg","sentence":"パンとコーヒー。パンとコーヒーです。","romaji":"pantokoohii. pantokoohiidesu"},{"number":13,"audio":"assets/06/audio/page-13.mp3","image":"assets/06/pages/page-13.jpg","sentence":"サンドイッチとなにをのみますか。サンドイッチとのみものをのみます。","romaji":"sandoicchitonanionomimasu ka. sandoicchitonomimonoonomimasu"},{"number":14,"audio":"assets/06/audio/page-14.mp3","image":"assets/06/pages/page-14.jpg","sentence":"だれですか。このひとはだれですか。","romaji":"daredesu ka. konohitohadaredesu ka"},{"number":15,"audio":"assets/06/audio/page-15.mp3","image":"assets/06/pages/page-15.jpg","sentence":"なまえです。このひとはだれですか。","romaji":"namaedesu. konohitohadaredesu ka"},{"number":16,"audio":"assets/06/audio/page-16.mp3","image":"assets/06/pages/page-16.jpg","sentence":"このひとはだれですか。","romaji":"konohitohadaredesu ka"},{"number":17,"audio":"assets/06/audio/page-17.mp3","image":"assets/06/pages/page-17.jpg","sentence":"このひとはだれですか。","romaji":"konohitohadaredesu ka"},{"number":18,"audio":"assets/06/audio/page-18.mp3","image":"assets/06/pages/page-18.jpg","sentence":"このひとはだれですか。","romaji":"konohitohadaredesu ka"},{"number":19,"audio":"assets/06/audio/page-19.mp3","image":"assets/06/pages/page-19.jpg","sentence":"このひとはだれですか。","romaji":"konohitohadaredesu ka"},{"number":20,"audio":"assets/06/audio/page-20.mp3","image":"assets/06/pages/page-20.jpg","sentence":"このひとはだれですか。","romaji":"konohitohadaredesu ka"},{"number":21,"audio":"assets/06/audio/page-21.mp3","image":"assets/06/pages/page-21.jpg","sentence":"このひとはだれですか。","romaji":"konohitohadaredesu ka"},{"number":22,"audio":"assets/06/audio/page-22.mp3","image":"assets/06/pages/page-22.jpg","sentence":"このひとはだれですか。","romaji":"konohitohadaredesu ka"},{"number":23,"audio":"assets/06/audio/page-23.mp3","image":"assets/06/pages/page-23.jpg","sentence":"このひとはだれですか。","romaji":"konohitohadaredesu ka"},{"number":24,"audio":"assets/06/audio/page-24.mp3","image":"assets/06/pages/page-24.jpg","sentence":"このひとはだれですか。","romaji":"konohitohadaredesu ka"},{"number":25,"audio":"assets/06/audio/page-25.mp3","image":"assets/06/pages/page-25.jpg","sentence":"このひとはだれですか。","romaji":"konohitohadaredesu ka"},{"number":26,"audio":"assets/06/audio/page-26.mp3","image":"assets/06/pages/page-26.jpg","sentence":"このひとはだれですか。","romaji":"konohitohadaredesu ka"}],"audio":null},{"kind":"lesson","lesson":"07","lessonTitle":"Possession and Age","subtitle":"「の」と年齢（ねんれい）","page":1,"pageCount":7,"image":"assets/07/pages/page-1.jpg","audio":"assets/07/audio/page-01.mp3"},{"kind":"lesson","lesson":"07","lessonTitle":"Possession and Age","subtitle":"「の」と年齢（ねんれい）","page":2,"pageCount":7,"image":"assets/07/pages/page-2.jpg","audio":"assets/07/audio/page-02.mp3"},{"kind":"lesson","lesson":"07","lessonTitle":"Possession and Age","subtitle":"「の」と年齢（ねんれい）","page":3,"pageCount":7,"image":"assets/07/pages/page-3.jpg","audio":"assets/07/audio/page-03.mp3"},{"kind":"lesson","lesson":"07","lessonTitle":"Possession and Age","subtitle":"「の」と年齢（ねんれい）","page":4,"pageCount":7,"image":"assets/07/pages/page-4.jpg","audio":"assets/07/audio/page-04.mp3"},{"kind":"lesson","lesson":"07","lessonTitle":"Possession and Age","subtitle":"「の」と年齢（ねんれい）","page":5,"pageCount":7,"image":"assets/07/pages/page-5.jpg","audio":"assets/07/audio/page-05.mp3"},{"kind":"lesson","lesson":"07","lessonTitle":"Possession and Age","subtitle":"「の」と年齢（ねんれい）","page":6,"pageCount":7,"image":"assets/07/pages/page-6.jpg","audio":"assets/07/audio/page-06.mp3"},{"kind":"lesson","lesson":"07","lessonTitle":"Possession and Age","subtitle":"「の」と年齢（ねんれい）","page":7,"pageCount":7,"image":"assets/07/pages/page-7.jpg","audio":"assets/07/audio/page-07.mp3"},{"kind":"review","lesson":"07","lessonTitle":"Possession and Age","subtitle":"「の」と年齢（ねんれい）","page":"Review","pageCount":7,"image":"assets/07/anime-review.png","reviewPdf":"assets/07/anime-decoding-review.pdf","answers":[{"number":"1","japanese":"これは亀です。","reading":"（これはかめです。）","english":"This is a turtle.","romaji":"kore wakamedesu"},{"number":"2","japanese":"これは私の亀です。","reading":"（これはわたしのかめです。）","english":"This is my turtle.","romaji":"kore wawatashinokamedesu"},{"number":"3","japanese":"これは私のペットです。","reading":"（これはわたしのペットです。）","english":"This is my pet.","romaji":"kore wawatashinopettodesu"},{"number":"4","japanese":"これは私の車です。","reading":"（これはわたしのくるまです。）","english":"This is my car.","romaji":"kore wawatashinokurumadesu"},{"number":"5","japanese":"亀は何歳ですか。","reading":"（かめはなんさいですか。）","english":"How old is the turtle?","romaji":"kamehanansaidesu ka"},{"number":"6","japanese":"亀は百歳です。","reading":"（かめはひゃくさいです。）","english":"The turtle is one hundred years old.","romaji":"kamehahyakusaidesu"},{"number":"7","japanese":"子猫は零歳です。","reading":"（こねこはれいさいです。）","english":"The kitten is zero years old.","romaji":"konekohareisaidesu"},{"number":"8","japanese":"これは誰の鞄ですか。これは誰の自転車ですか。","reading":"（これはだれのかばんですか。これはだれのじてんしゃですか。）","english":"Whose bag and bicycle are these?","romaji":"kore wadarenokabandesu ka. kore wadarenojitenshadesu ka"}],"audio":null},{"kind":"audioQuiz","lesson":"07","lessonTitle":"Possession and Age","subtitle":"「の」と年齢（ねんれい）","page":"Audio Cards","pageCount":7,"cards":[{"number":1,"audio":"assets/07/audio/page-01.mp3","image":"assets/07/pages/page-1.jpg","sentence":"かめです。","romaji":"kamedesu"},{"number":2,"audio":"assets/07/audio/page-02.mp3","image":"assets/07/pages/page-2.jpg","sentence":"わたしのかめです。","romaji":"watashinokamedesu"},{"number":3,"audio":"assets/07/audio/page-03.mp3","image":"assets/07/pages/page-3.jpg","sentence":"わたしのペットです。","romaji":"watashinopettodesu"},{"number":4,"audio":"assets/07/audio/page-04.mp3","image":"assets/07/pages/page-4.jpg","sentence":"わたしの、くるまです。","romaji":"watashino, kurumadesu"},{"number":5,"audio":"assets/07/audio/page-05.mp3","image":"assets/07/pages/page-5.jpg","sentence":"おおきい！。かめはなんさいですか。","romaji":"ookii! . kamehanansaidesu ka"},{"number":6,"audio":"assets/07/audio/page-06.mp3","image":"assets/07/pages/page-6.jpg","sentence":"１００さいです。","romaji":"１００saidesu"},{"number":7,"audio":"assets/07/audio/page-07.mp3","image":"assets/07/pages/page-7.jpg","sentence":"なんさいですか。０さいです。","romaji":"nansaidesu ka. ０saidesu"}],"audio":null},{"kind":"lesson","lesson":"08","lessonTitle":"Food and Drinks","subtitle":"食べ物と飲み物","page":1,"pageCount":26,"image":"assets/08/pages/page-01.jpg","audio":"assets/08/audio/page-01.mp3"},{"kind":"lesson","lesson":"08","lessonTitle":"Food and Drinks","subtitle":"食べ物と飲み物","page":2,"pageCount":26,"image":"assets/08/pages/page-02.jpg","audio":"assets/08/audio/page-02.mp3"},{"kind":"lesson","lesson":"08","lessonTitle":"Food and Drinks","subtitle":"食べ物と飲み物","page":3,"pageCount":26,"image":"assets/08/pages/page-03.jpg","audio":"assets/08/audio/page-03.mp3"},{"kind":"lesson","lesson":"08","lessonTitle":"Food and Drinks","subtitle":"食べ物と飲み物","page":4,"pageCount":26,"image":"assets/08/pages/page-04.jpg","audio":"assets/08/audio/page-04.mp3"},{"kind":"lesson","lesson":"08","lessonTitle":"Food and Drinks","subtitle":"食べ物と飲み物","page":5,"pageCount":26,"image":"assets/08/pages/page-05.jpg","audio":"assets/08/audio/page-05.mp3"},{"kind":"lesson","lesson":"08","lessonTitle":"Food and Drinks","subtitle":"食べ物と飲み物","page":6,"pageCount":26,"image":"assets/08/pages/page-06.jpg","audio":"assets/08/audio/page-06.mp3"},{"kind":"lesson","lesson":"08","lessonTitle":"Food and Drinks","subtitle":"食べ物と飲み物","page":7,"pageCount":26,"image":"assets/08/pages/page-07.jpg","audio":"assets/08/audio/page-07.mp3"},{"kind":"lesson","lesson":"08","lessonTitle":"Food and Drinks","subtitle":"食べ物と飲み物","page":8,"pageCount":26,"image":"assets/08/pages/page-08.jpg","audio":"assets/08/audio/page-08.mp3"},{"kind":"lesson","lesson":"08","lessonTitle":"Food and Drinks","subtitle":"食べ物と飲み物","page":9,"pageCount":26,"image":"assets/08/pages/page-09.jpg","audio":"assets/08/audio/page-09.mp3"},{"kind":"lesson","lesson":"08","lessonTitle":"Food and Drinks","subtitle":"食べ物と飲み物","page":10,"pageCount":26,"image":"assets/08/pages/page-10.jpg","audio":"assets/08/audio/page-10.mp3"},{"kind":"lesson","lesson":"08","lessonTitle":"Food and Drinks","subtitle":"食べ物と飲み物","page":11,"pageCount":26,"image":"assets/08/pages/page-11.jpg","audio":"assets/08/audio/page-11.mp3"},{"kind":"lesson","lesson":"08","lessonTitle":"Food and Drinks","subtitle":"食べ物と飲み物","page":12,"pageCount":26,"image":"assets/08/pages/page-12.jpg","audio":"assets/08/audio/page-12.mp3"},{"kind":"lesson","lesson":"08","lessonTitle":"Food and Drinks","subtitle":"食べ物と飲み物","page":13,"pageCount":26,"image":"assets/08/pages/page-13.jpg","audio":"assets/08/audio/page-13.mp3"},{"kind":"lesson","lesson":"08","lessonTitle":"Food and Drinks","subtitle":"食べ物と飲み物","page":14,"pageCount":26,"image":"assets/08/pages/page-14.jpg","audio":"assets/08/audio/page-14.mp3"},{"kind":"lesson","lesson":"08","lessonTitle":"Food and Drinks","subtitle":"食べ物と飲み物","page":15,"pageCount":26,"image":"assets/08/pages/page-15.jpg","audio":"assets/08/audio/page-15.mp3"},{"kind":"lesson","lesson":"08","lessonTitle":"Food and Drinks","subtitle":"食べ物と飲み物","page":16,"pageCount":26,"image":"assets/08/pages/page-16.jpg","audio":"assets/08/audio/page-16.mp3"},{"kind":"lesson","lesson":"08","lessonTitle":"Food and Drinks","subtitle":"食べ物と飲み物","page":17,"pageCount":26,"image":"assets/08/pages/page-17.jpg","audio":"assets/08/audio/page-17.mp3"},{"kind":"lesson","lesson":"08","lessonTitle":"Food and Drinks","subtitle":"食べ物と飲み物","page":18,"pageCount":26,"image":"assets/08/pages/page-18.jpg","audio":"assets/08/audio/page-18.mp3"},{"kind":"lesson","lesson":"08","lessonTitle":"Food and Drinks","subtitle":"食べ物と飲み物","page":19,"pageCount":26,"image":"assets/08/pages/page-19.jpg","audio":"assets/08/audio/page-19.mp3"},{"kind":"lesson","lesson":"08","lessonTitle":"Food and Drinks","subtitle":"食べ物と飲み物","page":20,"pageCount":26,"image":"assets/08/pages/page-20.jpg","audio":"assets/08/audio/page-20.mp3"},{"kind":"lesson","lesson":"08","lessonTitle":"Food and Drinks","subtitle":"食べ物と飲み物","page":21,"pageCount":26,"image":"assets/08/pages/page-21.jpg","audio":"assets/08/audio/page-21.mp3"},{"kind":"lesson","lesson":"08","lessonTitle":"Food and Drinks","subtitle":"食べ物と飲み物","page":22,"pageCount":26,"image":"assets/08/pages/page-22.jpg","audio":"assets/08/audio/page-22.mp3"},{"kind":"lesson","lesson":"08","lessonTitle":"Food and Drinks","subtitle":"食べ物と飲み物","page":23,"pageCount":26,"image":"assets/08/pages/page-23.jpg","audio":"assets/08/audio/page-23.mp3"},{"kind":"lesson","lesson":"08","lessonTitle":"Food and Drinks","subtitle":"食べ物と飲み物","page":24,"pageCount":26,"image":"assets/08/pages/page-24.jpg","audio":"assets/08/audio/page-24.mp3"},{"kind":"lesson","lesson":"08","lessonTitle":"Food and Drinks","subtitle":"食べ物と飲み物","page":25,"pageCount":26,"image":"assets/08/pages/page-25.jpg","audio":"assets/08/audio/page-25.mp3"},{"kind":"lesson","lesson":"08","lessonTitle":"Food and Drinks","subtitle":"食べ物と飲み物","page":26,"pageCount":26,"image":"assets/08/pages/page-26.jpg","audio":"assets/08/audio/page-26.mp3"},{"kind":"review","lesson":"08","lessonTitle":"Food and Drinks","subtitle":"食べ物と飲み物","page":"Review","pageCount":26,"image":"assets/08/anime-review.png","reviewPdf":"assets/08/anime-decoding-review.pdf","answers":[{"number":"1","japanese":"パン、ご飯、魚、肉、卵、野菜、果物です。","reading":"（パン、ごはん、さかな、にく、たまご、やさい、くだものです。）","english":"Bread, rice, fish, meat, eggs, vegetables, and fruit.","romaji":"pan, gohan, sakana, niku, tamago, yasai, kudamonodesu"},{"number":"2","japanese":"パンを食べます。","reading":"（パンをたべます。）","english":"I eat bread.","romaji":"panotabemasu"},{"number":"3","japanese":"誕生日に何を食べますか。","reading":"（たんじょうびになにをたべますか。）","english":"What will you eat on your birthday?","romaji":"tanjoubininaniotabemasu ka"},{"number":"4","japanese":"水、珈琲、紅茶、お茶、お酒、日本酒です。","reading":"（みず、コーヒー、こうちゃ、おちゃ、おさけ、にほんしゅです。）","english":"Water, coffee, black tea, green tea, alcohol, and sake.","romaji":"mizu, koohii, koucha, ocha, osake, nihonshudesu"},{"number":"5","japanese":"はい、珈琲を飲みます。","reading":"（はい、コーヒーをのみます。）","english":"Yes, I drink coffee.","romaji":"hai, koohiionomimasu"},{"number":"6","japanese":"いいえ、結構です。","reading":"（いいえ、けっこうです。）","english":"No, thank you.","romaji":"iie, kekkoudesu"},{"number":"7","japanese":"飛行機で何を飲みますか。","reading":"（ひこうきでなにをのみますか。）","english":"What will you drink on the airplane?","romaji":"hikoukidenanionomimasu ka"},{"number":"8","japanese":"食べ物を食べます。飲み物を飲みます。","reading":"（たべものをたべます。のみものをのみます。）","english":"We eat food and drink beverages.","romaji":"tabemonootabemasu . nomimonoonomimasu"}],"audio":null},{"kind":"audioQuiz","lesson":"08","lessonTitle":"Food and Drinks","subtitle":"食べ物と飲み物","page":"Audio Cards","pageCount":26,"cards":[{"number":1,"audio":"assets/08/audio/page-01.mp3","image":"assets/08/pages/page-01.jpg","sentence":"なにがすきですか。","romaji":"nanigasuki desu ka"},{"number":2,"audio":"assets/08/audio/page-02.mp3","image":"assets/08/pages/page-02.jpg","sentence":"たべもの。","romaji":"tabemono"},{"number":3,"audio":"assets/08/audio/page-03.mp3","image":"assets/08/pages/page-03.jpg","sentence":"パン。ぱん。","romaji":"pan. pan"},{"number":4,"audio":"assets/08/audio/page-04.mp3","image":"assets/08/pages/page-04.jpg","sentence":"ごはん。","romaji":"gohan"},{"number":5,"audio":"assets/08/audio/page-05.mp3","image":"assets/08/pages/page-05.jpg","sentence":"さかな。魚。","romaji":"sakana. sakana"},{"number":6,"audio":"assets/08/audio/page-06.mp3","image":"assets/08/pages/page-06.jpg","sentence":"にく。肉。","romaji":"niku. niku"},{"number":7,"audio":"assets/08/audio/page-07.mp3","image":"assets/08/pages/page-07.jpg","sentence":"たまご。","romaji":"tamago"},{"number":8,"audio":"assets/08/audio/page-08.mp3","image":"assets/08/pages/page-08.jpg","sentence":"やさい。","romaji":"yasai"},{"number":9,"audio":"assets/08/audio/page-09.mp3","image":"assets/08/pages/page-09.jpg","sentence":"くだもの。","romaji":"kudamono"},{"number":10,"audio":"assets/08/audio/page-10.mp3","image":"assets/08/pages/page-10.jpg","sentence":"くだものを。たべますか。","romaji":"kudamonoo. tabemasu ka"},{"number":11,"audio":"assets/08/audio/page-11.mp3","image":"assets/08/pages/page-11.jpg","sentence":"はい、たべます。ありがとうございます。","romaji":"hai, tabemasu . arigatou gozaimasu"},{"number":12,"audio":"assets/08/audio/page-12.mp3","image":"assets/08/pages/page-12.jpg","sentence":"たべます。パンをたべます。","romaji":"tabemasu . panotabemasu"},{"number":13,"audio":"assets/08/audio/page-13.mp3","image":"assets/08/pages/page-13.jpg","sentence":"たべものをたべます。","romaji":"tabemonootabemasu"},{"number":14,"audio":"assets/08/audio/page-14.mp3","image":"assets/08/pages/page-14.jpg","sentence":"たべものをたべます。きょうはあなたのたんじょうびです！。なにをたべますか。","romaji":"tabemonootabemasu . kyouhaanatanotanjoubidesu! . naniotabemasu ka"},{"number":15,"audio":"assets/08/audio/page-15.mp3","image":"assets/08/pages/page-15.jpg","sentence":"のみもの。","romaji":"nomimono"},{"number":16,"audio":"assets/08/audio/page-16.mp3","image":"assets/08/pages/page-16.jpg","sentence":"みず。水。","romaji":"mizu. mizu"},{"number":17,"audio":"assets/08/audio/page-17.mp3","image":"assets/08/pages/page-17.jpg","sentence":"コーヒー。","romaji":"koohii"},{"number":18,"audio":"assets/08/audio/page-18.mp3","image":"assets/08/pages/page-18.jpg","sentence":"こうちゃ。","romaji":"koucha"},{"number":19,"audio":"assets/08/audio/page-19.mp3","image":"assets/08/pages/page-19.jpg","sentence":"おちゃ。","romaji":"ocha"},{"number":20,"audio":"assets/08/audio/page-20.mp3","image":"assets/08/pages/page-20.jpg","sentence":"おさけ。にほんしゅ。","romaji":"osake. nihonshu"},{"number":21,"audio":"assets/08/audio/page-21.mp3","image":"assets/08/pages/page-21.jpg","sentence":"コーヒーのみますか。","romaji":"koohiinomimasu ka"},{"number":22,"audio":"assets/08/audio/page-22.mp3","image":"assets/08/pages/page-22.jpg","sentence":"はい、のみます。ありがとうございます。","romaji":"hai, nomimasu . arigatou gozaimasu"},{"number":23,"audio":"assets/08/audio/page-23.mp3","image":"assets/08/pages/page-23.jpg","sentence":"いいえ、けっこうです。ありがとうございます。","romaji":"iie, kekkoudesu. arigatou gozaimasu"},{"number":24,"audio":"assets/08/audio/page-24.mp3","image":"assets/08/pages/page-24.jpg","sentence":"のみます。コーヒーをのみます。","romaji":"nomimasu . koohiionomimasu"},{"number":25,"audio":"assets/08/audio/page-25.mp3","image":"assets/08/pages/page-25.jpg","sentence":"のみものをのみます。","romaji":"nomimonoonomimasu"},{"number":26,"audio":"assets/08/audio/page-26.mp3","image":"assets/08/pages/page-26.jpg","sentence":"のみものをのみます。ひこうきでなにをのみますか。","romaji":"nomimonoonomimasu . hikoukidenanionomimasu ka"}],"audio":null},{"kind":"lesson","lesson":"09","lessonTitle":"Likes and Habits","subtitle":"好き・一番・いつも・よく・あまり","page":1,"pageCount":31,"image":"assets/09/pages/page-01.jpg","audio":"assets/09/audio/page-01.mp3"},{"kind":"lesson","lesson":"09","lessonTitle":"Likes and Habits","subtitle":"好き・一番・いつも・よく・あまり","page":2,"pageCount":31,"image":"assets/09/pages/page-02.jpg","audio":null},{"kind":"lesson","lesson":"09","lessonTitle":"Likes and Habits","subtitle":"好き・一番・いつも・よく・あまり","page":3,"pageCount":31,"image":"assets/09/pages/page-03.jpg","audio":"assets/09/audio/page-03.mp3"},{"kind":"lesson","lesson":"09","lessonTitle":"Likes and Habits","subtitle":"好き・一番・いつも・よく・あまり","page":4,"pageCount":31,"image":"assets/09/pages/page-04.jpg","audio":"assets/09/audio/page-04.mp3"},{"kind":"lesson","lesson":"09","lessonTitle":"Likes and Habits","subtitle":"好き・一番・いつも・よく・あまり","page":5,"pageCount":31,"image":"assets/09/pages/page-05.jpg","audio":"assets/09/audio/page-05.mp3"},{"kind":"lesson","lesson":"09","lessonTitle":"Likes and Habits","subtitle":"好き・一番・いつも・よく・あまり","page":6,"pageCount":31,"image":"assets/09/pages/page-06.jpg","audio":"assets/09/audio/page-06.mp3"},{"kind":"lesson","lesson":"09","lessonTitle":"Likes and Habits","subtitle":"好き・一番・いつも・よく・あまり","page":7,"pageCount":31,"image":"assets/09/pages/page-07.jpg","audio":"assets/09/audio/page-07.mp3"},{"kind":"lesson","lesson":"09","lessonTitle":"Likes and Habits","subtitle":"好き・一番・いつも・よく・あまり","page":8,"pageCount":31,"image":"assets/09/pages/page-08.jpg","audio":"assets/09/audio/page-08.mp3"},{"kind":"lesson","lesson":"09","lessonTitle":"Likes and Habits","subtitle":"好き・一番・いつも・よく・あまり","page":9,"pageCount":31,"image":"assets/09/pages/page-09.jpg","audio":"assets/09/audio/page-09.mp3"},{"kind":"lesson","lesson":"09","lessonTitle":"Likes and Habits","subtitle":"好き・一番・いつも・よく・あまり","page":10,"pageCount":31,"image":"assets/09/pages/page-10.jpg","audio":"assets/09/audio/page-10.mp3"},{"kind":"lesson","lesson":"09","lessonTitle":"Likes and Habits","subtitle":"好き・一番・いつも・よく・あまり","page":11,"pageCount":31,"image":"assets/09/pages/page-11.jpg","audio":"assets/09/audio/page-11.mp3"},{"kind":"lesson","lesson":"09","lessonTitle":"Likes and Habits","subtitle":"好き・一番・いつも・よく・あまり","page":12,"pageCount":31,"image":"assets/09/pages/page-12.jpg","audio":"assets/09/audio/page-12.mp3"},{"kind":"lesson","lesson":"09","lessonTitle":"Likes and Habits","subtitle":"好き・一番・いつも・よく・あまり","page":13,"pageCount":31,"image":"assets/09/pages/page-13.jpg","audio":"assets/09/audio/page-13.mp3"},{"kind":"lesson","lesson":"09","lessonTitle":"Likes and Habits","subtitle":"好き・一番・いつも・よく・あまり","page":14,"pageCount":31,"image":"assets/09/pages/page-14.jpg","audio":"assets/09/audio/page-14.mp3"},{"kind":"lesson","lesson":"09","lessonTitle":"Likes and Habits","subtitle":"好き・一番・いつも・よく・あまり","page":15,"pageCount":31,"image":"assets/09/pages/page-15.jpg","audio":"assets/09/audio/page-15.mp3"},{"kind":"lesson","lesson":"09","lessonTitle":"Likes and Habits","subtitle":"好き・一番・いつも・よく・あまり","page":16,"pageCount":31,"image":"assets/09/pages/page-16.jpg","audio":"assets/09/audio/page-16.mp3"},{"kind":"lesson","lesson":"09","lessonTitle":"Likes and Habits","subtitle":"好き・一番・いつも・よく・あまり","page":17,"pageCount":31,"image":"assets/09/pages/page-17.jpg","audio":"assets/09/audio/page-17.mp3"},{"kind":"lesson","lesson":"09","lessonTitle":"Likes and Habits","subtitle":"好き・一番・いつも・よく・あまり","page":18,"pageCount":31,"image":"assets/09/pages/page-18.jpg","audio":"assets/09/audio/page-18.mp3"},{"kind":"lesson","lesson":"09","lessonTitle":"Likes and Habits","subtitle":"好き・一番・いつも・よく・あまり","page":19,"pageCount":31,"image":"assets/09/pages/page-19.jpg","audio":"assets/09/audio/page-19.mp3"},{"kind":"lesson","lesson":"09","lessonTitle":"Likes and Habits","subtitle":"好き・一番・いつも・よく・あまり","page":20,"pageCount":31,"image":"assets/09/pages/page-20.jpg","audio":"assets/09/audio/page-20.mp3"},{"kind":"lesson","lesson":"09","lessonTitle":"Likes and Habits","subtitle":"好き・一番・いつも・よく・あまり","page":21,"pageCount":31,"image":"assets/09/pages/page-21.jpg","audio":"assets/09/audio/page-21.mp3"},{"kind":"lesson","lesson":"09","lessonTitle":"Likes and Habits","subtitle":"好き・一番・いつも・よく・あまり","page":22,"pageCount":31,"image":"assets/09/pages/page-22.jpg","audio":"assets/09/audio/page-22.mp3"},{"kind":"lesson","lesson":"09","lessonTitle":"Likes and Habits","subtitle":"好き・一番・いつも・よく・あまり","page":23,"pageCount":31,"image":"assets/09/pages/page-23.jpg","audio":"assets/09/audio/page-23.mp3"},{"kind":"lesson","lesson":"09","lessonTitle":"Likes and Habits","subtitle":"好き・一番・いつも・よく・あまり","page":24,"pageCount":31,"image":"assets/09/pages/page-24.jpg","audio":"assets/09/audio/page-24.mp3"},{"kind":"lesson","lesson":"09","lessonTitle":"Likes and Habits","subtitle":"好き・一番・いつも・よく・あまり","page":25,"pageCount":31,"image":"assets/09/pages/page-25.jpg","audio":"assets/09/audio/page-25.mp3"},{"kind":"lesson","lesson":"09","lessonTitle":"Likes and Habits","subtitle":"好き・一番・いつも・よく・あまり","page":26,"pageCount":31,"image":"assets/09/pages/page-26.jpg","audio":"assets/09/audio/page-26.mp3"},{"kind":"lesson","lesson":"09","lessonTitle":"Likes and Habits","subtitle":"好き・一番・いつも・よく・あまり","page":27,"pageCount":31,"image":"assets/09/pages/page-27.jpg","audio":"assets/09/audio/page-27.mp3"},{"kind":"lesson","lesson":"09","lessonTitle":"Likes and Habits","subtitle":"好き・一番・いつも・よく・あまり","page":28,"pageCount":31,"image":"assets/09/pages/page-28.jpg","audio":"assets/09/audio/page-28.mp3"},{"kind":"lesson","lesson":"09","lessonTitle":"Likes and Habits","subtitle":"好き・一番・いつも・よく・あまり","page":29,"pageCount":31,"image":"assets/09/pages/page-29.jpg","audio":"assets/09/audio/page-29.mp3"},{"kind":"lesson","lesson":"09","lessonTitle":"Likes and Habits","subtitle":"好き・一番・いつも・よく・あまり","page":30,"pageCount":31,"image":"assets/09/pages/page-30.jpg","audio":"assets/09/audio/page-30.mp3"},{"kind":"lesson","lesson":"09","lessonTitle":"Likes and Habits","subtitle":"好き・一番・いつも・よく・あまり","page":31,"pageCount":31,"image":"assets/09/pages/page-31.jpg","audio":"assets/09/audio/page-31.mp3"},{"kind":"review","lesson":"09","lessonTitle":"Likes and Habits","subtitle":"好き・一番・いつも・よく・あまり","page":"Review","pageCount":31,"image":"assets/09/anime-review.png","reviewPdf":"assets/09/anime-decoding-review.pdf","answers":[{"number":"1","japanese":"私は野菜が好きです。","reading":"（わたしはやさいがすきです。）","english":"I like vegetables.","romaji":"watashi wayasaigasuki desu"},{"number":"2","japanese":"人参は好きじゃないです。","reading":"（にんじんはすきじゃないです。）","english":"I do not like carrots.","romaji":"ninjinhasuki ja naidesu"},{"number":"3","japanese":"ビールが一番好きです。","reading":"（ビールがいちばんすきです。）","english":"I like beer best.","romaji":"biirugaichibansuki desu"},{"number":"4","japanese":"珈琲が大好きです。","reading":"（コーヒーがだいすきです。）","english":"I love coffee.","romaji":"koohiigadaisuki desu"},{"number":"5","japanese":"朝、よくご飯を食べます。","reading":"（あさ、よくごはんをたべます。）","english":"I often eat rice in the morning.","romaji":"asa, yokugohanotabemasu"},{"number":"6","japanese":"いつも朝ご飯を食べます。","reading":"（いつもあさごはんをたべます。）","english":"I always eat breakfast.","romaji":"itsumoasagohanotabemasu"},{"number":"7","japanese":"あまりご飯を食べません。","reading":"（あまりごはんをたべません。）","english":"I do not eat rice very often.","romaji":"amarigohanotabemasen"},{"number":"8","japanese":"あまり珈琲を飲みません。","reading":"（あまりコーヒーをのみません。）","english":"I do not drink coffee very often.","romaji":"amarikoohiionomimasen"}],"audio":null},{"kind":"audioQuiz","lesson":"09","lessonTitle":"Likes and Habits","subtitle":"好き・一番・いつも・よく・あまり","page":"Audio Cards","pageCount":31,"cards":[{"number":1,"audio":"assets/09/audio/page-01.mp3","image":"assets/09/pages/page-01.jpg","sentence":"わさびは、すきじゃないです。","romaji":"wasabiha, suki ja naidesu"},{"number":3,"audio":"assets/09/audio/page-03.mp3","image":"assets/09/pages/page-03.jpg","sentence":"たべものはなにがすきですか。","romaji":"tabemonohananigasuki desu ka"},{"number":4,"audio":"assets/09/audio/page-04.mp3","image":"assets/09/pages/page-04.jpg","sentence":"わたしはやさいがすきです。","romaji":"watashi wayasaigasuki desu"},{"number":5,"audio":"assets/09/audio/page-05.mp3","image":"assets/09/pages/page-05.jpg","sentence":"にんじんはすきですか。","romaji":"ninjinhasuki desu ka"},{"number":6,"audio":"assets/09/audio/page-06.mp3","image":"assets/09/pages/page-06.jpg","sentence":"はい、すきです。","romaji":"hai, suki desu"},{"number":7,"audio":"assets/09/audio/page-07.mp3","image":"assets/09/pages/page-07.jpg","sentence":"すきです。さかながすきです。","romaji":"suki desu. sakanagasuki desu"},{"number":8,"audio":"assets/09/audio/page-08.mp3","image":"assets/09/pages/page-08.jpg","sentence":"いいえ、すきじゃないです。","romaji":"iie, suki ja naidesu"},{"number":9,"audio":"assets/09/audio/page-09.mp3","image":"assets/09/pages/page-09.jpg","sentence":"すきじゃないです。さかなはすきじゃないです。","romaji":"suki ja naidesu. sakanahasuki ja naidesu"},{"number":10,"audio":"assets/09/audio/page-10.mp3","image":"assets/09/pages/page-10.jpg","sentence":"たべものはなにがすきですか。","romaji":"tabemonohananigasuki desu ka"},{"number":11,"audio":"assets/09/audio/page-11.mp3","image":"assets/09/pages/page-11.jpg","sentence":"たべものがすきです。","romaji":"tabemonogasuki desu"},{"number":12,"audio":"assets/09/audio/page-12.mp3","image":"assets/09/pages/page-12.jpg","sentence":"たべものはすきじゃないです。","romaji":"tabemonohasuki ja naidesu"},{"number":13,"audio":"assets/09/audio/page-13.mp3","image":"assets/09/pages/page-13.jpg","sentence":"のみものはなにがすきですか。","romaji":"nomimonohananigasuki desu ka"},{"number":14,"audio":"assets/09/audio/page-14.mp3","image":"assets/09/pages/page-14.jpg","sentence":"のみものがすきです。","romaji":"nomimonogasuki desu"},{"number":15,"audio":"assets/09/audio/page-15.mp3","image":"assets/09/pages/page-15.jpg","sentence":"のみものはすきじゃないです。","romaji":"nomimonohasuki ja naidesu"},{"number":16,"audio":"assets/09/audio/page-16.mp3","image":"assets/09/pages/page-16.jpg","sentence":"ビールがいちばんすきです。","romaji":"biirugaichibansuki desu"},{"number":17,"audio":"assets/09/audio/page-17.mp3","image":"assets/09/pages/page-17.jpg","sentence":"いちばん。ビールがいちばんすきです。","romaji":"ichiban. biirugaichibansuki desu"},{"number":18,"audio":"assets/09/audio/page-18.mp3","image":"assets/09/pages/page-18.jpg","sentence":"だいすき。コーヒーがだいすきです。","romaji":"daisuki. koohiigadaisuki desu"},{"number":19,"audio":"assets/09/audio/page-19.mp3","image":"assets/09/pages/page-19.jpg","sentence":"なにがいちばんすきですか。なにかがいちばんすきです。","romaji":"nanigaichibansuki desu ka. nanikagaichibansuki desu"},{"number":20,"audio":"assets/09/audio/page-20.mp3","image":"assets/09/pages/page-20.jpg","sentence":"なにをよくたべますか。","romaji":"nanioyokutabemasu ka"},{"number":21,"audio":"assets/09/audio/page-21.mp3","image":"assets/09/pages/page-21.jpg","sentence":"よくごはんをたべます。","romaji":"yokugohanotabemasu"},{"number":22,"audio":"assets/09/audio/page-22.mp3","image":"assets/09/pages/page-22.jpg","sentence":"いつもごはんを。たべます。","romaji":"itsumogohano. tabemasu"},{"number":23,"audio":"assets/09/audio/page-23.mp3","image":"assets/09/pages/page-23.jpg","sentence":"あまりごはんをたべません。","romaji":"amarigohanotabemasen"},{"number":24,"audio":"assets/09/audio/page-24.mp3","image":"assets/09/pages/page-24.jpg","sentence":"わたしはよくヨーグルトをたべます。","romaji":"watashi wayokuyoogurutootabemasu"},{"number":25,"audio":"assets/09/audio/page-25.mp3","image":"assets/09/pages/page-25.jpg","sentence":"わたしはあまりコーヒーをのみません。","romaji":"watashi waamarikoohiionomimasen"},{"number":26,"audio":"assets/09/audio/page-26.mp3","image":"assets/09/pages/page-26.jpg","sentence":"あさごはんをたべますか。","romaji":"asagohanotabemasu ka"},{"number":27,"audio":"assets/09/audio/page-27.mp3","image":"assets/09/pages/page-27.jpg","sentence":"はい、【いつも・よく】あさごはんをたべます。","romaji":"hai, 【itsumo・yoku】asagohanotabemasu"},{"number":28,"audio":"assets/09/audio/page-28.mp3","image":"assets/09/pages/page-28.jpg","sentence":"いいえ、あまりあさごはんをたべません。","romaji":"iie, amariasagohanotabemasen"},{"number":29,"audio":"assets/09/audio/page-29.mp3","image":"assets/09/pages/page-29.jpg","sentence":"コーヒーをのみますか。","romaji":"koohiionomimasu ka"},{"number":30,"audio":"assets/09/audio/page-30.mp3","image":"assets/09/pages/page-30.jpg","sentence":"はい、【いつも・よく】コーヒーをのみます。","romaji":"hai, 【itsumo・yoku】koohiionomimasu"},{"number":31,"audio":"assets/09/audio/page-31.mp3","image":"assets/09/pages/page-31.jpg","sentence":"いいえ、あまりコーヒーをのみません。","romaji":"iie, amarikoohiionomimasen"}],"audio":null},{"kind":"culture","lesson":"C01","lessonTitle":"Japanese-Inspired Foods at Trader Joe’s","subtitle":"Food and cultural adaptation","page":1,"pageCount":12,"image":"assets/C01/pages/page-01.jpg","sourcePdf":"assets/C01/original.pdf","audio":null},{"kind":"culture","lesson":"C01","lessonTitle":"Japanese-Inspired Foods at Trader Joe’s","subtitle":"Food and cultural adaptation","page":2,"pageCount":12,"image":"assets/C01/pages/page-02.jpg","sourcePdf":"assets/C01/original.pdf","audio":null},{"kind":"culture","lesson":"C01","lessonTitle":"Japanese-Inspired Foods at Trader Joe’s","subtitle":"Food and cultural adaptation","page":3,"pageCount":12,"image":"assets/C01/pages/page-03.jpg","sourcePdf":"assets/C01/original.pdf","audio":null},{"kind":"culture","lesson":"C01","lessonTitle":"Japanese-Inspired Foods at Trader Joe’s","subtitle":"Food and cultural adaptation","page":4,"pageCount":12,"image":"assets/C01/pages/page-04.jpg","sourcePdf":"assets/C01/original.pdf","audio":null},{"kind":"culture","lesson":"C01","lessonTitle":"Japanese-Inspired Foods at Trader Joe’s","subtitle":"Food and cultural adaptation","page":5,"pageCount":12,"image":"assets/C01/pages/page-05.jpg","sourcePdf":"assets/C01/original.pdf","audio":null},{"kind":"culture","lesson":"C01","lessonTitle":"Japanese-Inspired Foods at Trader Joe’s","subtitle":"Food and cultural adaptation","page":6,"pageCount":12,"image":"assets/C01/pages/page-06.jpg","sourcePdf":"assets/C01/original.pdf","audio":null},{"kind":"culture","lesson":"C01","lessonTitle":"Japanese-Inspired Foods at Trader Joe’s","subtitle":"Food and cultural adaptation","page":7,"pageCount":12,"image":"assets/C01/pages/page-07.jpg","sourcePdf":"assets/C01/original.pdf","audio":null},{"kind":"culture","lesson":"C01","lessonTitle":"Japanese-Inspired Foods at Trader Joe’s","subtitle":"Food and cultural adaptation","page":8,"pageCount":12,"image":"assets/C01/pages/page-08.jpg","sourcePdf":"assets/C01/original.pdf","audio":null},{"kind":"culture","lesson":"C01","lessonTitle":"Japanese-Inspired Foods at Trader Joe’s","subtitle":"Food and cultural adaptation","page":9,"pageCount":12,"image":"assets/C01/pages/page-09.jpg","sourcePdf":"assets/C01/original.pdf","audio":null},{"kind":"culture","lesson":"C01","lessonTitle":"Japanese-Inspired Foods at Trader Joe’s","subtitle":"Food and cultural adaptation","page":10,"pageCount":12,"image":"assets/C01/pages/page-10.jpg","sourcePdf":"assets/C01/original.pdf","audio":null},{"kind":"culture","lesson":"C01","lessonTitle":"Japanese-Inspired Foods at Trader Joe’s","subtitle":"Food and cultural adaptation","page":11,"pageCount":12,"image":"assets/C01/pages/page-11.jpg","sourcePdf":"assets/C01/original.pdf","audio":null},{"kind":"culture","lesson":"C01","lessonTitle":"Japanese-Inspired Foods at Trader Joe’s","subtitle":"Food and cultural adaptation","page":12,"pageCount":12,"image":"assets/C01/pages/page-12.jpg","sourcePdf":"assets/C01/original.pdf","audio":null},{"kind":"culture","lesson":"C02","lessonTitle":"Frozen Foods in Japan","subtitle":"冷凍食品（れいとうしょくひん）","page":1,"pageCount":7,"image":"assets/C02/pages/page-1.jpg","sourcePdf":"assets/C02/original.pdf","audio":null},{"kind":"culture","lesson":"C02","lessonTitle":"Frozen Foods in Japan","subtitle":"冷凍食品（れいとうしょくひん）","page":2,"pageCount":7,"image":"assets/C02/pages/page-2.jpg","sourcePdf":"assets/C02/original.pdf","audio":null},{"kind":"culture","lesson":"C02","lessonTitle":"Frozen Foods in Japan","subtitle":"冷凍食品（れいとうしょくひん）","page":3,"pageCount":7,"image":"assets/C02/pages/page-3.jpg","sourcePdf":"assets/C02/original.pdf","audio":null},{"kind":"culture","lesson":"C02","lessonTitle":"Frozen Foods in Japan","subtitle":"冷凍食品（れいとうしょくひん）","page":4,"pageCount":7,"image":"assets/C02/pages/page-4.jpg","sourcePdf":"assets/C02/original.pdf","audio":null},{"kind":"culture","lesson":"C02","lessonTitle":"Frozen Foods in Japan","subtitle":"冷凍食品（れいとうしょくひん）","page":5,"pageCount":7,"image":"assets/C02/pages/page-5.jpg","sourcePdf":"assets/C02/original.pdf","audio":null},{"kind":"culture","lesson":"C02","lessonTitle":"Frozen Foods in Japan","subtitle":"冷凍食品（れいとうしょくひん）","page":6,"pageCount":7,"image":"assets/C02/pages/page-6.jpg","sourcePdf":"assets/C02/original.pdf","audio":null},{"kind":"culture","lesson":"C02","lessonTitle":"Frozen Foods in Japan","subtitle":"冷凍食品（れいとうしょくひん）","page":7,"pageCount":7,"image":"assets/C02/pages/page-7.jpg","sourcePdf":"assets/C02/original.pdf","audio":null},{"kind":"culture","lesson":"C03","lessonTitle":"The Story of Punch-kun","subtitle":"Japanese snow-monkey culture","page":1,"pageCount":7,"image":"assets/C03/pages/page-1.jpg","sourcePdf":"assets/C03/original.pdf","audio":null},{"kind":"culture","lesson":"C03","lessonTitle":"The Story of Punch-kun","subtitle":"Japanese snow-monkey culture","page":2,"pageCount":7,"image":"assets/C03/pages/page-2.jpg","sourcePdf":"assets/C03/original.pdf","audio":null},{"kind":"culture","lesson":"C03","lessonTitle":"The Story of Punch-kun","subtitle":"Japanese snow-monkey culture","page":3,"pageCount":7,"image":"assets/C03/pages/page-3.jpg","sourcePdf":"assets/C03/original.pdf","audio":null},{"kind":"culture","lesson":"C03","lessonTitle":"The Story of Punch-kun","subtitle":"Japanese snow-monkey culture","page":4,"pageCount":7,"image":"assets/C03/pages/page-4.jpg","sourcePdf":"assets/C03/original.pdf","audio":null},{"kind":"culture","lesson":"C03","lessonTitle":"The Story of Punch-kun","subtitle":"Japanese snow-monkey culture","page":5,"pageCount":7,"image":"assets/C03/pages/page-5.jpg","sourcePdf":"assets/C03/original.pdf","audio":null},{"kind":"culture","lesson":"C03","lessonTitle":"The Story of Punch-kun","subtitle":"Japanese snow-monkey culture","page":6,"pageCount":7,"image":"assets/C03/pages/page-6.jpg","sourcePdf":"assets/C03/original.pdf","audio":null},{"kind":"culture","lesson":"C03","lessonTitle":"The Story of Punch-kun","subtitle":"Japanese snow-monkey culture","page":7,"pageCount":7,"image":"assets/C03/pages/page-7.jpg","sourcePdf":"assets/C03/original.pdf","audio":null},{"kind":"culture","lesson":"C04","lessonTitle":"Japan in April","subtitle":"School, business, and renewal","page":1,"pageCount":11,"image":"assets/C04/pages/page-01.jpg","sourcePdf":"assets/C04/original.pdf","audio":null},{"kind":"culture","lesson":"C04","lessonTitle":"Japan in April","subtitle":"School, business, and renewal","page":2,"pageCount":11,"image":"assets/C04/pages/page-02.jpg","sourcePdf":"assets/C04/original.pdf","audio":null},{"kind":"culture","lesson":"C04","lessonTitle":"Japan in April","subtitle":"School, business, and renewal","page":3,"pageCount":11,"image":"assets/C04/pages/page-03.jpg","sourcePdf":"assets/C04/original.pdf","audio":null},{"kind":"culture","lesson":"C04","lessonTitle":"Japan in April","subtitle":"School, business, and renewal","page":4,"pageCount":11,"image":"assets/C04/pages/page-04.jpg","sourcePdf":"assets/C04/original.pdf","audio":null},{"kind":"culture","lesson":"C04","lessonTitle":"Japan in April","subtitle":"School, business, and renewal","page":5,"pageCount":11,"image":"assets/C04/pages/page-05.jpg","sourcePdf":"assets/C04/original.pdf","audio":null},{"kind":"culture","lesson":"C04","lessonTitle":"Japan in April","subtitle":"School, business, and renewal","page":6,"pageCount":11,"image":"assets/C04/pages/page-06.jpg","sourcePdf":"assets/C04/original.pdf","audio":null},{"kind":"culture","lesson":"C04","lessonTitle":"Japan in April","subtitle":"School, business, and renewal","page":7,"pageCount":11,"image":"assets/C04/pages/page-07.jpg","sourcePdf":"assets/C04/original.pdf","audio":null},{"kind":"culture","lesson":"C04","lessonTitle":"Japan in April","subtitle":"School, business, and renewal","page":8,"pageCount":11,"image":"assets/C04/pages/page-08.jpg","sourcePdf":"assets/C04/original.pdf","audio":null},{"kind":"culture","lesson":"C04","lessonTitle":"Japan in April","subtitle":"School, business, and renewal","page":9,"pageCount":11,"image":"assets/C04/pages/page-09.jpg","sourcePdf":"assets/C04/original.pdf","audio":null},{"kind":"culture","lesson":"C04","lessonTitle":"Japan in April","subtitle":"School, business, and renewal","page":10,"pageCount":11,"image":"assets/C04/pages/page-10.jpg","sourcePdf":"assets/C04/original.pdf","audio":null},{"kind":"culture","lesson":"C04","lessonTitle":"Japan in April","subtitle":"School, business, and renewal","page":11,"pageCount":11,"image":"assets/C04/pages/page-11.jpg","sourcePdf":"assets/C04/original.pdf","audio":null},{"kind":"culture","lesson":"C05","lessonTitle":"Cherry Blossoms: U.S. and Japan","subtitle":"桜（さくら） cultural exchange","page":1,"pageCount":12,"image":"assets/C05/pages/page-01.jpg","sourcePdf":"assets/C05/original.pdf","audio":null},{"kind":"culture","lesson":"C05","lessonTitle":"Cherry Blossoms: U.S. and Japan","subtitle":"桜（さくら） cultural exchange","page":2,"pageCount":12,"image":"assets/C05/pages/page-02.jpg","sourcePdf":"assets/C05/original.pdf","audio":null},{"kind":"culture","lesson":"C05","lessonTitle":"Cherry Blossoms: U.S. and Japan","subtitle":"桜（さくら） cultural exchange","page":3,"pageCount":12,"image":"assets/C05/pages/page-03.jpg","sourcePdf":"assets/C05/original.pdf","audio":null},{"kind":"culture","lesson":"C05","lessonTitle":"Cherry Blossoms: U.S. and Japan","subtitle":"桜（さくら） cultural exchange","page":4,"pageCount":12,"image":"assets/C05/pages/page-04.jpg","sourcePdf":"assets/C05/original.pdf","audio":null},{"kind":"culture","lesson":"C05","lessonTitle":"Cherry Blossoms: U.S. and Japan","subtitle":"桜（さくら） cultural exchange","page":5,"pageCount":12,"image":"assets/C05/pages/page-05.jpg","sourcePdf":"assets/C05/original.pdf","audio":null},{"kind":"culture","lesson":"C05","lessonTitle":"Cherry Blossoms: U.S. and Japan","subtitle":"桜（さくら） cultural exchange","page":6,"pageCount":12,"image":"assets/C05/pages/page-06.jpg","sourcePdf":"assets/C05/original.pdf","audio":null},{"kind":"culture","lesson":"C05","lessonTitle":"Cherry Blossoms: U.S. and Japan","subtitle":"桜（さくら） cultural exchange","page":7,"pageCount":12,"image":"assets/C05/pages/page-07.jpg","sourcePdf":"assets/C05/original.pdf","audio":null},{"kind":"culture","lesson":"C05","lessonTitle":"Cherry Blossoms: U.S. and Japan","subtitle":"桜（さくら） cultural exchange","page":8,"pageCount":12,"image":"assets/C05/pages/page-08.jpg","sourcePdf":"assets/C05/original.pdf","audio":null},{"kind":"culture","lesson":"C05","lessonTitle":"Cherry Blossoms: U.S. and Japan","subtitle":"桜（さくら） cultural exchange","page":9,"pageCount":12,"image":"assets/C05/pages/page-09.jpg","sourcePdf":"assets/C05/original.pdf","audio":null},{"kind":"culture","lesson":"C05","lessonTitle":"Cherry Blossoms: U.S. and Japan","subtitle":"桜（さくら） cultural exchange","page":10,"pageCount":12,"image":"assets/C05/pages/page-10.jpg","sourcePdf":"assets/C05/original.pdf","audio":null},{"kind":"culture","lesson":"C05","lessonTitle":"Cherry Blossoms: U.S. and Japan","subtitle":"桜（さくら） cultural exchange","page":11,"pageCount":12,"image":"assets/C05/pages/page-11.jpg","sourcePdf":"assets/C05/original.pdf","audio":null},{"kind":"culture","lesson":"C05","lessonTitle":"Cherry Blossoms: U.S. and Japan","subtitle":"桜（さくら） cultural exchange","page":12,"pageCount":12,"image":"assets/C05/pages/page-12.jpg","sourcePdf":"assets/C05/original.pdf","audio":null}]};
 
-    <main>
-      <section class="hero" id="home">
-        <div class="hero-copy">
-          <span class="eyebrow">Beginner friendly</span>
-          <h1>Learn Japanese in small, steady steps.</h1>
-          <p>
-            Practice hiragana, build core vocabulary, hear common phrases in your head, and
-            track your progress from one focused lesson dashboard.
-          </p>
-          <div class="hero-actions" aria-label="Primary actions">
-            <a class="button primary" href="#course" data-course-tab="kana">Start kana practice</a>
-            <a class="button secondary" href="#course" data-course-tab="lessons">View lessons</a>
-          </div>
-          <div class="class-welcome">
-            <strong>ようこそ, Minae Hayashi Sensei and classmates</strong>
-            <p>
-              Welcome Andrea, Lauren, Aaron, Tomo, Sam, Mario, and our class community.
-              Feel free to use this along your Japanese journeys.
-            </p>
-          </div>
-        </div>
-        <div class="hero-meter" aria-label="Study progress">
-          <span>今日の進み</span>
-          <strong id="heroProgress">0%</strong>
-          <div class="progress-track">
-            <span id="heroProgressBar"></span>
-          </div>
-        </div>
-      </section>
+const UI_TEXT={
+ en:{
+  brandCourse:"Interactive Teaching Course",brandDetails:"Lessons 1–9 • Cultural Exchange • Audio included",lessons:"Lessons",allSlides:"All Slides",howToUse:"How to Use",instructionVideos:"Instruction Videos",instructionIntro:"Choose the English or Japanese walkthrough. Both videos explain lesson navigation, All Slides, audio practice, Cultural Exchange, and Utilize All editing tools.",englishWalkthrough:"English walkthrough",japaneseWalkthrough:"Japanese walkthrough",editSlide:"Edit Slide",utilizeAll:"Utilize All",installApp:"Install App",fullscreen:"Fullscreen",nativeAudio:"Native Japanese audio",openVideo:"Open Video",openKanjiKey:"Open kanji caption key",openCulturalPdf:"Open original cultural PDF",editThisSlide:"Edit This Slide",previous:"← Previous",next:"Next →",chooseLesson:"Choose a lesson",close:"Close",lessonSlides:"Lesson Slides",editSlideContent:"Edit Slide Content",customTitle:"Custom slide title",customTitlePlaceholder:"Leave blank to use the original title",teacherNote:"Teacher/student note",teacherNotePlaceholder:"Add instructions, explanation, or discussion notes",videoLink:"Video link",replacementImage:"Replacement image link (optional)",cancel:"Cancel",saveChanges:"Save Changes",completeEditor:"Utilize All - Complete Slide Editor",editorIntro:"PowerPoint-style controls for the complete HTML course. Current slide:",uploadSlides:"Upload Slides",uploadSlidesHelp:"Add one or more image slides after the current slide.",duplicateSlide:"Duplicate Slide",duplicateSlideHelp:"Create an editable copy of the current slide.",deleteSlide:"Delete Slide",deleteSlideHelp:"Remove the current slide from the presentation.",moveEarlier:"Move Earlier",moveEarlierHelp:"Move the current slide one position earlier.",moveLater:"Move Later",moveLaterHelp:"Move the current slide one position later.",editContent:"Edit Content",editContentHelp:"Edit the slide title, notes, image link, or video.",restoreDeleted:"Restore Last Deleted",restoreDeletedHelp:"Return the most recently deleted slide.",exportEdits:"Export Course Edits",exportEditsHelp:"Download edits and uploaded slides as a portable JSON file.",importEdits:"Import Course Edits",importEditsHelp:"Load a previously exported course-editing JSON file.",restoreCourse:"Restore Original Course",restoreCourseHelp:"Remove structural edits and return all original slides.",noAction:"No editing action performed yet.",languageLessons:"Language Lessons",culturalExchange:"Cultural Exchange",slides:"slides",review:"review",audioCards:"audio cards",animeReview:"Anime Review",audioGuessingCards:"Audio Guessing Cards",uploadedSlide:"Uploaded Slide",page:"Page",completeSlides:"Complete Slides",finalReview:"Final Anime Decoding Review",reveal:"Reveal",hide:"Hide",listenGuess:"Listen and guess",flipCard:"Flip Card",hideAnswer:"Hide Answer",answerImage:"Answer image",checkPicture:"Check the action or vocabulary in the picture.",reviewAudio:"Use the lesson audio before attempting the review.",cardAudio:"Play the audio directly on each card.",cultureSlide:"Cultural exchange slide.",visualSlide:"Visual lesson slide.",slidesAvailable:"slides currently available. Structural edits save automatically in this browser.",appInstalled:"App Installed"
+ },
+ ja:{
+  brandCourse:"インタラクティブ日本語教材",brandDetails:"レッスン1～9・文化交流・音声付き",lessons:"レッスン",allSlides:"スライド一覧",howToUse:"使い方",instructionVideos:"使い方の動画",instructionIntro:"英語または日本語の説明動画を選んでください。レッスン移動、スライド一覧、音声練習、文化交流、「すべて活用」の編集機能を説明しています。",englishWalkthrough:"英語版",japaneseWalkthrough:"日本語版",editSlide:"スライド編集",utilizeAll:"すべて活用",installApp:"アプリを追加",fullscreen:"全画面",nativeAudio:"日本語ネイティブ音声",openVideo:"動画を開く",openKanjiKey:"漢字キャプションキーを開く",openCulturalPdf:"文化教材のPDFを開く",editThisSlide:"このスライドを編集",previous:"← 前へ",next:"次へ →",chooseLesson:"レッスンを選択",close:"閉じる",lessonSlides:"レッスンのスライド",editSlideContent:"スライド内容を編集",customTitle:"スライドのタイトル",customTitlePlaceholder:"空欄の場合は元のタイトルを使用します",teacherNote:"教師・学習者向けメモ",teacherNotePlaceholder:"説明、指示、ディスカッション用メモを追加",videoLink:"動画リンク",replacementImage:"差し替え画像リンク（任意）",cancel:"キャンセル",saveChanges:"変更を保存",completeEditor:"Utilize All・スライド編集ツール",editorIntro:"PowerPointのようにHTML教材全体を編集できます。現在のスライド：",uploadSlides:"スライドを追加",uploadSlidesHelp:"現在のスライドの後に画像スライドを追加します。",duplicateSlide:"スライドを複製",duplicateSlideHelp:"現在のスライドの編集可能なコピーを作成します。",deleteSlide:"スライドを削除",deleteSlideHelp:"現在のスライドを教材から削除します。",moveEarlier:"前へ移動",moveEarlierHelp:"現在のスライドを一つ前へ移動します。",moveLater:"後ろへ移動",moveLaterHelp:"現在のスライドを一つ後ろへ移動します。",editContent:"内容を編集",editContentHelp:"タイトル、メモ、画像リンク、動画を編集します。",restoreDeleted:"削除を元に戻す",restoreDeletedHelp:"最後に削除したスライドを戻します。",exportEdits:"編集内容を書き出す",exportEditsHelp:"編集内容と追加スライドをJSONファイルで保存します。",importEdits:"編集内容を読み込む",importEditsHelp:"保存した教材編集JSONファイルを読み込みます。",restoreCourse:"元の教材に戻す",restoreCourseHelp:"編集内容を削除し、元のスライドに戻します。",noAction:"まだ編集操作は行われていません。",languageLessons:"日本語レッスン",culturalExchange:"文化交流",slides:"枚",review:"復習",audioCards:"音声カード",animeReview:"アニメ復習",audioGuessingCards:"音声クイズカード",uploadedSlide:"追加スライド",page:"ページ",completeSlides:"全スライド",finalReview:"アニメ画像の最終復習",reveal:"答えを見る",hide:"隠す",listenGuess:"音声を聞いて答えましょう",flipCard:"カードをめくる",hideAnswer:"答えを隠す",answerImage:"答えの画像",checkPicture:"画像の動作や語彙を確認しましょう。",reviewAudio:"復習の前にレッスン音声を聞きましょう。",cardAudio:"各カードの音声を再生してください。",cultureSlide:"文化交流のスライドです。",visualSlide:"画像を使ったレッスンスライドです。",slidesAvailable:"枚のスライドがあります。編集内容はこのブラウザに自動保存されます。",appInstalled:"アプリ追加済み"
+ }
+};
+const LESSON_JA={"01":"日本語の挨拶","02":"仕事と物の説明","03":"私の家族","04":"人の数え方","05":"ゴールデンウィーク","06":"住んでいる場所","07":"所有と年齢","08":"食べ物と飲み物","09":"好きなものと習慣","C01":"トレーダー・ジョーズの日本風食品","C02":"日本の冷凍食品","C03":"パンチ君の物語","C04":"日本の4月","C05":"アメリカと日本の桜"};
+const CULTURE_GROUP_JA={"Lesson 5 - Seasonal Culture":"レッスン5・季節の文化","Lesson 7 - Animals and Daily Life":"レッスン7・動物と日常生活","Lesson 8 - Food and Drinks":"レッスン8・食べ物と飲み物"};
+let uiLanguage=localStorage.getItem("jp-course-ui-language")==="ja"?"ja":"en";
+const tr=key=>UI_TEXT[uiLanguage][key]||UI_TEXT.en[key]||key;
+const bi=(english,japanese)=>uiLanguage==="ja"?japanese:english;
+const localizedLessonTitle=lesson=>uiLanguage==="ja"?(LESSON_JA[lesson.id]||lesson.title):lesson.title;
+function applyLanguage(){
+ document.documentElement.lang=uiLanguage;
+ document.querySelectorAll("[data-i18n]").forEach(el=>el.textContent=tr(el.dataset.i18n));
+ document.querySelectorAll("[data-i18n-placeholder]").forEach(el=>el.placeholder=tr(el.dataset.i18nPlaceholder));
+ $("languageBtn").textContent=uiLanguage==="en"?"日本語":"English";
+ buildNav();render();
+}
+let data,index=Number(localStorage.getItem("jp-course-slide")||0),deletedSlides=[];
+const STRUCTURE_KEY="jp-course-structure-v3",DELETED_KEY="jp-course-deleted-v3",DB_NAME="jp-course-editor-v1";
+const $=id=>document.getElementById(id);
+const clone=x=>JSON.parse(JSON.stringify(x));
+const makeUid=(s,i)=>s.uid||`base:${s.lesson}:${s.kind}:${s.page}:${i}`;
+function originalData(){
+ const fresh=clone(COURSE_DATA);
+ fresh.slides.forEach((s,i)=>s.uid=makeUid(s,i));
+ return fresh;
+}
+function refreshLessons(){
+ data.lessons.forEach(l=>{
+   const matches=data.slides.map((s,i)=>({s,i})).filter(x=>x.s.lesson===l.id);
+   l.start=matches.length?matches[0].i:-1;l.count=matches.length;
+ });
+}
+function persistStructure(){
+ refreshLessons();
+ localStorage.setItem(STRUCTURE_KEY,JSON.stringify(data));
+ localStorage.setItem(DELETED_KEY,JSON.stringify(deletedSlides));
+}
+function openDb(){
+ return new Promise((resolve,reject)=>{
+   const request=indexedDB.open(DB_NAME,1);
+   request.onupgradeneeded=()=>request.result.createObjectStore("images",{keyPath:"id"});
+   request.onsuccess=()=>resolve(request.result);request.onerror=()=>reject(request.error);
+ });
+}
+async function imagePut(id,dataUrl){const db=await openDb();return new Promise((resolve,reject)=>{const tx=db.transaction("images","readwrite");tx.objectStore("images").put({id,dataUrl});tx.oncomplete=()=>resolve();tx.onerror=()=>reject(tx.error)})}
+async function imageGet(id){if(!id)return null;const db=await openDb();return new Promise((resolve,reject)=>{const r=db.transaction("images").objectStore("images").get(id);r.onsuccess=()=>resolve(r.result?.dataUrl||null);r.onerror=()=>reject(r.error)})}
+async function imageAll(){const db=await openDb();return new Promise((resolve,reject)=>{const r=db.transaction("images").objectStore("images").getAll();r.onsuccess=()=>resolve(r.result||[]);r.onerror=()=>reject(r.error)})}
+async function imageClear(){const db=await openDb();return new Promise((resolve,reject)=>{const tx=db.transaction("images","readwrite");tx.objectStore("images").clear();tx.oncomplete=()=>resolve();tx.onerror=()=>reject(tx.error)})}
+async function init(){
+ try{data=JSON.parse(localStorage.getItem(STRUCTURE_KEY)||"null")||originalData()}catch{data=originalData()}
+ data.lessons=COURSE_DATA.lessons.map(base=>({...base,...(data.lessons||[]).find(x=>x.id===base.id)}));
+ data.slides.forEach((s,i)=>s.uid=makeUid(s,i));
+ try{deletedSlides=JSON.parse(localStorage.getItem(DELETED_KEY)||"[]")}catch{deletedSlides=[]}
+ refreshLessons();index=Math.max(0,Math.min(index,data.slides.length-1));applyLanguage();
+}
+function buildNav(){
+ const language=data.lessons.filter(l=>l.group!=="culture"&&l.count);
+ const cultureOrder=["Lesson 5 - Seasonal Culture","Lesson 7 - Animals and Daily Life","Lesson 8 - Food and Drinks"];
+ const culture=data.lessons.filter(l=>l.group==="culture"&&l.count).sort((a,b)=>{
+   const groupDiff=cultureOrder.indexOf(a.cultureGroup)-cultureOrder.indexOf(b.cultureGroup);
+   return groupDiff||a.id.localeCompare(b.id);
+ });
+ const make=container=>{
+   container.innerHTML="";
+   const addHeading=text=>{const h=document.createElement("div");h.className="nav-group";h.textContent=text;container.appendChild(h)};
+   const addLesson=l=>{const b=document.createElement("button");b.className="lesson-btn";b.dataset.lesson=l.id;b.innerHTML=`<b>${l.id}. ${safeText(localizedLessonTitle(l))}</b><span>${l.subtitle}${l.romaji?`<em>${l.romaji}</em>`:""} • ${l.count} ${tr("slides")}${l.hasReview?` + ${tr("review")}`:""}${l.hasAudioQuiz?` + ${tr("audioCards")}`:""}</span>`;b.onclick=()=>{index=data.slides.findIndex(s=>s.lesson===l.id);render();$("lessonDialog").close?.()};container.appendChild(b)};
+   addHeading(tr("languageLessons"));language.forEach(addLesson);
+   addHeading(tr("culturalExchange"));let subgroup="";
+   culture.forEach(l=>{if(l.cultureGroup!==subgroup){subgroup=l.cultureGroup;const h=document.createElement("div");h.className="nav-subgroup";h.textContent=uiLanguage==="ja"?(CULTURE_GROUP_JA[subgroup]||subgroup):subgroup;container.appendChild(h)}addLesson(l)});
+ };
+ make($("lessonNav"));make($("mobileNav"));
+}
+function editKey(s){return `jp-course-edit:${s.uid||`${s.lesson}:${s.kind}:${s.page}`}`}
+function getEdit(s){try{return JSON.parse(localStorage.getItem(editKey(s))||"{}")}catch{return {}}}
+function safeText(x){const d=document.createElement("div");d.textContent=x||"";return d.innerHTML}
+function vocabularyFocus(value){const text=value||"";const quoted=[...text.matchAll(/「([^」]+)」/g)].map(match=>match[1]);return quoted.length?quoted.join(" "):text}
+function morae(word){
+ const letters=[...word],units=[];let i=0;
+ const vowel=char=>/[aeiouāīūēō]/i.test(char||"");
+ while(i<letters.length){
+   const current=letters[i],lower=current.toLowerCase();
+   if(lower==="-"||lower==="・"){i++;continue}
+   if(vowel(current)){units.push(current);i++;continue}
+   if(lower==="n"&&(i===letters.length-1||!vowel(letters[i+1])||letters[i+1]?.toLowerCase()==="n")){
+     units.push(current);i++;continue;
+   }
+   let unit=current;i++;
+   while(i<letters.length&&!vowel(letters[i])){
+     if(letters[i].toLowerCase()==="n"&&i+1<letters.length&&!vowel(letters[i+1]))break;
+     unit+=letters[i];i++;
+   }
+   if(i<letters.length&&vowel(letters[i])){unit+=letters[i];i++}
+   units.push(unit);
+ }
+ return units.filter(Boolean);
+}
+function romajiGuide(value){
+ const tokens=String(value||"").match(/[A-Za-zĀĪŪĒŌāīūēō-]+|[^A-Za-zĀĪŪĒŌāīūēō\s-]+/g)||[];
+ return tokens.map(token=>{
+   if(/^[A-Za-zĀĪŪĒŌāīūēō-]+$/.test(token)){
+     const sounds=morae(token).map(safeText);
+     return `<span class="mora-word">${sounds.join('<span class="mora-dot"> · </span>')}</span>`;
+   }
+   return `<span class="mora-punctuation">${safeText(token)}</span>`;
+ }).join("");
+}
+function currentLesson(){return data.lessons.find(l=>l.id===data.slides[index]?.lesson)}
+function slideLabel(s){return s.kind==="review"?tr("animeReview"):s.kind==="audioQuiz"?tr("audioGuessingCards"):s.kind==="custom"?(s.customTitle||tr("uploadedSlide")):`${tr("page")} ${s.page}`}
+async function resolvedImage(s,edit){return edit.image||(s.uploadedImageId?await imageGet(s.uploadedImageId):null)||s.image||""}
+async function openSlideBrowser(){
+ const s=data.slides[index],items=data.slides.map((x,i)=>({x,i})).filter(o=>o.x.lesson===s.lesson);
+ const lesson=currentLesson();$("slideDialogTitle").textContent=`${s.lesson} ${localizedLessonTitle(lesson||{id:s.lesson,title:s.lessonTitle})} - ${tr("completeSlides")}`;
+ const cards=[];
+ for(const {x,i} of items){const image=await resolvedImage(x,getEdit(x));cards.push(`<button class="thumb ${i===index?"current":""}" data-index="${i}">${image?`<img src="${image}" alt="">`:""}<b>${safeText(slideLabel(x))}</b></button>`)}
+ $("thumbGrid").innerHTML=cards.join("");
+ $("thumbGrid").querySelectorAll(".thumb").forEach(b=>b.onclick=()=>{index=Number(b.dataset.index);$("slideDialog").close();render()});
+ $("slideDialog").showModal();
+}
+function openEditor(){
+ const s=data.slides[index],e=getEdit(s);
+ $("editTitle").value=e.title||"";$("editNote").value=e.note||"";$("editVideo").value=e.video||"";$("editImage").value=e.image||"";
+ $("editDialog").showModal();
+}
+function setUtilizeStatus(message){$("utilizeStatus").textContent=message}
+function openUtilize(){
+ const s=data.slides[index],lesson=currentLesson();$("utilizeCurrent").textContent=`${s.lesson} ${localizedLessonTitle(lesson||{id:s.lesson,title:s.lessonTitle})} - ${slideLabel(s)}`;
+ setUtilizeStatus(`${data.slides.length} ${tr("slidesAvailable")}`);
+ $("utilizeDialog").showModal();
+}
+async function render(){
+ if(!data.slides.length)return;
+ index=Math.max(0,Math.min(index,data.slides.length-1));
+ const s=data.slides[index],lesson=currentLesson(),isReview=s.kind==="review",isCulture=lesson?.group==="culture"||s.kind==="culture",isQuiz=s.kind==="audioQuiz";
+ const edit=getEdit(s);localStorage.setItem("jp-course-slide",index);
+ $("crumb").textContent=`${s.lesson}  ${localizedLessonTitle(lesson||{id:s.lesson,title:s.lessonTitle})}`;
+ $("pageLabel").textContent=edit.title||(isReview?tr("finalReview"):isQuiz?tr("audioGuessingCards"):slideLabel(s));
+ $("slideImage").src=await resolvedImage(s,edit);$("slideImage").alt=isReview?`${s.lessonTitle} anime review`:`${s.lessonTitle} ${slideLabel(s)}`;
+ $("visual").classList.toggle("review",isReview);$("visual").classList.toggle("quiz-mode",isQuiz);$("stage").classList.toggle("quiz-stage",isQuiz);
+ document.querySelectorAll(".quiz-grid").forEach(x=>x.remove());
+ const reviewGrid=$("reviewCardGrid");reviewGrid.innerHTML="";reviewGrid.style.display="none";reviewGrid.classList.remove("ten");
+ if(isReview&&s.answers?.length){
+   reviewGrid.style.display="grid";reviewGrid.classList.toggle("ten",s.answers.length===10);
+   reviewGrid.innerHTML=s.answers.map(x=>`<div class="sentence-card"><div class="sentence-inner"><div class="sentence-face sentence-front"><button>${tr("reveal")} ${x.number}</button></div><div class="sentence-face sentence-back"><div class="ajp">${safeText(vocabularyFocus(x.japanese))}</div><div class="romaji" aria-label="${safeText(x.romaji)}">${romajiGuide(x.romaji)}</div><button>${tr("hide")}</button></div></div></div>`).join("");
+   reviewGrid.querySelectorAll(".sentence-card button").forEach(btn=>btn.onclick=()=>btn.closest(".sentence-card").classList.toggle("flipped"));
+ }
+ if(isQuiz){
+   const grid=document.createElement("div");grid.className="quiz-grid";
+   grid.innerHTML=s.cards.map(x=>`<div class="quiz-card"><div class="quiz-inner"><div class="quiz-face quiz-front"><div class="quiz-number">${x.number}</div><strong>${tr("listenGuess")}</strong><audio controls preload="metadata" src="${x.audio}"></audio><button class="flip-btn">${tr("flipCard")}</button></div><div class="quiz-face quiz-back"><div class="quiz-number">${x.number}</div><img src="${x.image}" alt="${tr("answerImage")}"><div class="quiz-sentence">${x.sentence||tr("checkPicture")}</div><div class="quiz-romaji" aria-label="${safeText(x.romaji)}">${romajiGuide(x.romaji)}</div><button class="flip-btn">${tr("hideAnswer")}</button></div></div></div>`).join("");
+   $("visual").appendChild(grid);grid.querySelectorAll(".flip-btn").forEach(btn=>btn.onclick=()=>btn.closest(".quiz-card").classList.toggle("flipped"));
+ }
+ const a=$("audio"),no=$("noAudio");a.pause();a.removeAttribute("src");
+ if(s.audio){a.src=s.audio;a.style.display="block";no.textContent=""}else{a.style.display="none";no.textContent=isReview?tr("reviewAudio"):isQuiz?tr("cardAudio"):isCulture?tr("cultureSlide"):tr("visualSlide")}
+ const rl=$("reviewLink");if(s.reviewPdf){rl.href=s.reviewPdf;rl.style.display="inline-block"}else rl.style.display="none";
+ const sl=$("sourceLink");if(s.sourcePdf){sl.href=s.sourcePdf;sl.style.display="inline-block"}else sl.style.display="none";
+ const vl=$("videoLink");if(edit.video){vl.href=edit.video;vl.style.display="inline-block"}else vl.style.display="none";
+ const note=$("customNote");if(edit.note){note.textContent=edit.note;note.style.display="block"}else note.style.display="none";
+ $("prevBtn").disabled=index===0;$("nextBtn").disabled=index===data.slides.length-1;$("counter").textContent=`${index+1} / ${data.slides.length}`;$("progressBar").style.width=`${((index+1)/data.slides.length)*100}%`;
+ document.querySelectorAll(".lesson-btn").forEach(b=>b.classList.toggle("active",b.dataset.lesson===s.lesson));
+ if($("utilizeDialog").open)$("utilizeCurrent").textContent=`${s.lesson} ${localizedLessonTitle(lesson||{id:s.lesson,title:s.lessonTitle})} - ${slideLabel(s)}`;
+}
+function move(n){index=Math.max(0,Math.min(data.slides.length-1,index+n));render()}
+function fileDataUrl(file){return new Promise((resolve,reject)=>{const r=new FileReader();r.onload=()=>resolve(r.result);r.onerror=()=>reject(r.error);r.readAsDataURL(file)})}
+async function uploadSlides(files){
+ if(!files.length)return;
+ const source=data.slides[index],insert=[];
+ for(const file of files){
+   const id=`upload:${Date.now()}:${crypto.randomUUID()}`;await imagePut(id,await fileDataUrl(file));
+   insert.push({uid:`custom:${crypto.randomUUID()}`,kind:"custom",lesson:source.lesson,lessonTitle:source.lessonTitle,subtitle:source.subtitle,page:"Uploaded",pageCount:source.pageCount,customTitle:file.name.replace(/\.[^.]+$/,""),uploadedImageId:id,audio:null});
+ }
+ data.slides.splice(index+1,0,...insert);index++;persistStructure();refreshLessons();buildNav();setUtilizeStatus(bi(`${insert.length} uploaded slide${insert.length===1?"":"s"} added.`,`${insert.length}枚のスライドを追加しました。`));await render();
+}
+function duplicateCurrent(){
+ const copy=clone(data.slides[index]);copy.uid=`copy:${crypto.randomUUID()}`;copy.customTitle=`${slideLabel(copy)} Copy`;copy.page="Copy";
+ data.slides.splice(index+1,0,copy);index++;persistStructure();buildNav();setUtilizeStatus(bi("Current slide duplicated.","現在のスライドを複製しました。"));render();
+}
+function deleteCurrent(){
+ if(data.slides.length<=1)return setUtilizeStatus(bi("The final remaining slide cannot be deleted.","最後の1枚は削除できません。"));
+ const removed=data.slides[index];if(!confirm(bi(`Delete ${removed.lesson} ${slideLabel(removed)}?`,`${removed.lesson} ${slideLabel(removed)}を削除しますか？`)))return;
+ deletedSlides.push({slide:removed,position:index});data.slides.splice(index,1);index=Math.min(index,data.slides.length-1);persistStructure();buildNav();setUtilizeStatus(bi("Slide deleted. Use Restore Last Deleted to bring it back.","スライドを削除しました。「削除を元に戻す」で復元できます。"));render();
+}
+function moveCurrent(direction){
+ const lesson=data.slides[index].lesson,target=index+direction;
+ if(target<0||target>=data.slides.length||data.slides[target].lesson!==lesson)return setUtilizeStatus(bi("Slides can only be reordered inside their current lesson.","スライドは同じレッスン内でのみ並べ替えられます。"));
+ [data.slides[index],data.slides[target]]=[data.slides[target],data.slides[index]];index=target;persistStructure();setUtilizeStatus(direction<0?bi("Slide moved earlier.","スライドを前へ移動しました。"):bi("Slide moved later.","スライドを後ろへ移動しました。"));render();
+}
+function restoreDeleted(){
+ const item=deletedSlides.pop();if(!item)return setUtilizeStatus(bi("There are no deleted slides to restore.","復元できる削除済みスライドはありません。"));
+ const position=Math.min(item.position,data.slides.length);data.slides.splice(position,0,item.slide);index=position;persistStructure();buildNav();setUtilizeStatus(bi("Last deleted slide restored.","最後に削除したスライドを復元しました。"));render();
+}
+function collectEdits(){const edits={};for(let i=0;i<localStorage.length;i++){const key=localStorage.key(i);if(key?.startsWith("jp-course-edit:"))edits[key]=localStorage.getItem(key)}return edits}
+function downloadJson(value,name){const blob=new Blob([JSON.stringify(value,null,2)],{type:"application/json"}),url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)}
+async function exportCourse(){
+ const payload={format:"Japanese HTML Course Edits v3",exportedAt:new Date().toISOString(),data,deletedSlides,edits:collectEdits(),images:await imageAll()};
+ downloadJson(payload,"Japanese-HTML-Course-Edits.json");setUtilizeStatus(bi("Course edits exported.","教材の編集内容を書き出しました。"));
+}
+async function importCourse(file){
+ const payload=JSON.parse(await file.text());if(!payload.data?.slides)throw new Error("This is not a valid course-edit file.");
+ data=payload.data;deletedSlides=payload.deletedSlides||[];await imageClear();for(const image of payload.images||[])await imagePut(image.id,image.dataUrl);
+ Object.entries(payload.edits||{}).forEach(([key,value])=>localStorage.setItem(key,value));index=0;persistStructure();buildNav();setUtilizeStatus(bi("Course edits imported.","教材の編集内容を読み込みました。"));await render();
+}
+async function restoreCourse(){
+ if(!confirm(bi("Restore the original course and remove all structural edits and uploaded slides?","追加スライドと編集内容を削除し、元の教材に戻しますか？")))return;
+ data=originalData();deletedSlides=[];index=0;localStorage.removeItem(STRUCTURE_KEY);localStorage.removeItem(DELETED_KEY);
+ const remove=[];for(let i=0;i<localStorage.length;i++){const key=localStorage.key(i);if(key?.startsWith("jp-course-edit:"))remove.push(key)}remove.forEach(key=>localStorage.removeItem(key));
+ await imageClear();refreshLessons();buildNav();setUtilizeStatus(bi("Original course restored.","元の教材に戻しました。"));await render();
+}
+$("prevBtn").onclick=()=>move(-1);$("nextBtn").onclick=()=>move(1);
+$("fullscreenBtn").onclick=()=>document.fullscreenElement?document.exitFullscreen():document.documentElement.requestFullscreen();
+$("menuBtn").onclick=()=>$("lessonDialog").showModal();$("slidesBtn").onclick=openSlideBrowser;$("helpBtn").onclick=()=>$("helpDialog").showModal();$("closeHelpBtn").onclick=()=>{$("helpDialog").querySelectorAll("video").forEach(video=>video.pause());$("helpDialog").close()};$("editBtn").onclick=openEditor;$("sideEditBtn").onclick=openEditor;$("utilizeBtn").onclick=openUtilize;
+$("languageBtn").onclick=()=>{uiLanguage=uiLanguage==="en"?"ja":"en";localStorage.setItem("jp-course-ui-language",uiLanguage);applyLanguage()};
+$("saveEditBtn").onclick=()=>{const s=data.slides[index];localStorage.setItem(editKey(s),JSON.stringify({title:$("editTitle").value.trim(),note:$("editNote").value.trim(),video:$("editVideo").value.trim(),image:$("editImage").value.trim()}));$("editDialog").close();render()};
+$("uploadSlidesBtn").onclick=()=>$("slideUploadInput").click();$("slideUploadInput").onchange=e=>uploadSlides([...e.target.files]).finally(()=>e.target.value="");
+$("duplicateSlideBtn").onclick=duplicateCurrent;$("deleteSlideBtn").onclick=deleteCurrent;$("moveSlideUpBtn").onclick=()=>moveCurrent(-1);$("moveSlideDownBtn").onclick=()=>moveCurrent(1);$("editAllCurrentBtn").onclick=()=>{$("utilizeDialog").close();openEditor()};$("restoreDeletedBtn").onclick=restoreDeleted;$("exportEditsBtn").onclick=exportCourse;$("importEditsBtn").onclick=()=>$("courseImportInput").click();$("courseImportInput").onchange=e=>importCourse(e.target.files[0]).catch(error=>setUtilizeStatus(error.message)).finally(()=>e.target.value="");$("restoreCourseBtn").onclick=restoreCourse;
+document.addEventListener("keydown",e=>{if(e.key==="ArrowRight"||e.key==="PageDown")move(1);if(e.key==="ArrowLeft"||e.key==="PageUp")move(-1);if(e.key===" "&&document.activeElement.tagName!=="BUTTON"){e.preventDefault();const a=$("audio");if(a.src)a.paused?a.play():a.pause()}});
+init();
 
-      <section class="study-strip" aria-label="Learning stats">
-        <article>
-          <span id="knownKanaCount">0</span>
-          <p>Kana mastered</p>
-        </article>
-        <article>
-          <span id="knownWordCount">0</span>
-          <p>Words reviewed</p>
-        </article>
-        <article>
-          <span id="quizBest">0</span>
-          <p>Best quiz score</p>
-        </article>
-      </section>
+let installPrompt=null;
+const installBtn=$("installBtn");
+window.addEventListener("beforeinstallprompt",event=>{
+ event.preventDefault();installPrompt=event;installBtn.style.display="inline-block";
+});
+installBtn.onclick=async()=>{
+ if(installPrompt){
+   installPrompt.prompt();await installPrompt.userChoice;installPrompt=null;return;
+ }
+ const isIOS=/iphone|ipad|ipod/i.test(navigator.userAgent);
+ alert(isIOS
+   ?bi("On iPhone or iPad: tap the Share button, then choose “Add to Home Screen.”","iPhoneまたはiPadでは、共有ボタンをタップして「ホーム画面に追加」を選んでください。")
+   :bi("Open this course in Chrome or Safari, open the browser menu, and choose “Install app” or “Add to Home Screen.”","ChromeまたはSafariのメニューから「アプリをインストール」または「ホーム画面に追加」を選んでください。"));
+};
+window.addEventListener("appinstalled",()=>{installBtn.textContent=tr("appInstalled")});
+if("serviceWorker" in navigator&&location.protocol.startsWith("http")){
+ window.addEventListener("load",()=>navigator.serviceWorker.register("./sw.js").catch(()=>{}));
+}
 
-      <section class="course-shell" id="course" aria-label="Course workspace">
-        <div class="course-tabs" role="tablist" aria-label="Course sections">
-          <button class="active" type="button" role="tab" data-course-tab="lessons" aria-selected="true">Lessons</button>
-          <button type="button" role="tab" data-course-tab="weeks" aria-selected="false">Weeks</button>
-          <button type="button" role="tab" data-course-tab="kana" aria-selected="false">Kana</button>
-          <button type="button" role="tab" data-course-tab="kana-games" aria-selected="false">Kana Games</button>
-          <button type="button" role="tab" data-course-tab="vocab" aria-selected="false">Vocabulary</button>
-          <button type="button" role="tab" data-course-tab="flashcards" aria-selected="false">Flashcards</button>
-          <button type="button" role="tab" data-course-tab="activities" aria-selected="false">Activities</button>
-          <button type="button" role="tab" data-course-tab="grammar" aria-selected="false">Grammar Focus</button>
-          <button type="button" role="tab" data-course-tab="culture" aria-selected="false">Culture</button>
-          <button type="button" role="tab" data-course-tab="phrase" aria-selected="false">Phrases</button>
-          <button type="button" role="tab" data-course-tab="quiz" aria-selected="false">Quiz</button>
-        </div>
-
-        <div class="course-stage">
-      <section class="lessons-section course-panel active" id="lessons" data-course-panel="lessons">
-        <div class="section-heading">
-          <span class="eyebrow">Course path</span>
-          <h2>Choose a short lesson</h2>
-        </div>
-        <div class="lesson-grid" id="lessonGrid"></div>
-      </section>
-
-      <section class="weeks-section course-panel" id="weeks" data-course-panel="weeks">
-        <div class="section-heading">
-          <span class="eyebrow">Weekly lesson archive</span>
-          <h2>Keep each class organized</h2>
-        </div>
-        <section class="week-control-panel">
-          <div>
-            <span class="eyebrow">Current module</span>
-            <h3 id="selectedWeekTitle">Week overview</h3>
-            <p id="selectedWeekSummary">Choose a week to review its vocabulary, grammar, culture, and activities.</p>
-          </div>
-          <label>
-            Choose week
-            <select id="weekSelect"></select>
-          </label>
-        </section>
-        <div class="week-detail-grid" id="weekDetailGrid"></div>
-        <div class="week-card-grid" id="weekCardGrid"></div>
-      </section>
-
-      <section class="workspace course-panel" id="kana" data-course-panel="kana">
-        <div class="section-heading">
-          <span class="eyebrow">Kana trainer</span>
-          <h2>Read, reveal, repeat</h2>
-        </div>
-        <div class="trainer-layout">
-          <section class="kana-practice" aria-labelledby="kanaTitle">
-            <div class="panel-heading">
-              <div>
-                <span id="kanaSetLabel">Hiragana</span>
-                <h3 id="kanaTitle">Kana flashcard</h3>
-              </div>
-              <div class="segmented" role="group" aria-label="Kana set">
-                <button class="active" type="button" data-kana-set="hiragana">あ</button>
-                <button type="button" data-kana-set="katakana">ア</button>
-                <button type="button" data-kana-set="mixed">Mix</button>
-              </div>
-            </div>
-            <p class="round-note" id="kanaRoundNote">Practice set: Hiragana basics</p>
-            <button class="kana-card" id="kanaCard" type="button" aria-label="Reveal kana answer">
-              <span id="kanaCharacter">あ</span>
-              <small id="kanaAnswer">Tap to reveal</small>
-            </button>
-            <div class="practice-actions">
-              <button type="button" id="markKnownButton">I knew it</button>
-              <button class="light" type="button" id="nextKanaButton">Next card</button>
-            </div>
-          </section>
-
-          <section class="kana-chart" aria-labelledby="chartTitle">
-            <div class="panel-heading">
-              <div>
-                <span>Reference</span>
-                <h3 id="chartTitle">Kana chart</h3>
-              </div>
-              <button class="light" type="button" id="toggleKanaChartButton" aria-expanded="false">
-                Show chart
-              </button>
-            </div>
-            <div class="chart-grid" id="kanaChart" hidden></div>
-          </section>
-
-          <section class="kana-print-panel">
-            <div class="panel-heading">
-              <div>
-                <span>Printable practice</span>
-                <h3>PDF-style kana sheets</h3>
-              </div>
-            </div>
-            <p>Open a clean practice sheet, then use your browser print menu to save it as a PDF.</p>
-            <div class="practice-actions">
-              <button type="button" data-print-kana="hiragana">Hiragana sheet</button>
-              <button class="light" type="button" data-print-kana="katakana">Katakana sheet</button>
-            </div>
-          </section>
-        </div>
-      </section>
-
-      <section class="kana-games-section course-panel" id="kana-games" data-course-panel="kana-games">
-        <div class="section-heading">
-          <span class="eyebrow">Kana reinforcement</span>
-          <h2>Flashcards, matching, and mnemonic hints</h2>
-        </div>
-        <div class="game-layout">
-          <section class="mini-game-panel">
-            <div class="panel-heading">
-              <div>
-                <span id="kanaGameSetLabel">Hiragana</span>
-                <h3>Kana match</h3>
-              </div>
-              <button class="light" type="button" id="newKanaMatchButton">New round</button>
-            </div>
-            <div class="match-columns">
-              <div id="kanaSymbolChoices" class="choice-stack" aria-label="Kana choices"></div>
-              <div id="kanaReadingChoices" class="choice-stack" aria-label="Reading choices"></div>
-            </div>
-            <p class="feedback" id="kanaMatchFeedback" role="status">Match each kana to its reading.</p>
-          </section>
-
-          <section class="mini-game-panel">
-            <div class="panel-heading">
-              <div>
-                <span>Memory clue</span>
-                <h3>Mnemonic helper</h3>
-              </div>
-              <button class="light" type="button" id="kanaHintButton">Show hint</button>
-            </div>
-            <p class="jp hint-symbol" id="kanaHintSymbol">あ</p>
-            <p id="kanaHintText">Tap Show hint when a kana needs a memory hook.</p>
-          </section>
-
-          <section class="mini-game-panel kata-translation-panel">
-            <div class="panel-heading">
-              <div>
-                <span>Katakana translation</span>
-                <h3>What does the word say?</h3>
-              </div>
-            </div>
-            <label>
-              Choose katakana word
-              <select id="katakanaWordSelect"></select>
-            </label>
-            <p class="jp" id="katakanaPracticeWord">テレビ</p>
-            <div class="answer-grid" id="katakanaAnswerGrid"></div>
-            <p class="feedback" id="katakanaAnnotation" role="status">
-              Choose one answer. The note will explain the sound and meaning.
-            </p>
-          </section>
-        </div>
-      </section>
-
-      <section class="vocab-section course-panel" id="vocab" data-course-panel="vocab">
-        <div class="section-heading">
-          <span class="eyebrow">Vocabulary</span>
-          <h2>Flashcards, objects, definitions, and mnemonics</h2>
-        </div>
-        <div class="toolbar" aria-label="Vocabulary filters">
-          <button class="active" type="button" data-category="all">All</button>
-          <button type="button" data-category="greetings">Greetings</button>
-          <button type="button" data-category="food">Food</button>
-          <button type="button" data-category="travel">Travel</button>
-          <button type="button" data-category="time">Time</button>
-          <button type="button" data-category="family">Family</button>
-        </div>
-        <div class="word-grid" id="wordGrid"></div>
-      </section>
-
-      <section class="vocab-flash-section course-panel" id="flashcards" data-course-panel="flashcards">
-        <div class="section-heading">
-          <span class="eyebrow">Vocabulary flashcard</span>
-          <h2>Guess the meaning, then reveal</h2>
-        </div>
-        <div class="flash-layout">
-          <section class="vocab-flash-card" id="vocabFlashCard" aria-live="polite">
-            <span class="object-icon" id="flashObject">💧</span>
-            <p class="jp" id="flashJapanese">水</p>
-            <strong id="flashPrompt">What does this mean?</strong>
-            <p id="flashAnswer">Tap reveal to check yourself.</p>
-          </section>
-          <section class="mini-game-panel">
-            <div class="practice-actions">
-              <button type="button" id="revealFlashButton">Reveal</button>
-              <button class="light" type="button" id="nextFlashButton">Next flashcard</button>
-              <button class="light" type="button" id="flashHintButton">Mnemonic hint</button>
-            </div>
-            <p class="feedback" id="flashHintText" role="status">Hints use memory hooks to connect sound, meaning, and object.</p>
-          </section>
-        </div>
-      </section>
-
-      <section class="activities-section course-panel" id="activities" data-course-panel="activities">
-        <div class="section-heading">
-          <span class="eyebrow">Activity games</span>
-          <h2>Timed matching and sentence building</h2>
-        </div>
-        <div class="activity-grid">
-          <section class="timed-match-panel">
-            <div class="game-status">
-              <strong id="matchTimer">45</strong>
-              <span id="objectMatchScore">0 matches</span>
-            </div>
-            <h3>Match definitions to objects</h3>
-            <p>Choose an object, then choose the Japanese word that matches its definition.</p>
-            <div class="object-row" id="objectChoices"></div>
-            <div class="definition-row" id="definitionChoices"></div>
-            <div class="practice-actions">
-              <button type="button" id="startObjectMatchButton">Start timer</button>
-              <button class="light" type="button" id="resetObjectMatchButton">Reset game</button>
-              <button class="light" type="button" id="objectHintButton">Hint</button>
-            </div>
-            <p class="feedback" id="objectMatchFeedback" role="status">Start the timer when you are ready.</p>
-          </section>
-
-          <section class="sentence-game-panel">
-            <div class="panel-heading">
-              <div>
-                <span>Sentence builder</span>
-                <h3>Build the Japanese sentence</h3>
-              </div>
-              <button class="light" type="button" id="nextSentenceButton">Next sentence</button>
-            </div>
-            <p class="english-target" id="sentenceEnglish">I like tea.</p>
-            <div class="grammar-legend" aria-label="Parts of speech legend">
-              <span data-role="topic">Topic</span>
-              <span data-role="noun">Noun</span>
-              <span data-role="particle">Particle</span>
-              <span data-role="action">Action</span>
-              <span data-role="question">Question</span>
-              <span data-role="polite">Polite</span>
-            </div>
-            <div class="sentence-slots" id="sentenceSlots" aria-label="Sentence slots"></div>
-            <div class="word-bank" id="sentenceBank" aria-label="Japanese word bank"></div>
-            <div class="practice-actions">
-              <button type="button" id="checkSentenceButton">Check sentence</button>
-              <button class="light" type="button" id="clearSentenceButton">Clear</button>
-              <button class="light" type="button" id="sentenceHintButton">Hint</button>
-            </div>
-            <p class="feedback" id="sentenceFeedback" role="status">Pull words from the bank to complete the sentence.</p>
-          </section>
-        </div>
-        <section class="review-panel" aria-labelledby="reviewTitle">
-          <div class="panel-heading">
-            <div>
-              <span>Extra practice</span>
-              <h3 id="reviewTitle">Review missed answers</h3>
-            </div>
-            <button class="light" type="button" id="clearReviewButton">Clear review</button>
-          </div>
-          <div class="review-grid" id="reviewGrid">
-            <p>No missed answers yet. This area fills in as you practice.</p>
-          </div>
-        </section>
-      </section>
-
-      <section class="phrase-section course-panel" id="phrase" data-course-panel="phrase">
-        <div class="section-heading">
-          <span class="eyebrow">Phrase builder</span>
-          <h2>Swap one part and speak</h2>
-        </div>
-        <div class="phrase-builder">
-          <p class="jp" id="phraseJapanese">私は コーヒー が 好きです。</p>
-          <p id="phraseRomaji">Watashi wa koohii ga suki desu.</p>
-          <label>
-            Change the noun
-            <select id="phraseSelect"></select>
-          </label>
-        </div>
-      </section>
-
-      <section class="grammar-section course-panel" id="grammar" data-course-panel="grammar">
-        <div class="section-heading">
-          <span class="eyebrow">Grammar focus</span>
-          <h2>Particles and sentence patterns</h2>
-        </div>
-        <div class="grammar-focus-grid" id="grammarFocusGrid"></div>
-        <section class="grammar-practice-panel">
-          <div>
-            <span class="eyebrow">Mini practice</span>
-            <h3>Pick the missing particle</h3>
-          </div>
-          <p class="jp" id="grammarPracticeSentence">わたし ___ にほんじんです。</p>
-          <div class="answer-grid" id="grammarAnswerGrid"></div>
-          <p class="feedback" id="grammarFeedback" role="status">Choose the particle that fits the sentence.</p>
-        </section>
-      </section>
-
-      <section class="culture-section course-panel" id="culture" data-course-panel="culture">
-        <div class="section-heading">
-          <span class="eyebrow">Japanese society and culture</span>
-          <h2>Week 4 May 5 upload: family, ability, and Golden Week</h2>
-        </div>
-        <section class="culture-hero-card">
-          <div>
-            <span class="eyebrow">Narrative</span>
-            <h3>From classroom practice to cultural context</h3>
-            <p>
-              The class moved from warm conversation into survival-skill sentences using
-              できます and できません, then into the particle も for “also.” The second half
-              shifted toward family language and Japanese society: how family terms change when
-              speaking about your own family versus someone else’s, and how Golden Week shapes
-              travel, work, and everyday life in Japan.
-            </p>
-          </div>
-          <div class="culture-term-cloud" id="cultureTermCloud"></div>
-        </section>
-        <section class="class-community-card">
-          <div>
-            <span class="eyebrow">Class community</span>
-            <h3>Welcome to the shared study space</h3>
-            <p>
-              Minae Hayashi Sensei, Andrea, Lauren, Aaron, Tomo, Sam, Mario, and classmates:
-              this page is built from our class notes, practice moments, and cultural topics.
-              Feel free to use it along your Japanese journeys.
-            </p>
-          </div>
-          <div class="class-name-grid" aria-label="Class names">
-            <span>林先生</span>
-            <span>Andrea-san</span>
-            <span>Lauren-san</span>
-            <span>Aaron-san</span>
-            <span>Tomo-san</span>
-            <span>Sam-san</span>
-            <span>Mario-san</span>
-          </div>
-        </section>
-        <div class="class-recap-grid" id="classRecapGrid"></div>
-        <div class="culture-photo-grid" id="culturePhotoGrid"></div>
-      </section>
-
-      <section class="quiz-section course-panel" id="quiz" data-course-panel="quiz">
-        <div class="section-heading">
-          <span class="eyebrow">Quick quiz</span>
-          <h2>Five questions, instant feedback</h2>
-        </div>
-        <div class="quiz-panel">
-          <div class="quiz-topline">
-            <p id="quizProgress">Question 1 of 5</p>
-            <strong id="quizScore">0 correct</strong>
-          </div>
-          <h3 id="quizPrompt">What does ありがとう mean?</h3>
-          <div class="answer-grid" id="answerGrid"></div>
-          <p class="feedback" id="quizFeedback" role="status"></p>
-          <button type="button" id="resetQuizButton">Restart quiz</button>
-        </div>
-      </section>
-        </div>
-      </section>
-    </main>
-
-    <footer>
-      <p>日本語は少しずつ。 Learn a little, return often, keep going.</p>
-    </footer>
-
-    <script src="app.js"></script>
-  </body>
-</html>
+</script>
+</body></html>

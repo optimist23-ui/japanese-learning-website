@@ -1,0 +1,4405 @@
+{
+  "lessons": [
+    {
+      "id": "01",
+      "title": "Japanese Greetings",
+      "subtitle": "挨拶（あいさつ）",
+      "start": 0,
+      "count": 29,
+      "pageCount": 27,
+      "hasReview": true,
+      "hasAudioQuiz": true,
+      "group": "language",
+      "romaji": "Aisatsu"
+    },
+    {
+      "id": "02",
+      "title": "Jobs and Identifying Things",
+      "subtitle": "仕事と「A は B です」",
+      "start": 29,
+      "count": 40,
+      "pageCount": 38,
+      "hasReview": true,
+      "hasAudioQuiz": true,
+      "group": "language",
+      "romaji": "Shigoto to A wa B desu"
+    },
+    {
+      "id": "03",
+      "title": "My Family",
+      "subtitle": "私の家族（わたしのかぞく）",
+      "start": 69,
+      "count": 13,
+      "pageCount": 11,
+      "hasReview": true,
+      "hasAudioQuiz": true,
+      "group": "language",
+      "romaji": "Watashi no kazoku"
+    },
+    {
+      "id": "04",
+      "title": "Counting People",
+      "subtitle": "人の数え方（ひとのかぞえかた）",
+      "start": 82,
+      "count": 13,
+      "pageCount": 11,
+      "hasReview": true,
+      "hasAudioQuiz": true,
+      "group": "language",
+      "romaji": "Hito no kazoekata"
+    },
+    {
+      "id": "05",
+      "title": "Golden Week",
+      "subtitle": "Cultural reference lesson",
+      "start": 95,
+      "count": 7,
+      "pageCount": 7,
+      "hasReview": false,
+      "hasAudioQuiz": false,
+      "group": "culture",
+      "cultureGroup": "Lesson 5 - Seasonal Culture",
+      "romaji": "Gooruden Wiiku"
+    },
+    {
+      "id": "06",
+      "title": "Where People Live",
+      "subtitle": "どこに住んでいますか",
+      "start": 102,
+      "count": 28,
+      "pageCount": 26,
+      "hasReview": true,
+      "hasAudioQuiz": true,
+      "group": "language",
+      "romaji": "Doko ni sunde imasu ka"
+    },
+    {
+      "id": "07",
+      "title": "Possession and Age",
+      "subtitle": "「の」と年齢（ねんれい）",
+      "start": 130,
+      "count": 9,
+      "pageCount": 7,
+      "hasReview": true,
+      "hasAudioQuiz": true,
+      "group": "language",
+      "romaji": "No to nenrei"
+    },
+    {
+      "id": "08",
+      "title": "Food and Drinks",
+      "subtitle": "食べ物と飲み物",
+      "start": 139,
+      "count": 28,
+      "pageCount": 26,
+      "hasReview": true,
+      "hasAudioQuiz": true,
+      "group": "language",
+      "romaji": "Tabemono to nomimono"
+    },
+    {
+      "id": "09",
+      "title": "Likes and Habits",
+      "subtitle": "好き・一番・いつも・よく・あまり",
+      "start": 167,
+      "count": 33,
+      "pageCount": 31,
+      "hasReview": true,
+      "hasAudioQuiz": true,
+      "group": "language",
+      "romaji": "Suki, ichiban, itsumo, yoku, amari"
+    },
+    {
+      "id": "C01",
+      "title": "Japanese-Inspired Foods at Trader Joe’s",
+      "subtitle": "Food and cultural adaptation",
+      "start": 200,
+      "count": 12,
+      "pageCount": 12,
+      "hasReview": false,
+      "group": "culture",
+      "cultureGroup": "Lesson 8 - Food and Drinks",
+      "romaji": "Nihon-fuu no tabemono"
+    },
+    {
+      "id": "C02",
+      "title": "Frozen Foods in Japan",
+      "subtitle": "冷凍食品（れいとうしょくひん）",
+      "start": 212,
+      "count": 7,
+      "pageCount": 7,
+      "hasReview": false,
+      "group": "culture",
+      "cultureGroup": "Lesson 8 - Food and Drinks",
+      "romaji": "Reitou shokuhin"
+    },
+    {
+      "id": "C03",
+      "title": "The Story of Punch-kun",
+      "subtitle": "Japanese snow-monkey culture",
+      "start": 219,
+      "count": 7,
+      "pageCount": 7,
+      "hasReview": false,
+      "group": "culture",
+      "cultureGroup": "Lesson 7 - Animals and Daily Life",
+      "romaji": "Panchi-kun no monogatari"
+    },
+    {
+      "id": "C04",
+      "title": "Japan in April",
+      "subtitle": "School, business, and renewal",
+      "start": 226,
+      "count": 11,
+      "pageCount": 11,
+      "hasReview": false,
+      "group": "culture",
+      "cultureGroup": "Lesson 5 - Seasonal Culture",
+      "romaji": "Nihon no shigatsu"
+    },
+    {
+      "id": "C05",
+      "title": "Cherry Blossoms: U.S. and Japan",
+      "subtitle": "桜（さくら） cultural exchange",
+      "start": 237,
+      "count": 12,
+      "pageCount": 12,
+      "hasReview": false,
+      "group": "culture",
+      "cultureGroup": "Lesson 5 - Seasonal Culture",
+      "romaji": "Sakura: Amerika to Nihon"
+    }
+  ],
+  "slides": [
+    {
+      "kind": "lesson",
+      "lesson": "01",
+      "lessonTitle": "Japanese Greetings",
+      "subtitle": "挨拶（あいさつ）",
+      "page": 1,
+      "pageCount": 27,
+      "image": "assets/01/pages/page-01.jpg",
+      "audio": "assets/01/audio/page-01.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "01",
+      "lessonTitle": "Japanese Greetings",
+      "subtitle": "挨拶（あいさつ）",
+      "page": 2,
+      "pageCount": 27,
+      "image": "assets/01/pages/page-02.jpg",
+      "audio": "assets/01/audio/page-02.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "01",
+      "lessonTitle": "Japanese Greetings",
+      "subtitle": "挨拶（あいさつ）",
+      "page": 3,
+      "pageCount": 27,
+      "image": "assets/01/pages/page-03.jpg",
+      "audio": "assets/01/audio/page-03.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "01",
+      "lessonTitle": "Japanese Greetings",
+      "subtitle": "挨拶（あいさつ）",
+      "page": 4,
+      "pageCount": 27,
+      "image": "assets/01/pages/page-04.jpg",
+      "audio": "assets/01/audio/page-04.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "01",
+      "lessonTitle": "Japanese Greetings",
+      "subtitle": "挨拶（あいさつ）",
+      "page": 5,
+      "pageCount": 27,
+      "image": "assets/01/pages/page-05.jpg",
+      "audio": "assets/01/audio/page-05.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "01",
+      "lessonTitle": "Japanese Greetings",
+      "subtitle": "挨拶（あいさつ）",
+      "page": 6,
+      "pageCount": 27,
+      "image": "assets/01/pages/page-06.jpg",
+      "audio": "assets/01/audio/page-06.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "01",
+      "lessonTitle": "Japanese Greetings",
+      "subtitle": "挨拶（あいさつ）",
+      "page": 7,
+      "pageCount": 27,
+      "image": "assets/01/pages/page-07.jpg",
+      "audio": "assets/01/audio/page-07.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "01",
+      "lessonTitle": "Japanese Greetings",
+      "subtitle": "挨拶（あいさつ）",
+      "page": 8,
+      "pageCount": 27,
+      "image": "assets/01/pages/page-08.jpg",
+      "audio": "assets/01/audio/page-08.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "01",
+      "lessonTitle": "Japanese Greetings",
+      "subtitle": "挨拶（あいさつ）",
+      "page": 9,
+      "pageCount": 27,
+      "image": "assets/01/pages/page-09.jpg",
+      "audio": "assets/01/audio/page-09.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "01",
+      "lessonTitle": "Japanese Greetings",
+      "subtitle": "挨拶（あいさつ）",
+      "page": 10,
+      "pageCount": 27,
+      "image": "assets/01/pages/page-10.jpg",
+      "audio": "assets/01/audio/page-10.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "01",
+      "lessonTitle": "Japanese Greetings",
+      "subtitle": "挨拶（あいさつ）",
+      "page": 11,
+      "pageCount": 27,
+      "image": "assets/01/pages/page-11.jpg",
+      "audio": "assets/01/audio/page-11.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "01",
+      "lessonTitle": "Japanese Greetings",
+      "subtitle": "挨拶（あいさつ）",
+      "page": 12,
+      "pageCount": 27,
+      "image": "assets/01/pages/page-12.jpg",
+      "audio": "assets/01/audio/page-12.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "01",
+      "lessonTitle": "Japanese Greetings",
+      "subtitle": "挨拶（あいさつ）",
+      "page": 13,
+      "pageCount": 27,
+      "image": "assets/01/pages/page-13.jpg",
+      "audio": "assets/01/audio/page-13.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "01",
+      "lessonTitle": "Japanese Greetings",
+      "subtitle": "挨拶（あいさつ）",
+      "page": 14,
+      "pageCount": 27,
+      "image": "assets/01/pages/page-14.jpg",
+      "audio": "assets/01/audio/page-14.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "01",
+      "lessonTitle": "Japanese Greetings",
+      "subtitle": "挨拶（あいさつ）",
+      "page": 15,
+      "pageCount": 27,
+      "image": "assets/01/pages/page-15.jpg",
+      "audio": "assets/01/audio/page-15.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "01",
+      "lessonTitle": "Japanese Greetings",
+      "subtitle": "挨拶（あいさつ）",
+      "page": 16,
+      "pageCount": 27,
+      "image": "assets/01/pages/page-16.jpg",
+      "audio": "assets/01/audio/page-16.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "01",
+      "lessonTitle": "Japanese Greetings",
+      "subtitle": "挨拶（あいさつ）",
+      "page": 17,
+      "pageCount": 27,
+      "image": "assets/01/pages/page-17.jpg",
+      "audio": "assets/01/audio/page-17.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "01",
+      "lessonTitle": "Japanese Greetings",
+      "subtitle": "挨拶（あいさつ）",
+      "page": 18,
+      "pageCount": 27,
+      "image": "assets/01/pages/page-18.jpg",
+      "audio": "assets/01/audio/page-18.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "01",
+      "lessonTitle": "Japanese Greetings",
+      "subtitle": "挨拶（あいさつ）",
+      "page": 19,
+      "pageCount": 27,
+      "image": "assets/01/pages/page-19.jpg",
+      "audio": "assets/01/audio/page-19.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "01",
+      "lessonTitle": "Japanese Greetings",
+      "subtitle": "挨拶（あいさつ）",
+      "page": 20,
+      "pageCount": 27,
+      "image": "assets/01/pages/page-20.jpg",
+      "audio": "assets/01/audio/page-20.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "01",
+      "lessonTitle": "Japanese Greetings",
+      "subtitle": "挨拶（あいさつ）",
+      "page": 21,
+      "pageCount": 27,
+      "image": "assets/01/pages/page-21.jpg",
+      "audio": "assets/01/audio/page-21.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "01",
+      "lessonTitle": "Japanese Greetings",
+      "subtitle": "挨拶（あいさつ）",
+      "page": 22,
+      "pageCount": 27,
+      "image": "assets/01/pages/page-22.jpg",
+      "audio": "assets/01/audio/page-22.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "01",
+      "lessonTitle": "Japanese Greetings",
+      "subtitle": "挨拶（あいさつ）",
+      "page": 23,
+      "pageCount": 27,
+      "image": "assets/01/pages/page-23.jpg",
+      "audio": "assets/01/audio/page-23.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "01",
+      "lessonTitle": "Japanese Greetings",
+      "subtitle": "挨拶（あいさつ）",
+      "page": 24,
+      "pageCount": 27,
+      "image": "assets/01/pages/page-24.jpg",
+      "audio": "assets/01/audio/page-24.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "01",
+      "lessonTitle": "Japanese Greetings",
+      "subtitle": "挨拶（あいさつ）",
+      "page": 25,
+      "pageCount": 27,
+      "image": "assets/01/pages/page-25.jpg",
+      "audio": null
+    },
+    {
+      "kind": "lesson",
+      "lesson": "01",
+      "lessonTitle": "Japanese Greetings",
+      "subtitle": "挨拶（あいさつ）",
+      "page": 26,
+      "pageCount": 27,
+      "image": "assets/01/pages/page-26.jpg",
+      "audio": null
+    },
+    {
+      "kind": "lesson",
+      "lesson": "01",
+      "lessonTitle": "Japanese Greetings",
+      "subtitle": "挨拶（あいさつ）",
+      "page": 27,
+      "pageCount": 27,
+      "image": "assets/01/pages/page-27.jpg",
+      "audio": null
+    },
+    {
+      "kind": "review",
+      "lesson": "01",
+      "lessonTitle": "Japanese Greetings",
+      "subtitle": "挨拶（あいさつ）",
+      "page": "Review",
+      "pageCount": 27,
+      "image": "assets/01/anime-review.png",
+      "reviewPdf": "assets/01/anime-decoding-review.pdf",
+      "answers": [
+        {
+          "number": "1",
+          "japanese": "朝、同僚に「おはようございます」と挨拶します。",
+          "reading": "（あさ、どうりょうに「おはようございます」とあいさつします。）",
+          "english": "In the morning, coworkers greet each other politely.",
+          "romaji": "ohayou gozaimasu"
+        },
+        {
+          "number": "2",
+          "japanese": "昼、友達に「こんにちは」と挨拶します。",
+          "reading": "（ひる、ともだちに「こんにちは」とあいさつします。）",
+          "english": "During the day, friends say hello.",
+          "romaji": "konnichiwa"
+        },
+        {
+          "number": "3",
+          "japanese": "夜、近所の人に「こんばんは」と挨拶します。",
+          "reading": "（よる、きんじょのひとに「こんばんは」とあいさつします。）",
+          "english": "In the evening, neighbors say good evening.",
+          "romaji": "konbanwa"
+        },
+        {
+          "number": "4",
+          "japanese": "駅で友達に「さようなら。またね」と言います。",
+          "reading": "（えきでともだちに「さようなら。またね」といいます。）",
+          "english": "At the station, friends say goodbye and see you again.",
+          "romaji": "sayounara. mata ne"
+        },
+        {
+          "number": "5",
+          "japanese": "寝る前に「おやすみなさい」と言います。",
+          "reading": "（ねるまえに「おやすみなさい」といいます。）",
+          "english": "Before sleeping, someone says good night.",
+          "romaji": "oyasumi nasai"
+        },
+        {
+          "number": "6",
+          "japanese": "店員が水を渡し、客が「ありがとうございます」と言います。",
+          "reading": "（てんいんがみずをわたし、きゃくが「ありがとうございます」といいます。）",
+          "english": "A server offers water and the guest says thank you.",
+          "romaji": "arigatou gozaimasu"
+        },
+        {
+          "number": "7",
+          "japanese": "「すみません。トイレはどこですか」と尋ねます。",
+          "reading": "（「すみません。トイレはどこですか」とたずねます。）",
+          "english": "Someone politely asks where the restroom is.",
+          "romaji": "sumimasen. toire wa doko desu ka"
+        },
+        {
+          "number": "8",
+          "japanese": "遅れた学生が先生に「遅れてすみません」と謝ります。",
+          "reading": "（おくれたがくせいがせんせいに「おくれてすみません」とあやまります。）",
+          "english": "A late student apologizes to the teacher.",
+          "romaji": "okurete sumimasen"
+        }
+      ],
+      "audio": null
+    },
+    {
+      "kind": "audioQuiz",
+      "lesson": "01",
+      "lessonTitle": "Japanese Greetings",
+      "subtitle": "挨拶（あいさつ）",
+      "page": "Audio Cards",
+      "pageCount": 27,
+      "cards": [
+        {
+          "number": 1,
+          "audio": "assets/01/audio/page-01.mp3",
+          "image": "assets/01/pages/page-01.jpg",
+          "sentence": "にほんのあいさつ。",
+          "romaji": "nihonnoaisatsu"
+        },
+        {
+          "number": 2,
+          "audio": "assets/01/audio/page-02.mp3",
+          "image": "assets/01/pages/page-02.jpg",
+          "sentence": "おはよう。",
+          "romaji": "ohayou"
+        },
+        {
+          "number": 3,
+          "audio": "assets/01/audio/page-03.mp3",
+          "image": "assets/01/pages/page-03.jpg",
+          "sentence": "おはようございます。",
+          "romaji": "ohayou gozaimasu"
+        },
+        {
+          "number": 4,
+          "audio": "assets/01/audio/page-04.mp3",
+          "image": "assets/01/pages/page-04.jpg",
+          "sentence": "こんにちは。",
+          "romaji": "konnichiwa"
+        },
+        {
+          "number": 5,
+          "audio": "assets/01/audio/page-05.mp3",
+          "image": "assets/01/pages/page-05.jpg",
+          "sentence": "こんばんは。",
+          "romaji": "konbanwa"
+        },
+        {
+          "number": 6,
+          "audio": "assets/01/audio/page-06.mp3",
+          "image": "assets/01/pages/page-06.jpg",
+          "sentence": "さようなら。またね！。",
+          "romaji": "sayounara. mata ne!"
+        },
+        {
+          "number": 7,
+          "audio": "assets/01/audio/page-07.mp3",
+          "image": "assets/01/pages/page-07.jpg",
+          "sentence": "おやすみなさい。おやすみ。",
+          "romaji": "oyasumi nasai. oyasumi"
+        },
+        {
+          "number": 8,
+          "audio": "assets/01/audio/page-08.mp3",
+          "image": "assets/01/pages/page-08.jpg",
+          "sentence": "どうぞ。",
+          "romaji": "douzo"
+        },
+        {
+          "number": 9,
+          "audio": "assets/01/audio/page-09.mp3",
+          "image": "assets/01/pages/page-09.jpg",
+          "sentence": "ありがとう。",
+          "romaji": "arigatou"
+        },
+        {
+          "number": 10,
+          "audio": "assets/01/audio/page-10.mp3",
+          "image": "assets/01/pages/page-10.jpg",
+          "sentence": "どうぞ。",
+          "romaji": "douzo"
+        },
+        {
+          "number": 11,
+          "audio": "assets/01/audio/page-11.mp3",
+          "image": "assets/01/pages/page-11.jpg",
+          "sentence": "ありがとうございます。",
+          "romaji": "arigatou gozaimasu"
+        },
+        {
+          "number": 12,
+          "audio": "assets/01/audio/page-12.mp3",
+          "image": "assets/01/pages/page-12.jpg",
+          "sentence": "すみません。",
+          "romaji": "sumimasen"
+        },
+        {
+          "number": 13,
+          "audio": "assets/01/audio/page-13.mp3",
+          "image": "assets/01/pages/page-13.jpg",
+          "sentence": "すみません。",
+          "romaji": "sumimasen"
+        },
+        {
+          "number": 14,
+          "audio": "assets/01/audio/page-14.mp3",
+          "image": "assets/01/pages/page-14.jpg",
+          "sentence": "トイレは。どこですか。",
+          "romaji": "toireha. dokodesu ka"
+        },
+        {
+          "number": 15,
+          "audio": "assets/01/audio/page-15.mp3",
+          "image": "assets/01/pages/page-15.jpg",
+          "sentence": "あそこです。",
+          "romaji": "asokodesu"
+        },
+        {
+          "number": 16,
+          "audio": "assets/01/audio/page-16.mp3",
+          "image": "assets/01/pages/page-16.jpg",
+          "sentence": "ありがとうございます。",
+          "romaji": "arigatou gozaimasu"
+        },
+        {
+          "number": 17,
+          "audio": "assets/01/audio/page-17.mp3",
+          "image": "assets/01/pages/page-17.jpg",
+          "sentence": "すみません。すみません、みずをください。",
+          "romaji": "sumimasen. sumimasen, mizuokudasai"
+        },
+        {
+          "number": 18,
+          "audio": "assets/01/audio/page-18.mp3",
+          "image": "assets/01/pages/page-18.jpg",
+          "sentence": "だいじょうぶですか。",
+          "romaji": "daijoubudesu ka"
+        },
+        {
+          "number": 19,
+          "audio": "assets/01/audio/page-19.mp3",
+          "image": "assets/01/pages/page-19.jpg",
+          "sentence": "すみません。",
+          "romaji": "sumimasen"
+        },
+        {
+          "number": 20,
+          "audio": "assets/01/audio/page-20.mp3",
+          "image": "assets/01/pages/page-20.jpg",
+          "sentence": "ごめんなさい。",
+          "romaji": "gomennasai"
+        },
+        {
+          "number": 21,
+          "audio": "assets/01/audio/page-21.mp3",
+          "image": "assets/01/pages/page-21.jpg",
+          "sentence": "すみません。おくれてすみません。",
+          "romaji": "sumimasen. okurete sumimasen"
+        },
+        {
+          "number": 22,
+          "audio": "assets/01/audio/page-22.mp3",
+          "image": "assets/01/pages/page-22.jpg",
+          "sentence": "れんしゅう。どうぞ。",
+          "romaji": "renshuu. douzo"
+        },
+        {
+          "number": 23,
+          "audio": "assets/01/audio/page-23.mp3",
+          "image": "assets/01/pages/page-23.jpg",
+          "sentence": "すみません。",
+          "romaji": "sumimasen"
+        },
+        {
+          "number": 24,
+          "audio": "assets/01/audio/page-24.mp3",
+          "image": "assets/01/pages/page-24.jpg",
+          "sentence": "すみません。",
+          "romaji": "sumimasen"
+        }
+      ],
+      "audio": null
+    },
+    {
+      "kind": "lesson",
+      "lesson": "02",
+      "lessonTitle": "Jobs and Identifying Things",
+      "subtitle": "仕事と「A は B です」",
+      "page": 1,
+      "pageCount": 38,
+      "image": "assets/02/pages/page-01.jpg",
+      "audio": "assets/02/audio/page-01.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "02",
+      "lessonTitle": "Jobs and Identifying Things",
+      "subtitle": "仕事と「A は B です」",
+      "page": 2,
+      "pageCount": 38,
+      "image": "assets/02/pages/page-02.jpg",
+      "audio": null
+    },
+    {
+      "kind": "lesson",
+      "lesson": "02",
+      "lessonTitle": "Jobs and Identifying Things",
+      "subtitle": "仕事と「A は B です」",
+      "page": 3,
+      "pageCount": 38,
+      "image": "assets/02/pages/page-03.jpg",
+      "audio": "assets/02/audio/page-03.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "02",
+      "lessonTitle": "Jobs and Identifying Things",
+      "subtitle": "仕事と「A は B です」",
+      "page": 4,
+      "pageCount": 38,
+      "image": "assets/02/pages/page-04.jpg",
+      "audio": "assets/02/audio/page-04.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "02",
+      "lessonTitle": "Jobs and Identifying Things",
+      "subtitle": "仕事と「A は B です」",
+      "page": 5,
+      "pageCount": 38,
+      "image": "assets/02/pages/page-05.jpg",
+      "audio": "assets/02/audio/page-05.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "02",
+      "lessonTitle": "Jobs and Identifying Things",
+      "subtitle": "仕事と「A は B です」",
+      "page": 6,
+      "pageCount": 38,
+      "image": "assets/02/pages/page-06.jpg",
+      "audio": "assets/02/audio/page-06.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "02",
+      "lessonTitle": "Jobs and Identifying Things",
+      "subtitle": "仕事と「A は B です」",
+      "page": 7,
+      "pageCount": 38,
+      "image": "assets/02/pages/page-07.jpg",
+      "audio": "assets/02/audio/page-07.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "02",
+      "lessonTitle": "Jobs and Identifying Things",
+      "subtitle": "仕事と「A は B です」",
+      "page": 8,
+      "pageCount": 38,
+      "image": "assets/02/pages/page-08.jpg",
+      "audio": "assets/02/audio/page-08.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "02",
+      "lessonTitle": "Jobs and Identifying Things",
+      "subtitle": "仕事と「A は B です」",
+      "page": 9,
+      "pageCount": 38,
+      "image": "assets/02/pages/page-09.jpg",
+      "audio": "assets/02/audio/page-09.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "02",
+      "lessonTitle": "Jobs and Identifying Things",
+      "subtitle": "仕事と「A は B です」",
+      "page": 10,
+      "pageCount": 38,
+      "image": "assets/02/pages/page-10.jpg",
+      "audio": "assets/02/audio/page-10.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "02",
+      "lessonTitle": "Jobs and Identifying Things",
+      "subtitle": "仕事と「A は B です」",
+      "page": 11,
+      "pageCount": 38,
+      "image": "assets/02/pages/page-11.jpg",
+      "audio": "assets/02/audio/page-11.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "02",
+      "lessonTitle": "Jobs and Identifying Things",
+      "subtitle": "仕事と「A は B です」",
+      "page": 12,
+      "pageCount": 38,
+      "image": "assets/02/pages/page-12.jpg",
+      "audio": "assets/02/audio/page-12.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "02",
+      "lessonTitle": "Jobs and Identifying Things",
+      "subtitle": "仕事と「A は B です」",
+      "page": 13,
+      "pageCount": 38,
+      "image": "assets/02/pages/page-13.jpg",
+      "audio": "assets/02/audio/page-13.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "02",
+      "lessonTitle": "Jobs and Identifying Things",
+      "subtitle": "仕事と「A は B です」",
+      "page": 14,
+      "pageCount": 38,
+      "image": "assets/02/pages/page-14.jpg",
+      "audio": "assets/02/audio/page-14.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "02",
+      "lessonTitle": "Jobs and Identifying Things",
+      "subtitle": "仕事と「A は B です」",
+      "page": 15,
+      "pageCount": 38,
+      "image": "assets/02/pages/page-15.jpg",
+      "audio": "assets/02/audio/page-15.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "02",
+      "lessonTitle": "Jobs and Identifying Things",
+      "subtitle": "仕事と「A は B です」",
+      "page": 16,
+      "pageCount": 38,
+      "image": "assets/02/pages/page-16.jpg",
+      "audio": "assets/02/audio/page-16.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "02",
+      "lessonTitle": "Jobs and Identifying Things",
+      "subtitle": "仕事と「A は B です」",
+      "page": 17,
+      "pageCount": 38,
+      "image": "assets/02/pages/page-17.jpg",
+      "audio": "assets/02/audio/page-17.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "02",
+      "lessonTitle": "Jobs and Identifying Things",
+      "subtitle": "仕事と「A は B です」",
+      "page": 18,
+      "pageCount": 38,
+      "image": "assets/02/pages/page-18.jpg",
+      "audio": "assets/02/audio/page-18.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "02",
+      "lessonTitle": "Jobs and Identifying Things",
+      "subtitle": "仕事と「A は B です」",
+      "page": 19,
+      "pageCount": 38,
+      "image": "assets/02/pages/page-19.jpg",
+      "audio": "assets/02/audio/page-19.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "02",
+      "lessonTitle": "Jobs and Identifying Things",
+      "subtitle": "仕事と「A は B です」",
+      "page": 20,
+      "pageCount": 38,
+      "image": "assets/02/pages/page-20.jpg",
+      "audio": "assets/02/audio/page-20.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "02",
+      "lessonTitle": "Jobs and Identifying Things",
+      "subtitle": "仕事と「A は B です」",
+      "page": 21,
+      "pageCount": 38,
+      "image": "assets/02/pages/page-21.jpg",
+      "audio": "assets/02/audio/page-21.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "02",
+      "lessonTitle": "Jobs and Identifying Things",
+      "subtitle": "仕事と「A は B です」",
+      "page": 22,
+      "pageCount": 38,
+      "image": "assets/02/pages/page-22.jpg",
+      "audio": "assets/02/audio/page-22.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "02",
+      "lessonTitle": "Jobs and Identifying Things",
+      "subtitle": "仕事と「A は B です」",
+      "page": 23,
+      "pageCount": 38,
+      "image": "assets/02/pages/page-23.jpg",
+      "audio": "assets/02/audio/page-23.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "02",
+      "lessonTitle": "Jobs and Identifying Things",
+      "subtitle": "仕事と「A は B です」",
+      "page": 24,
+      "pageCount": 38,
+      "image": "assets/02/pages/page-24.jpg",
+      "audio": "assets/02/audio/page-24.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "02",
+      "lessonTitle": "Jobs and Identifying Things",
+      "subtitle": "仕事と「A は B です」",
+      "page": 25,
+      "pageCount": 38,
+      "image": "assets/02/pages/page-25.jpg",
+      "audio": "assets/02/audio/page-25.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "02",
+      "lessonTitle": "Jobs and Identifying Things",
+      "subtitle": "仕事と「A は B です」",
+      "page": 26,
+      "pageCount": 38,
+      "image": "assets/02/pages/page-26.jpg",
+      "audio": "assets/02/audio/page-26.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "02",
+      "lessonTitle": "Jobs and Identifying Things",
+      "subtitle": "仕事と「A は B です」",
+      "page": 27,
+      "pageCount": 38,
+      "image": "assets/02/pages/page-27.jpg",
+      "audio": "assets/02/audio/page-27.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "02",
+      "lessonTitle": "Jobs and Identifying Things",
+      "subtitle": "仕事と「A は B です」",
+      "page": 28,
+      "pageCount": 38,
+      "image": "assets/02/pages/page-28.jpg",
+      "audio": "assets/02/audio/page-28.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "02",
+      "lessonTitle": "Jobs and Identifying Things",
+      "subtitle": "仕事と「A は B です」",
+      "page": 29,
+      "pageCount": 38,
+      "image": "assets/02/pages/page-29.jpg",
+      "audio": "assets/02/audio/page-29.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "02",
+      "lessonTitle": "Jobs and Identifying Things",
+      "subtitle": "仕事と「A は B です」",
+      "page": 30,
+      "pageCount": 38,
+      "image": "assets/02/pages/page-30.jpg",
+      "audio": "assets/02/audio/page-30.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "02",
+      "lessonTitle": "Jobs and Identifying Things",
+      "subtitle": "仕事と「A は B です」",
+      "page": 31,
+      "pageCount": 38,
+      "image": "assets/02/pages/page-31.jpg",
+      "audio": "assets/02/audio/page-31.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "02",
+      "lessonTitle": "Jobs and Identifying Things",
+      "subtitle": "仕事と「A は B です」",
+      "page": 32,
+      "pageCount": 38,
+      "image": "assets/02/pages/page-32.jpg",
+      "audio": "assets/02/audio/page-32.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "02",
+      "lessonTitle": "Jobs and Identifying Things",
+      "subtitle": "仕事と「A は B です」",
+      "page": 33,
+      "pageCount": 38,
+      "image": "assets/02/pages/page-33.jpg",
+      "audio": "assets/02/audio/page-33.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "02",
+      "lessonTitle": "Jobs and Identifying Things",
+      "subtitle": "仕事と「A は B です」",
+      "page": 34,
+      "pageCount": 38,
+      "image": "assets/02/pages/page-34.jpg",
+      "audio": "assets/02/audio/page-34.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "02",
+      "lessonTitle": "Jobs and Identifying Things",
+      "subtitle": "仕事と「A は B です」",
+      "page": 35,
+      "pageCount": 38,
+      "image": "assets/02/pages/page-35.jpg",
+      "audio": "assets/02/audio/page-35.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "02",
+      "lessonTitle": "Jobs and Identifying Things",
+      "subtitle": "仕事と「A は B です」",
+      "page": 36,
+      "pageCount": 38,
+      "image": "assets/02/pages/page-36.jpg",
+      "audio": "assets/02/audio/page-36.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "02",
+      "lessonTitle": "Jobs and Identifying Things",
+      "subtitle": "仕事と「A は B です」",
+      "page": 37,
+      "pageCount": 38,
+      "image": "assets/02/pages/page-37.jpg",
+      "audio": "assets/02/audio/page-37.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "02",
+      "lessonTitle": "Jobs and Identifying Things",
+      "subtitle": "仕事と「A は B です」",
+      "page": 38,
+      "pageCount": 38,
+      "image": "assets/02/pages/page-38.jpg",
+      "audio": "assets/02/audio/page-38.mp3"
+    },
+    {
+      "kind": "review",
+      "lesson": "02",
+      "lessonTitle": "Jobs and Identifying Things",
+      "subtitle": "仕事と「A は B です」",
+      "page": "Review",
+      "pageCount": 38,
+      "image": "assets/02/anime-review.png",
+      "reviewPdf": "assets/02/anime-decoding-review.pdf",
+      "answers": [
+        {
+          "number": "1",
+          "japanese": "私は会社員です。",
+          "reading": "（わたしはかいしゃいんです。）",
+          "english": "I am a company employee.",
+          "romaji": "watashi wakaishaindesu"
+        },
+        {
+          "number": "2",
+          "japanese": "私は技術者です。",
+          "reading": "（わたしはぎじゅつしゃです。）",
+          "english": "I am an engineer.",
+          "romaji": "watashi wagijutsushadesu"
+        },
+        {
+          "number": "3",
+          "japanese": "私は公務員です。",
+          "reading": "（わたしはこうむいんです。）",
+          "english": "I am a public servant.",
+          "romaji": "watashi wakoumuindesu"
+        },
+        {
+          "number": "4",
+          "japanese": "私は警察官です。",
+          "reading": "（わたしはけいさつかんです。）",
+          "english": "I am a police officer.",
+          "romaji": "watashi wakeisatsukandesu"
+        },
+        {
+          "number": "5",
+          "japanese": "私はアメリカ人です。",
+          "reading": "（わたしはアメリカじんです。）",
+          "english": "I am American.",
+          "romaji": "watashi waamerikajindesu"
+        },
+        {
+          "number": "6",
+          "japanese": "これは寿司じゃないです。これはラーメンです。",
+          "reading": "（これはすしじゃないです。これはラーメンです。）",
+          "english": "This is not sushi. This is ramen.",
+          "romaji": "kore wasushija naidesu. kore waraamendesu"
+        },
+        {
+          "number": "7",
+          "japanese": "ここは公園じゃないです。ここは商店街です。",
+          "reading": "（ここはこうえんじゃないです。ここはしょうてんがいです。）",
+          "english": "This is not a park. This is a shopping area.",
+          "romaji": "kokohakouenja naidesu. kokohashoutengaidesu"
+        },
+        {
+          "number": "8",
+          "japanese": "今日は雨じゃないです。今日は晴れです。",
+          "reading": "（きょうはあめじゃないです。きょうははれです。）",
+          "english": "It is not rainy today. It is clear/sunny.",
+          "romaji": "kyouhaameja naidesu. kyouhaharedesu"
+        }
+      ],
+      "audio": null
+    },
+    {
+      "kind": "audioQuiz",
+      "lesson": "02",
+      "lessonTitle": "Jobs and Identifying Things",
+      "subtitle": "仕事と「A は B です」",
+      "page": "Audio Cards",
+      "pageCount": 38,
+      "cards": [
+        {
+          "number": 1,
+          "audio": "assets/02/audio/page-01.mp3",
+          "image": "assets/02/pages/page-01.jpg",
+          "sentence": "わたしはかいしゃいんです。",
+          "romaji": "watashi wakaishaindesu"
+        },
+        {
+          "number": 3,
+          "audio": "assets/02/audio/page-03.mp3",
+          "image": "assets/02/pages/page-03.jpg",
+          "sentence": "たなかさん、。おしごとは？。",
+          "romaji": "tanakasan, . oshigotoha?"
+        },
+        {
+          "number": 4,
+          "audio": "assets/02/audio/page-04.mp3",
+          "image": "assets/02/pages/page-04.jpg",
+          "sentence": "わたしは。かいしゃいんです。",
+          "romaji": "watashi wa. kaishaindesu"
+        },
+        {
+          "number": 5,
+          "audio": "assets/02/audio/page-05.mp3",
+          "image": "assets/02/pages/page-05.jpg",
+          "sentence": "そうですか。わたしはエンジニアです。",
+          "romaji": "soudesu ka. watashi waenjiniadesu"
+        },
+        {
+          "number": 6,
+          "audio": "assets/02/audio/page-06.mp3",
+          "image": "assets/02/pages/page-06.jpg",
+          "sentence": "わたしは、かいしゃいんです。",
+          "romaji": "watashi wa, kaishaindesu"
+        },
+        {
+          "number": 7,
+          "audio": "assets/02/audio/page-07.mp3",
+          "image": "assets/02/pages/page-07.jpg",
+          "sentence": "わたしは、なまえです。わたしは、しょくぎょうです。これは、めいしです。",
+          "romaji": "watashi wa, namaedesu. watashi wa, shokugyoudesu. kore wa, meishidesu"
+        },
+        {
+          "number": 8,
+          "audio": "assets/02/audio/page-08.mp3",
+          "image": "assets/02/pages/page-08.jpg",
+          "sentence": "さとうさん、。おしごとは？。",
+          "romaji": "satousan, . oshigotoha?"
+        },
+        {
+          "number": 9,
+          "audio": "assets/02/audio/page-09.mp3",
+          "image": "assets/02/pages/page-09.jpg",
+          "sentence": "こうむいんです。",
+          "romaji": "koumuindesu"
+        },
+        {
+          "number": 10,
+          "audio": "assets/02/audio/page-10.mp3",
+          "image": "assets/02/pages/page-10.jpg",
+          "sentence": "けいさつかんですか。",
+          "romaji": "keisatsukandesu ka"
+        },
+        {
+          "number": 11,
+          "audio": "assets/02/audio/page-11.mp3",
+          "image": "assets/02/pages/page-11.jpg",
+          "sentence": "いいえ。けいさつかんじゃないです。",
+          "romaji": "iie. keisatsukanja naidesu"
+        },
+        {
+          "number": 12,
+          "audio": "assets/02/audio/page-12.mp3",
+          "image": "assets/02/pages/page-12.jpg",
+          "sentence": "わたしは、けいさつかんじゃないです。",
+          "romaji": "watashi wa, keisatsukanja naidesu"
+        },
+        {
+          "number": 13,
+          "audio": "assets/02/audio/page-13.mp3",
+          "image": "assets/02/pages/page-13.jpg",
+          "sentence": "わたしはアメリカじんです。",
+          "romaji": "watashi waamerikajindesu"
+        },
+        {
+          "number": 14,
+          "audio": "assets/02/audio/page-14.mp3",
+          "image": "assets/02/pages/page-14.jpg",
+          "sentence": "わたしはアメリカじんじゃないです。",
+          "romaji": "watashi waamerikajinja naidesu"
+        },
+        {
+          "number": 15,
+          "audio": "assets/02/audio/page-15.mp3",
+          "image": "assets/02/pages/page-15.jpg",
+          "sentence": "これはすしです。",
+          "romaji": "kore wasushidesu"
+        },
+        {
+          "number": 16,
+          "audio": "assets/02/audio/page-16.mp3",
+          "image": "assets/02/pages/page-16.jpg",
+          "sentence": "これはすしじゃないです。これはラーメンです。",
+          "romaji": "kore wasushija naidesu. kore waraamendesu"
+        },
+        {
+          "number": 17,
+          "audio": "assets/02/audio/page-17.mp3",
+          "image": "assets/02/pages/page-17.jpg",
+          "sentence": "これはコーラです。",
+          "romaji": "kore wakooradesu"
+        },
+        {
+          "number": 18,
+          "audio": "assets/02/audio/page-18.mp3",
+          "image": "assets/02/pages/page-18.jpg",
+          "sentence": "これはコーラじゃないです。これはペプシです。",
+          "romaji": "kore wakooraja naidesu. kore wapepushidesu"
+        },
+        {
+          "number": 19,
+          "audio": "assets/02/audio/page-19.mp3",
+          "image": "assets/02/pages/page-19.jpg",
+          "sentence": "これはいぬです。",
+          "romaji": "kore wainudesu"
+        },
+        {
+          "number": 20,
+          "audio": "assets/02/audio/page-20.mp3",
+          "image": "assets/02/pages/page-20.jpg",
+          "sentence": "これはいぬじゃないです。これはビーバーです。",
+          "romaji": "kore wainuja naidesu. kore wabiibaadesu"
+        },
+        {
+          "number": 21,
+          "audio": "assets/02/audio/page-21.mp3",
+          "image": "assets/02/pages/page-21.jpg",
+          "sentence": "これは、ポパイズです。",
+          "romaji": "kore wa, popaizudesu"
+        },
+        {
+          "number": 22,
+          "audio": "assets/02/audio/page-22.mp3",
+          "image": "assets/02/pages/page-22.jpg",
+          "sentence": "これは、ポパイズじゃないです。これは、ケー・エフ・シーです。",
+          "romaji": "kore wa, popaizuja naidesu. kore wa, kee・efu・shiidesu"
+        },
+        {
+          "number": 23,
+          "audio": "assets/02/audio/page-23.mp3",
+          "image": "assets/02/pages/page-23.jpg",
+          "sentence": "これはパンケーキです。",
+          "romaji": "kore wapankeekidesu"
+        },
+        {
+          "number": 24,
+          "audio": "assets/02/audio/page-24.mp3",
+          "image": "assets/02/pages/page-24.jpg",
+          "sentence": "これはパンケーキじゃないです。これはワッフルです。",
+          "romaji": "kore wapankeekija naidesu. kore wawaffurudesu"
+        },
+        {
+          "number": 25,
+          "audio": "assets/02/audio/page-25.mp3",
+          "image": "assets/02/pages/page-25.jpg",
+          "sentence": "これはタコスです。",
+          "romaji": "kore watakosudesu"
+        },
+        {
+          "number": 26,
+          "audio": "assets/02/audio/page-26.mp3",
+          "image": "assets/02/pages/page-26.jpg",
+          "sentence": "これはタコスじゃないです。これはブリトーです。",
+          "romaji": "kore watakosuja naidesu. kore waburitoodesu"
+        },
+        {
+          "number": 27,
+          "audio": "assets/02/audio/page-27.mp3",
+          "image": "assets/02/pages/page-27.jpg",
+          "sentence": "これはレタスです。",
+          "romaji": "kore waretasudesu"
+        },
+        {
+          "number": 28,
+          "audio": "assets/02/audio/page-28.mp3",
+          "image": "assets/02/pages/page-28.jpg",
+          "sentence": "これはレタスじゃないです。これはキャベツです。",
+          "romaji": "kore waretasuja naidesu. kore wakyabetsudesu"
+        },
+        {
+          "number": 29,
+          "audio": "assets/02/audio/page-29.mp3",
+          "image": "assets/02/pages/page-29.jpg",
+          "sentence": "これはズッキーニです。",
+          "romaji": "kore wazukkiinidesu"
+        },
+        {
+          "number": 30,
+          "audio": "assets/02/audio/page-30.mp3",
+          "image": "assets/02/pages/page-30.jpg",
+          "sentence": "これはズッキーニじゃないです。これはきゅうりです。",
+          "romaji": "kore wazukkiinija naidesu. kore wakyuuridesu"
+        },
+        {
+          "number": 31,
+          "audio": "assets/02/audio/page-31.mp3",
+          "image": "assets/02/pages/page-31.jpg",
+          "sentence": "ここはこうえんです。",
+          "romaji": "kokohakouendesu"
+        },
+        {
+          "number": 32,
+          "audio": "assets/02/audio/page-32.mp3",
+          "image": "assets/02/pages/page-32.jpg",
+          "sentence": "ここはこうえんじゃないです。ここはモールです。",
+          "romaji": "kokohakouenja naidesu. kokohamoorudesu"
+        },
+        {
+          "number": 33,
+          "audio": "assets/02/audio/page-33.mp3",
+          "image": "assets/02/pages/page-33.jpg",
+          "sentence": "きょうはあめです。",
+          "romaji": "kyouhaamedesu"
+        },
+        {
+          "number": 34,
+          "audio": "assets/02/audio/page-34.mp3",
+          "image": "assets/02/pages/page-34.jpg",
+          "sentence": "きょうはあめじゃないです。きょうははれです。",
+          "romaji": "kyouhaameja naidesu. kyouhaharedesu"
+        },
+        {
+          "number": 35,
+          "audio": "assets/02/audio/page-35.mp3",
+          "image": "assets/02/pages/page-35.jpg",
+          "sentence": "あしたはやすみです。",
+          "romaji": "ashitahayasumidesu"
+        },
+        {
+          "number": 36,
+          "audio": "assets/02/audio/page-36.mp3",
+          "image": "assets/02/pages/page-36.jpg",
+          "sentence": "あしたはやすみじゃないです。あしたはしごとです。",
+          "romaji": "ashitahayasumija naidesu. ashitahashigotodesu"
+        },
+        {
+          "number": 37,
+          "audio": "assets/02/audio/page-37.mp3",
+          "image": "assets/02/pages/page-37.jpg",
+          "sentence": "これはドーナツです。",
+          "romaji": "kore wadoonatsudesu"
+        },
+        {
+          "number": 38,
+          "audio": "assets/02/audio/page-38.mp3",
+          "image": "assets/02/pages/page-38.jpg",
+          "sentence": "これはドーナツじゃないです。これはベーグルです。",
+          "romaji": "kore wadoonatsuja naidesu. kore wabeegurudesu"
+        }
+      ],
+      "audio": null
+    },
+    {
+      "kind": "lesson",
+      "lesson": "03",
+      "lessonTitle": "My Family",
+      "subtitle": "私の家族（わたしのかぞく）",
+      "page": 1,
+      "pageCount": 11,
+      "image": "assets/03/pages/page-01.jpg",
+      "audio": "assets/03/audio/page-01.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "03",
+      "lessonTitle": "My Family",
+      "subtitle": "私の家族（わたしのかぞく）",
+      "page": 2,
+      "pageCount": 11,
+      "image": "assets/03/pages/page-02.jpg",
+      "audio": "assets/03/audio/page-02.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "03",
+      "lessonTitle": "My Family",
+      "subtitle": "私の家族（わたしのかぞく）",
+      "page": 3,
+      "pageCount": 11,
+      "image": "assets/03/pages/page-03.jpg",
+      "audio": "assets/03/audio/page-03.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "03",
+      "lessonTitle": "My Family",
+      "subtitle": "私の家族（わたしのかぞく）",
+      "page": 4,
+      "pageCount": 11,
+      "image": "assets/03/pages/page-04.jpg",
+      "audio": "assets/03/audio/page-04.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "03",
+      "lessonTitle": "My Family",
+      "subtitle": "私の家族（わたしのかぞく）",
+      "page": 5,
+      "pageCount": 11,
+      "image": "assets/03/pages/page-05.jpg",
+      "audio": "assets/03/audio/page-05.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "03",
+      "lessonTitle": "My Family",
+      "subtitle": "私の家族（わたしのかぞく）",
+      "page": 6,
+      "pageCount": 11,
+      "image": "assets/03/pages/page-06.jpg",
+      "audio": "assets/03/audio/page-06.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "03",
+      "lessonTitle": "My Family",
+      "subtitle": "私の家族（わたしのかぞく）",
+      "page": 7,
+      "pageCount": 11,
+      "image": "assets/03/pages/page-07.jpg",
+      "audio": "assets/03/audio/page-07.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "03",
+      "lessonTitle": "My Family",
+      "subtitle": "私の家族（わたしのかぞく）",
+      "page": 8,
+      "pageCount": 11,
+      "image": "assets/03/pages/page-08.jpg",
+      "audio": "assets/03/audio/page-08.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "03",
+      "lessonTitle": "My Family",
+      "subtitle": "私の家族（わたしのかぞく）",
+      "page": 9,
+      "pageCount": 11,
+      "image": "assets/03/pages/page-09.jpg",
+      "audio": "assets/03/audio/page-09.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "03",
+      "lessonTitle": "My Family",
+      "subtitle": "私の家族（わたしのかぞく）",
+      "page": 10,
+      "pageCount": 11,
+      "image": "assets/03/pages/page-10.jpg",
+      "audio": "assets/03/audio/page-10.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "03",
+      "lessonTitle": "My Family",
+      "subtitle": "私の家族（わたしのかぞく）",
+      "page": 11,
+      "pageCount": 11,
+      "image": "assets/03/pages/page-11.jpg",
+      "audio": "assets/03/audio/page-11.mp3"
+    },
+    {
+      "kind": "review",
+      "lesson": "03",
+      "lessonTitle": "My Family",
+      "subtitle": "私の家族（わたしのかぞく）",
+      "page": "Review",
+      "pageCount": 11,
+      "image": "assets/03/anime-review.png",
+      "reviewPdf": "assets/03/anime-decoding-review.pdf",
+      "answers": [
+        {
+          "number": "1",
+          "japanese": "父と母です。",
+          "reading": "（ちちとははです。）",
+          "english": "They are my father and mother.",
+          "romaji": "chichitohahadesu"
+        },
+        {
+          "number": "2",
+          "japanese": "夫と妻です。",
+          "reading": "（おっととつまです。）",
+          "english": "They are husband and wife.",
+          "romaji": "ottototsumadesu"
+        },
+        {
+          "number": "3",
+          "japanese": "息子と娘がいます。",
+          "reading": "（むすことむすめがいます。）",
+          "english": "There is a son and a daughter.",
+          "romaji": "musukotomusumegaimasu"
+        },
+        {
+          "number": "4",
+          "japanese": "兄が弟に宿題を教えます。",
+          "reading": "（あにがおとうとにしゅくだいをおしえます。）",
+          "english": "The older brother helps the younger brother with homework.",
+          "romaji": "anigaotoutonishukudaiooshiemasu"
+        },
+        {
+          "number": "5",
+          "japanese": "姉と妹が一緒に歩きます。",
+          "reading": "（あねといもうとがいっしょにあるきます。）",
+          "english": "The older and younger sisters walk together.",
+          "romaji": "anetoimoutogaisshoniarukimasu"
+        },
+        {
+          "number": "6",
+          "japanese": "祖父と祖母が写真を見ています。",
+          "reading": "（そふとそぼがしゃしんをみています。）",
+          "english": "Grandfather and grandmother look at photographs.",
+          "romaji": "sofutosobogashashinomiteimasu"
+        },
+        {
+          "number": "7",
+          "japanese": "祖母が孫を抱いています。",
+          "reading": "（そぼがまごをだいています。）",
+          "english": "The grandmother is holding her grandchild.",
+          "romaji": "sobogamagoodaiteimasu"
+        },
+        {
+          "number": "8",
+          "japanese": "男の人、女の人、男の子、女の子、赤ちゃん、猫、子猫です。",
+          "reading": "（おとこのひと、おんなのひと、おとこのこ、おんなのこ、あかちゃん、ねこ、こねこです。）",
+          "english": "An adult man, woman, boy, girl, baby, cat, and kitten.",
+          "romaji": "otokonohito, onnanohito, otokonoko, onnanoko, akachan, neko, konekodesu"
+        }
+      ],
+      "audio": null
+    },
+    {
+      "kind": "audioQuiz",
+      "lesson": "03",
+      "lessonTitle": "My Family",
+      "subtitle": "私の家族（わたしのかぞく）",
+      "page": "Audio Cards",
+      "pageCount": 11,
+      "cards": [
+        {
+          "number": 1,
+          "audio": "assets/03/audio/page-01.mp3",
+          "image": "assets/03/pages/page-01.jpg",
+          "sentence": "わたしのかぞく。",
+          "romaji": "watashinokazoku"
+        },
+        {
+          "number": 2,
+          "audio": "assets/03/audio/page-02.mp3",
+          "image": "assets/03/pages/page-02.jpg",
+          "sentence": "ちち。はは。おとうさん。おかあさん。",
+          "romaji": "chichi. haha. otousan. okaasan"
+        },
+        {
+          "number": 3,
+          "audio": "assets/03/audio/page-03.mp3",
+          "image": "assets/03/pages/page-03.jpg",
+          "sentence": "おっと。しゅじん。つま。ごしゅじん。おくさん。",
+          "romaji": "otto. shujin. tsuma. goshujin. okusan"
+        },
+        {
+          "number": 4,
+          "audio": "assets/03/audio/page-04.mp3",
+          "image": "assets/03/pages/page-04.jpg",
+          "sentence": "こども。おこさん。",
+          "romaji": "kodomo. okosan"
+        },
+        {
+          "number": 5,
+          "audio": "assets/03/audio/page-05.mp3",
+          "image": "assets/03/pages/page-05.jpg",
+          "sentence": "むすこ。むすこさん。むすめ。むすめさん。",
+          "romaji": "musuko. musukosan. musume. musumesan"
+        },
+        {
+          "number": 6,
+          "audio": "assets/03/audio/page-06.mp3",
+          "image": "assets/03/pages/page-06.jpg",
+          "sentence": "あに。おとうと。おにいさん。おとうとさん。",
+          "romaji": "ani. otouto. oniisan. otoutosan"
+        },
+        {
+          "number": 7,
+          "audio": "assets/03/audio/page-07.mp3",
+          "image": "assets/03/pages/page-07.jpg",
+          "sentence": "あね。いもうと。おねえさん。いもうとさん。",
+          "romaji": "ane. imouto. oneesan. imoutosan"
+        },
+        {
+          "number": 8,
+          "audio": "assets/03/audio/page-08.mp3",
+          "image": "assets/03/pages/page-08.jpg",
+          "sentence": "そふ。そぼ。おじいさん。おばあさん。",
+          "romaji": "sofu. sobo. ojiisan. obaasan"
+        },
+        {
+          "number": 9,
+          "audio": "assets/03/audio/page-09.mp3",
+          "image": "assets/03/pages/page-09.jpg",
+          "sentence": "まご。おまごさん。",
+          "romaji": "mago. omagosan"
+        },
+        {
+          "number": 10,
+          "audio": "assets/03/audio/page-10.mp3",
+          "image": "assets/03/pages/page-10.jpg",
+          "sentence": "おとこのひと。おとこのこ。おんなのひと。おんなのこ。",
+          "romaji": "otokonohito. otokonoko. onnanohito. onnanoko"
+        },
+        {
+          "number": 11,
+          "audio": "assets/03/audio/page-11.mp3",
+          "image": "assets/03/pages/page-11.jpg",
+          "sentence": "あかちゃん。ねこ。こねこ。",
+          "romaji": "akachan. neko. koneko"
+        }
+      ],
+      "audio": null
+    },
+    {
+      "kind": "lesson",
+      "lesson": "04",
+      "lessonTitle": "Counting People",
+      "subtitle": "人の数え方（ひとのかぞえかた）",
+      "page": 1,
+      "pageCount": 11,
+      "image": "assets/04/pages/page-01.jpg",
+      "audio": "assets/04/audio/page-01.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "04",
+      "lessonTitle": "Counting People",
+      "subtitle": "人の数え方（ひとのかぞえかた）",
+      "page": 2,
+      "pageCount": 11,
+      "image": "assets/04/pages/page-02.jpg",
+      "audio": "assets/04/audio/page-02.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "04",
+      "lessonTitle": "Counting People",
+      "subtitle": "人の数え方（ひとのかぞえかた）",
+      "page": 3,
+      "pageCount": 11,
+      "image": "assets/04/pages/page-03.jpg",
+      "audio": "assets/04/audio/page-03.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "04",
+      "lessonTitle": "Counting People",
+      "subtitle": "人の数え方（ひとのかぞえかた）",
+      "page": 4,
+      "pageCount": 11,
+      "image": "assets/04/pages/page-04.jpg",
+      "audio": "assets/04/audio/page-04.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "04",
+      "lessonTitle": "Counting People",
+      "subtitle": "人の数え方（ひとのかぞえかた）",
+      "page": 5,
+      "pageCount": 11,
+      "image": "assets/04/pages/page-05.jpg",
+      "audio": "assets/04/audio/page-05.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "04",
+      "lessonTitle": "Counting People",
+      "subtitle": "人の数え方（ひとのかぞえかた）",
+      "page": 6,
+      "pageCount": 11,
+      "image": "assets/04/pages/page-06.jpg",
+      "audio": "assets/04/audio/page-06.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "04",
+      "lessonTitle": "Counting People",
+      "subtitle": "人の数え方（ひとのかぞえかた）",
+      "page": 7,
+      "pageCount": 11,
+      "image": "assets/04/pages/page-07.jpg",
+      "audio": "assets/04/audio/page-07.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "04",
+      "lessonTitle": "Counting People",
+      "subtitle": "人の数え方（ひとのかぞえかた）",
+      "page": 8,
+      "pageCount": 11,
+      "image": "assets/04/pages/page-08.jpg",
+      "audio": "assets/04/audio/page-08.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "04",
+      "lessonTitle": "Counting People",
+      "subtitle": "人の数え方（ひとのかぞえかた）",
+      "page": 9,
+      "pageCount": 11,
+      "image": "assets/04/pages/page-09.jpg",
+      "audio": "assets/04/audio/page-09.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "04",
+      "lessonTitle": "Counting People",
+      "subtitle": "人の数え方（ひとのかぞえかた）",
+      "page": 10,
+      "pageCount": 11,
+      "image": "assets/04/pages/page-10.jpg",
+      "audio": "assets/04/audio/page-10.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "04",
+      "lessonTitle": "Counting People",
+      "subtitle": "人の数え方（ひとのかぞえかた）",
+      "page": 11,
+      "pageCount": 11,
+      "image": "assets/04/pages/page-11.jpg",
+      "audio": "assets/04/audio/page-11.mp3"
+    },
+    {
+      "kind": "review",
+      "lesson": "04",
+      "lessonTitle": "Counting People",
+      "subtitle": "人の数え方（ひとのかぞえかた）",
+      "page": "Review",
+      "pageCount": 11,
+      "image": "assets/04/anime-review.png",
+      "reviewPdf": "assets/04/anime-decoding-review.pdf",
+      "answers": [
+        {
+          "number": "1",
+          "japanese": "一人です。",
+          "reading": "（ひとりです。）",
+          "english": "There is one person.",
+          "romaji": "hitoridesu"
+        },
+        {
+          "number": "2",
+          "japanese": "二人です。",
+          "reading": "（ふたりです。）",
+          "english": "There are two people.",
+          "romaji": "futaridesu"
+        },
+        {
+          "number": "3",
+          "japanese": "三人です。",
+          "reading": "（さんにんです。）",
+          "english": "There are three people.",
+          "romaji": "sannindesu"
+        },
+        {
+          "number": "4",
+          "japanese": "四人です。",
+          "reading": "（よにんです。）",
+          "english": "There are four people.",
+          "romaji": "yonindesu"
+        },
+        {
+          "number": "5",
+          "japanese": "五人です。",
+          "reading": "（ごにんです。）",
+          "english": "There are five people.",
+          "romaji": "gonindesu"
+        },
+        {
+          "number": "6",
+          "japanese": "六人です。",
+          "reading": "（ろくにんです。）",
+          "english": "There are six people.",
+          "romaji": "rokunindesu"
+        },
+        {
+          "number": "7",
+          "japanese": "七人です。",
+          "reading": "（ななにんです。）",
+          "english": "There are seven people.",
+          "romaji": "nananindesu"
+        },
+        {
+          "number": "8",
+          "japanese": "八人です。",
+          "reading": "（はちにんです。）",
+          "english": "There are eight people.",
+          "romaji": "hachinindesu"
+        },
+        {
+          "number": "9",
+          "japanese": "九人です。",
+          "reading": "（きゅうにんです。）",
+          "english": "There are nine people.",
+          "romaji": "kyuunindesu"
+        },
+        {
+          "number": "10",
+          "japanese": "十人です。",
+          "reading": "（じゅうにんです。）",
+          "english": "There are ten people.",
+          "romaji": "juunindesu"
+        }
+      ],
+      "audio": null
+    },
+    {
+      "kind": "audioQuiz",
+      "lesson": "04",
+      "lessonTitle": "Counting People",
+      "subtitle": "人の数え方（ひとのかぞえかた）",
+      "page": "Audio Cards",
+      "pageCount": 11,
+      "cards": [
+        {
+          "number": 1,
+          "audio": "assets/04/audio/page-01.mp3",
+          "image": "assets/04/pages/page-01.jpg",
+          "sentence": "ひとのかぞえかた。",
+          "romaji": "hitonokazoekata"
+        },
+        {
+          "number": 2,
+          "audio": "assets/04/audio/page-02.mp3",
+          "image": "assets/04/pages/page-02.jpg",
+          "sentence": "ひとり。",
+          "romaji": "hitori"
+        },
+        {
+          "number": 3,
+          "audio": "assets/04/audio/page-03.mp3",
+          "image": "assets/04/pages/page-03.jpg",
+          "sentence": "ふたり。",
+          "romaji": "futari"
+        },
+        {
+          "number": 4,
+          "audio": "assets/04/audio/page-04.mp3",
+          "image": "assets/04/pages/page-04.jpg",
+          "sentence": "さんにん。",
+          "romaji": "sannin"
+        },
+        {
+          "number": 5,
+          "audio": "assets/04/audio/page-05.mp3",
+          "image": "assets/04/pages/page-05.jpg",
+          "sentence": "よにん。",
+          "romaji": "yonin"
+        },
+        {
+          "number": 6,
+          "audio": "assets/04/audio/page-06.mp3",
+          "image": "assets/04/pages/page-06.jpg",
+          "sentence": "ごにん。",
+          "romaji": "gonin"
+        },
+        {
+          "number": 7,
+          "audio": "assets/04/audio/page-07.mp3",
+          "image": "assets/04/pages/page-07.jpg",
+          "sentence": "ろくにん。",
+          "romaji": "rokunin"
+        },
+        {
+          "number": 8,
+          "audio": "assets/04/audio/page-08.mp3",
+          "image": "assets/04/pages/page-08.jpg",
+          "sentence": "ななにん。",
+          "romaji": "nananin"
+        },
+        {
+          "number": 9,
+          "audio": "assets/04/audio/page-09.mp3",
+          "image": "assets/04/pages/page-09.jpg",
+          "sentence": "はちにん。",
+          "romaji": "hachinin"
+        },
+        {
+          "number": 10,
+          "audio": "assets/04/audio/page-10.mp3",
+          "image": "assets/04/pages/page-10.jpg",
+          "sentence": "きゅうにん。",
+          "romaji": "kyuunin"
+        },
+        {
+          "number": 11,
+          "audio": "assets/04/audio/page-11.mp3",
+          "image": "assets/04/pages/page-11.jpg",
+          "sentence": "じゅうにん。",
+          "romaji": "juunin"
+        }
+      ],
+      "audio": null
+    },
+    {
+      "kind": "lesson",
+      "lesson": "05",
+      "lessonTitle": "Golden Week",
+      "subtitle": "Cultural reference lesson",
+      "page": 1,
+      "pageCount": 7,
+      "image": "assets/05/pages/page-1.jpg",
+      "audio": null
+    },
+    {
+      "kind": "lesson",
+      "lesson": "05",
+      "lessonTitle": "Golden Week",
+      "subtitle": "Cultural reference lesson",
+      "page": 2,
+      "pageCount": 7,
+      "image": "assets/05/pages/page-2.jpg",
+      "audio": null
+    },
+    {
+      "kind": "lesson",
+      "lesson": "05",
+      "lessonTitle": "Golden Week",
+      "subtitle": "Cultural reference lesson",
+      "page": 3,
+      "pageCount": 7,
+      "image": "assets/05/pages/page-3.jpg",
+      "audio": null
+    },
+    {
+      "kind": "lesson",
+      "lesson": "05",
+      "lessonTitle": "Golden Week",
+      "subtitle": "Cultural reference lesson",
+      "page": 4,
+      "pageCount": 7,
+      "image": "assets/05/pages/page-4.jpg",
+      "audio": null
+    },
+    {
+      "kind": "lesson",
+      "lesson": "05",
+      "lessonTitle": "Golden Week",
+      "subtitle": "Cultural reference lesson",
+      "page": 5,
+      "pageCount": 7,
+      "image": "assets/05/pages/page-5.jpg",
+      "audio": null
+    },
+    {
+      "kind": "lesson",
+      "lesson": "05",
+      "lessonTitle": "Golden Week",
+      "subtitle": "Cultural reference lesson",
+      "page": 6,
+      "pageCount": 7,
+      "image": "assets/05/pages/page-6.jpg",
+      "audio": null
+    },
+    {
+      "kind": "lesson",
+      "lesson": "05",
+      "lessonTitle": "Golden Week",
+      "subtitle": "Cultural reference lesson",
+      "page": 7,
+      "pageCount": 7,
+      "image": "assets/05/pages/page-7.jpg",
+      "audio": null
+    },
+    {
+      "kind": "lesson",
+      "lesson": "06",
+      "lessonTitle": "Where People Live",
+      "subtitle": "どこに住んでいますか",
+      "page": 1,
+      "pageCount": 26,
+      "image": "assets/06/pages/page-01.jpg",
+      "audio": "assets/06/audio/page-01.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "06",
+      "lessonTitle": "Where People Live",
+      "subtitle": "どこに住んでいますか",
+      "page": 2,
+      "pageCount": 26,
+      "image": "assets/06/pages/page-02.jpg",
+      "audio": null
+    },
+    {
+      "kind": "lesson",
+      "lesson": "06",
+      "lessonTitle": "Where People Live",
+      "subtitle": "どこに住んでいますか",
+      "page": 3,
+      "pageCount": 26,
+      "image": "assets/06/pages/page-03.jpg",
+      "audio": "assets/06/audio/page-03.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "06",
+      "lessonTitle": "Where People Live",
+      "subtitle": "どこに住んでいますか",
+      "page": 4,
+      "pageCount": 26,
+      "image": "assets/06/pages/page-04.jpg",
+      "audio": "assets/06/audio/page-04.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "06",
+      "lessonTitle": "Where People Live",
+      "subtitle": "どこに住んでいますか",
+      "page": 5,
+      "pageCount": 26,
+      "image": "assets/06/pages/page-05.jpg",
+      "audio": "assets/06/audio/page-05.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "06",
+      "lessonTitle": "Where People Live",
+      "subtitle": "どこに住んでいますか",
+      "page": 6,
+      "pageCount": 26,
+      "image": "assets/06/pages/page-06.jpg",
+      "audio": "assets/06/audio/page-06.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "06",
+      "lessonTitle": "Where People Live",
+      "subtitle": "どこに住んでいますか",
+      "page": 7,
+      "pageCount": 26,
+      "image": "assets/06/pages/page-07.jpg",
+      "audio": "assets/06/audio/page-07.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "06",
+      "lessonTitle": "Where People Live",
+      "subtitle": "どこに住んでいますか",
+      "page": 8,
+      "pageCount": 26,
+      "image": "assets/06/pages/page-08.jpg",
+      "audio": "assets/06/audio/page-08.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "06",
+      "lessonTitle": "Where People Live",
+      "subtitle": "どこに住んでいますか",
+      "page": 9,
+      "pageCount": 26,
+      "image": "assets/06/pages/page-09.jpg",
+      "audio": "assets/06/audio/page-09.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "06",
+      "lessonTitle": "Where People Live",
+      "subtitle": "どこに住んでいますか",
+      "page": 10,
+      "pageCount": 26,
+      "image": "assets/06/pages/page-10.jpg",
+      "audio": "assets/06/audio/page-10.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "06",
+      "lessonTitle": "Where People Live",
+      "subtitle": "どこに住んでいますか",
+      "page": 11,
+      "pageCount": 26,
+      "image": "assets/06/pages/page-11.jpg",
+      "audio": "assets/06/audio/page-11.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "06",
+      "lessonTitle": "Where People Live",
+      "subtitle": "どこに住んでいますか",
+      "page": 12,
+      "pageCount": 26,
+      "image": "assets/06/pages/page-12.jpg",
+      "audio": "assets/06/audio/page-12.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "06",
+      "lessonTitle": "Where People Live",
+      "subtitle": "どこに住んでいますか",
+      "page": 13,
+      "pageCount": 26,
+      "image": "assets/06/pages/page-13.jpg",
+      "audio": "assets/06/audio/page-13.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "06",
+      "lessonTitle": "Where People Live",
+      "subtitle": "どこに住んでいますか",
+      "page": 14,
+      "pageCount": 26,
+      "image": "assets/06/pages/page-14.jpg",
+      "audio": "assets/06/audio/page-14.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "06",
+      "lessonTitle": "Where People Live",
+      "subtitle": "どこに住んでいますか",
+      "page": 15,
+      "pageCount": 26,
+      "image": "assets/06/pages/page-15.jpg",
+      "audio": "assets/06/audio/page-15.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "06",
+      "lessonTitle": "Where People Live",
+      "subtitle": "どこに住んでいますか",
+      "page": 16,
+      "pageCount": 26,
+      "image": "assets/06/pages/page-16.jpg",
+      "audio": "assets/06/audio/page-16.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "06",
+      "lessonTitle": "Where People Live",
+      "subtitle": "どこに住んでいますか",
+      "page": 17,
+      "pageCount": 26,
+      "image": "assets/06/pages/page-17.jpg",
+      "audio": "assets/06/audio/page-17.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "06",
+      "lessonTitle": "Where People Live",
+      "subtitle": "どこに住んでいますか",
+      "page": 18,
+      "pageCount": 26,
+      "image": "assets/06/pages/page-18.jpg",
+      "audio": "assets/06/audio/page-18.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "06",
+      "lessonTitle": "Where People Live",
+      "subtitle": "どこに住んでいますか",
+      "page": 19,
+      "pageCount": 26,
+      "image": "assets/06/pages/page-19.jpg",
+      "audio": "assets/06/audio/page-19.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "06",
+      "lessonTitle": "Where People Live",
+      "subtitle": "どこに住んでいますか",
+      "page": 20,
+      "pageCount": 26,
+      "image": "assets/06/pages/page-20.jpg",
+      "audio": "assets/06/audio/page-20.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "06",
+      "lessonTitle": "Where People Live",
+      "subtitle": "どこに住んでいますか",
+      "page": 21,
+      "pageCount": 26,
+      "image": "assets/06/pages/page-21.jpg",
+      "audio": "assets/06/audio/page-21.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "06",
+      "lessonTitle": "Where People Live",
+      "subtitle": "どこに住んでいますか",
+      "page": 22,
+      "pageCount": 26,
+      "image": "assets/06/pages/page-22.jpg",
+      "audio": "assets/06/audio/page-22.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "06",
+      "lessonTitle": "Where People Live",
+      "subtitle": "どこに住んでいますか",
+      "page": 23,
+      "pageCount": 26,
+      "image": "assets/06/pages/page-23.jpg",
+      "audio": "assets/06/audio/page-23.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "06",
+      "lessonTitle": "Where People Live",
+      "subtitle": "どこに住んでいますか",
+      "page": 24,
+      "pageCount": 26,
+      "image": "assets/06/pages/page-24.jpg",
+      "audio": "assets/06/audio/page-24.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "06",
+      "lessonTitle": "Where People Live",
+      "subtitle": "どこに住んでいますか",
+      "page": 25,
+      "pageCount": 26,
+      "image": "assets/06/pages/page-25.jpg",
+      "audio": "assets/06/audio/page-25.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "06",
+      "lessonTitle": "Where People Live",
+      "subtitle": "どこに住んでいますか",
+      "page": 26,
+      "pageCount": 26,
+      "image": "assets/06/pages/page-26.jpg",
+      "audio": "assets/06/audio/page-26.mp3"
+    },
+    {
+      "kind": "review",
+      "lesson": "06",
+      "lessonTitle": "Where People Live",
+      "subtitle": "どこに住んでいますか",
+      "page": "Review",
+      "pageCount": 26,
+      "image": "assets/06/anime-review.png",
+      "reviewPdf": "assets/06/anime-decoding-review.pdf",
+      "answers": [
+        {
+          "number": "1",
+          "japanese": "この人は誰ですか。",
+          "reading": "（このひとはだれですか。）",
+          "english": "Who is this person?",
+          "romaji": "konohitohadaredesu ka"
+        },
+        {
+          "number": "2",
+          "japanese": "この人は私の姉です。",
+          "reading": "（このひとはわたしのあねです。）",
+          "english": "This person is my older sister.",
+          "romaji": "konohitohawatashinoanedesu"
+        },
+        {
+          "number": "3",
+          "japanese": "姉は日本に住んでいます。",
+          "reading": "（あねはにほんにすんでいます。）",
+          "english": "My older sister lives in Japan.",
+          "romaji": "anehanihonnisunde imasu"
+        },
+        {
+          "number": "4",
+          "japanese": "どこに住んでいますか。",
+          "reading": "（どこにすんでいますか。）",
+          "english": "Where do you live?",
+          "romaji": "dokonisunde imasu ka"
+        },
+        {
+          "number": "5",
+          "japanese": "クリスマスはどこに行きますか。",
+          "reading": "（クリスマスはどこにいきますか。）",
+          "english": "Where are you going for Christmas?",
+          "romaji": "kurisumasuhadokoniikimasu ka"
+        },
+        {
+          "number": "6",
+          "japanese": "大切な写真はどこにありますか。",
+          "reading": "（たいせつなしゃしんはどこにありますか。）",
+          "english": "Where is the important photograph?",
+          "romaji": "taisetsunashashinhadokoniarimasu ka"
+        },
+        {
+          "number": "7",
+          "japanese": "サンドイッチと何を飲みますか。",
+          "reading": "（サンドイッチとなにをのみますか。）",
+          "english": "What will you drink with the sandwich?",
+          "romaji": "sandoicchitonanionomimasu ka"
+        },
+        {
+          "number": "8",
+          "japanese": "この人は誰ですか。名前を言ってください。",
+          "reading": "（このひとはだれですか。なまえをいってください。）",
+          "english": "Who is this person? Say the name.",
+          "romaji": "konohitohadaredesu ka. namaeoittekudasai"
+        }
+      ],
+      "audio": null
+    },
+    {
+      "kind": "audioQuiz",
+      "lesson": "06",
+      "lessonTitle": "Where People Live",
+      "subtitle": "どこに住んでいますか",
+      "page": "Audio Cards",
+      "pageCount": 26,
+      "cards": [
+        {
+          "number": 1,
+          "audio": "assets/06/audio/page-01.mp3",
+          "image": "assets/06/pages/page-01.jpg",
+          "sentence": "どこにすんでいますか。",
+          "romaji": "dokonisunde imasu ka"
+        },
+        {
+          "number": 3,
+          "audio": "assets/06/audio/page-03.mp3",
+          "image": "assets/06/pages/page-03.jpg",
+          "sentence": "このひとはだれですか。",
+          "romaji": "konohitohadaredesu ka"
+        },
+        {
+          "number": 4,
+          "audio": "assets/06/audio/page-04.mp3",
+          "image": "assets/06/pages/page-04.jpg",
+          "sentence": "あねです。",
+          "romaji": "anedesu"
+        },
+        {
+          "number": 5,
+          "audio": "assets/06/audio/page-05.mp3",
+          "image": "assets/06/pages/page-05.jpg",
+          "sentence": "おねえさんはどこに。すんでいますか。",
+          "romaji": "oneesanhadokoni. sunde imasu ka"
+        },
+        {
+          "number": 6,
+          "audio": "assets/06/audio/page-06.mp3",
+          "image": "assets/06/pages/page-06.jpg",
+          "sentence": "にほんにすんでいます。",
+          "romaji": "nihonnisunde imasu"
+        },
+        {
+          "number": 7,
+          "audio": "assets/06/audio/page-07.mp3",
+          "image": "assets/06/pages/page-07.jpg",
+          "sentence": "どこにすんでいますか。",
+          "romaji": "dokonisunde imasu ka"
+        },
+        {
+          "number": 8,
+          "audio": "assets/06/audio/page-08.mp3",
+          "image": "assets/06/pages/page-08.jpg",
+          "sentence": "どこにすんでいますか。ばしょにすんでいます。",
+          "romaji": "dokonisunde imasu ka. bashonisunde imasu"
+        },
+        {
+          "number": 9,
+          "audio": "assets/06/audio/page-09.mp3",
+          "image": "assets/06/pages/page-09.jpg",
+          "sentence": "どこにすんでいますか。ばしょにすんでいます。",
+          "romaji": "dokonisunde imasu ka. bashonisunde imasu"
+        },
+        {
+          "number": 10,
+          "audio": "assets/06/audio/page-10.mp3",
+          "image": "assets/06/pages/page-10.jpg",
+          "sentence": "クリスマスはどこにいきますか。クリスマスはばしょにいきます。",
+          "romaji": "kurisumasuhadokoniikimasu ka. kurisumasuhabashoniikimasu"
+        },
+        {
+          "number": 11,
+          "audio": "assets/06/audio/page-11.mp3",
+          "image": "assets/06/pages/page-11.jpg",
+          "sentence": "しゃしんはばしょにあります。たいせつなしゃしんはどこにありますか。",
+          "romaji": "shashinhabashoniarimasu. taisetsunashashinhadokoniarimasu ka"
+        },
+        {
+          "number": 12,
+          "audio": "assets/06/audio/page-12.mp3",
+          "image": "assets/06/pages/page-12.jpg",
+          "sentence": "パンとコーヒー。パンとコーヒーです。",
+          "romaji": "pantokoohii. pantokoohiidesu"
+        },
+        {
+          "number": 13,
+          "audio": "assets/06/audio/page-13.mp3",
+          "image": "assets/06/pages/page-13.jpg",
+          "sentence": "サンドイッチとなにをのみますか。サンドイッチとのみものをのみます。",
+          "romaji": "sandoicchitonanionomimasu ka. sandoicchitonomimonoonomimasu"
+        },
+        {
+          "number": 14,
+          "audio": "assets/06/audio/page-14.mp3",
+          "image": "assets/06/pages/page-14.jpg",
+          "sentence": "だれですか。このひとはだれですか。",
+          "romaji": "daredesu ka. konohitohadaredesu ka"
+        },
+        {
+          "number": 15,
+          "audio": "assets/06/audio/page-15.mp3",
+          "image": "assets/06/pages/page-15.jpg",
+          "sentence": "なまえです。このひとはだれですか。",
+          "romaji": "namaedesu. konohitohadaredesu ka"
+        },
+        {
+          "number": 16,
+          "audio": "assets/06/audio/page-16.mp3",
+          "image": "assets/06/pages/page-16.jpg",
+          "sentence": "このひとはだれですか。",
+          "romaji": "konohitohadaredesu ka"
+        },
+        {
+          "number": 17,
+          "audio": "assets/06/audio/page-17.mp3",
+          "image": "assets/06/pages/page-17.jpg",
+          "sentence": "このひとはだれですか。",
+          "romaji": "konohitohadaredesu ka"
+        },
+        {
+          "number": 18,
+          "audio": "assets/06/audio/page-18.mp3",
+          "image": "assets/06/pages/page-18.jpg",
+          "sentence": "このひとはだれですか。",
+          "romaji": "konohitohadaredesu ka"
+        },
+        {
+          "number": 19,
+          "audio": "assets/06/audio/page-19.mp3",
+          "image": "assets/06/pages/page-19.jpg",
+          "sentence": "このひとはだれですか。",
+          "romaji": "konohitohadaredesu ka"
+        },
+        {
+          "number": 20,
+          "audio": "assets/06/audio/page-20.mp3",
+          "image": "assets/06/pages/page-20.jpg",
+          "sentence": "このひとはだれですか。",
+          "romaji": "konohitohadaredesu ka"
+        },
+        {
+          "number": 21,
+          "audio": "assets/06/audio/page-21.mp3",
+          "image": "assets/06/pages/page-21.jpg",
+          "sentence": "このひとはだれですか。",
+          "romaji": "konohitohadaredesu ka"
+        },
+        {
+          "number": 22,
+          "audio": "assets/06/audio/page-22.mp3",
+          "image": "assets/06/pages/page-22.jpg",
+          "sentence": "このひとはだれですか。",
+          "romaji": "konohitohadaredesu ka"
+        },
+        {
+          "number": 23,
+          "audio": "assets/06/audio/page-23.mp3",
+          "image": "assets/06/pages/page-23.jpg",
+          "sentence": "このひとはだれですか。",
+          "romaji": "konohitohadaredesu ka"
+        },
+        {
+          "number": 24,
+          "audio": "assets/06/audio/page-24.mp3",
+          "image": "assets/06/pages/page-24.jpg",
+          "sentence": "このひとはだれですか。",
+          "romaji": "konohitohadaredesu ka"
+        },
+        {
+          "number": 25,
+          "audio": "assets/06/audio/page-25.mp3",
+          "image": "assets/06/pages/page-25.jpg",
+          "sentence": "このひとはだれですか。",
+          "romaji": "konohitohadaredesu ka"
+        },
+        {
+          "number": 26,
+          "audio": "assets/06/audio/page-26.mp3",
+          "image": "assets/06/pages/page-26.jpg",
+          "sentence": "このひとはだれですか。",
+          "romaji": "konohitohadaredesu ka"
+        }
+      ],
+      "audio": null
+    },
+    {
+      "kind": "lesson",
+      "lesson": "07",
+      "lessonTitle": "Possession and Age",
+      "subtitle": "「の」と年齢（ねんれい）",
+      "page": 1,
+      "pageCount": 7,
+      "image": "assets/07/pages/page-1.jpg",
+      "audio": "assets/07/audio/page-01.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "07",
+      "lessonTitle": "Possession and Age",
+      "subtitle": "「の」と年齢（ねんれい）",
+      "page": 2,
+      "pageCount": 7,
+      "image": "assets/07/pages/page-2.jpg",
+      "audio": "assets/07/audio/page-02.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "07",
+      "lessonTitle": "Possession and Age",
+      "subtitle": "「の」と年齢（ねんれい）",
+      "page": 3,
+      "pageCount": 7,
+      "image": "assets/07/pages/page-3.jpg",
+      "audio": "assets/07/audio/page-03.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "07",
+      "lessonTitle": "Possession and Age",
+      "subtitle": "「の」と年齢（ねんれい）",
+      "page": 4,
+      "pageCount": 7,
+      "image": "assets/07/pages/page-4.jpg",
+      "audio": "assets/07/audio/page-04.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "07",
+      "lessonTitle": "Possession and Age",
+      "subtitle": "「の」と年齢（ねんれい）",
+      "page": 5,
+      "pageCount": 7,
+      "image": "assets/07/pages/page-5.jpg",
+      "audio": "assets/07/audio/page-05.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "07",
+      "lessonTitle": "Possession and Age",
+      "subtitle": "「の」と年齢（ねんれい）",
+      "page": 6,
+      "pageCount": 7,
+      "image": "assets/07/pages/page-6.jpg",
+      "audio": "assets/07/audio/page-06.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "07",
+      "lessonTitle": "Possession and Age",
+      "subtitle": "「の」と年齢（ねんれい）",
+      "page": 7,
+      "pageCount": 7,
+      "image": "assets/07/pages/page-7.jpg",
+      "audio": "assets/07/audio/page-07.mp3"
+    },
+    {
+      "kind": "review",
+      "lesson": "07",
+      "lessonTitle": "Possession and Age",
+      "subtitle": "「の」と年齢（ねんれい）",
+      "page": "Review",
+      "pageCount": 7,
+      "image": "assets/07/anime-review.png",
+      "reviewPdf": "assets/07/anime-decoding-review.pdf",
+      "answers": [
+        {
+          "number": "1",
+          "japanese": "これは亀です。",
+          "reading": "（これはかめです。）",
+          "english": "This is a turtle.",
+          "romaji": "kore wakamedesu"
+        },
+        {
+          "number": "2",
+          "japanese": "これは私の亀です。",
+          "reading": "（これはわたしのかめです。）",
+          "english": "This is my turtle.",
+          "romaji": "kore wawatashinokamedesu"
+        },
+        {
+          "number": "3",
+          "japanese": "これは私のペットです。",
+          "reading": "（これはわたしのペットです。）",
+          "english": "This is my pet.",
+          "romaji": "kore wawatashinopettodesu"
+        },
+        {
+          "number": "4",
+          "japanese": "これは私の車です。",
+          "reading": "（これはわたしのくるまです。）",
+          "english": "This is my car.",
+          "romaji": "kore wawatashinokurumadesu"
+        },
+        {
+          "number": "5",
+          "japanese": "亀は何歳ですか。",
+          "reading": "（かめはなんさいですか。）",
+          "english": "How old is the turtle?",
+          "romaji": "kamehanansaidesu ka"
+        },
+        {
+          "number": "6",
+          "japanese": "亀は百歳です。",
+          "reading": "（かめはひゃくさいです。）",
+          "english": "The turtle is one hundred years old.",
+          "romaji": "kamehahyakusaidesu"
+        },
+        {
+          "number": "7",
+          "japanese": "子猫は零歳です。",
+          "reading": "（こねこはれいさいです。）",
+          "english": "The kitten is zero years old.",
+          "romaji": "konekohareisaidesu"
+        },
+        {
+          "number": "8",
+          "japanese": "これは誰の鞄ですか。これは誰の自転車ですか。",
+          "reading": "（これはだれのかばんですか。これはだれのじてんしゃですか。）",
+          "english": "Whose bag and bicycle are these?",
+          "romaji": "kore wadarenokabandesu ka. kore wadarenojitenshadesu ka"
+        }
+      ],
+      "audio": null
+    },
+    {
+      "kind": "audioQuiz",
+      "lesson": "07",
+      "lessonTitle": "Possession and Age",
+      "subtitle": "「の」と年齢（ねんれい）",
+      "page": "Audio Cards",
+      "pageCount": 7,
+      "cards": [
+        {
+          "number": 1,
+          "audio": "assets/07/audio/page-01.mp3",
+          "image": "assets/07/pages/page-1.jpg",
+          "sentence": "かめです。",
+          "romaji": "kamedesu"
+        },
+        {
+          "number": 2,
+          "audio": "assets/07/audio/page-02.mp3",
+          "image": "assets/07/pages/page-2.jpg",
+          "sentence": "わたしのかめです。",
+          "romaji": "watashinokamedesu"
+        },
+        {
+          "number": 3,
+          "audio": "assets/07/audio/page-03.mp3",
+          "image": "assets/07/pages/page-3.jpg",
+          "sentence": "わたしのペットです。",
+          "romaji": "watashinopettodesu"
+        },
+        {
+          "number": 4,
+          "audio": "assets/07/audio/page-04.mp3",
+          "image": "assets/07/pages/page-4.jpg",
+          "sentence": "わたしの、くるまです。",
+          "romaji": "watashino, kurumadesu"
+        },
+        {
+          "number": 5,
+          "audio": "assets/07/audio/page-05.mp3",
+          "image": "assets/07/pages/page-5.jpg",
+          "sentence": "おおきい！。かめはなんさいですか。",
+          "romaji": "ookii! . kamehanansaidesu ka"
+        },
+        {
+          "number": 6,
+          "audio": "assets/07/audio/page-06.mp3",
+          "image": "assets/07/pages/page-6.jpg",
+          "sentence": "１００さいです。",
+          "romaji": "１００saidesu"
+        },
+        {
+          "number": 7,
+          "audio": "assets/07/audio/page-07.mp3",
+          "image": "assets/07/pages/page-7.jpg",
+          "sentence": "なんさいですか。０さいです。",
+          "romaji": "nansaidesu ka. ０saidesu"
+        }
+      ],
+      "audio": null
+    },
+    {
+      "kind": "lesson",
+      "lesson": "08",
+      "lessonTitle": "Food and Drinks",
+      "subtitle": "食べ物と飲み物",
+      "page": 1,
+      "pageCount": 26,
+      "image": "assets/08/pages/page-01.jpg",
+      "audio": "assets/08/audio/page-01.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "08",
+      "lessonTitle": "Food and Drinks",
+      "subtitle": "食べ物と飲み物",
+      "page": 2,
+      "pageCount": 26,
+      "image": "assets/08/pages/page-02.jpg",
+      "audio": "assets/08/audio/page-02.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "08",
+      "lessonTitle": "Food and Drinks",
+      "subtitle": "食べ物と飲み物",
+      "page": 3,
+      "pageCount": 26,
+      "image": "assets/08/pages/page-03.jpg",
+      "audio": "assets/08/audio/page-03.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "08",
+      "lessonTitle": "Food and Drinks",
+      "subtitle": "食べ物と飲み物",
+      "page": 4,
+      "pageCount": 26,
+      "image": "assets/08/pages/page-04.jpg",
+      "audio": "assets/08/audio/page-04.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "08",
+      "lessonTitle": "Food and Drinks",
+      "subtitle": "食べ物と飲み物",
+      "page": 5,
+      "pageCount": 26,
+      "image": "assets/08/pages/page-05.jpg",
+      "audio": "assets/08/audio/page-05.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "08",
+      "lessonTitle": "Food and Drinks",
+      "subtitle": "食べ物と飲み物",
+      "page": 6,
+      "pageCount": 26,
+      "image": "assets/08/pages/page-06.jpg",
+      "audio": "assets/08/audio/page-06.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "08",
+      "lessonTitle": "Food and Drinks",
+      "subtitle": "食べ物と飲み物",
+      "page": 7,
+      "pageCount": 26,
+      "image": "assets/08/pages/page-07.jpg",
+      "audio": "assets/08/audio/page-07.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "08",
+      "lessonTitle": "Food and Drinks",
+      "subtitle": "食べ物と飲み物",
+      "page": 8,
+      "pageCount": 26,
+      "image": "assets/08/pages/page-08.jpg",
+      "audio": "assets/08/audio/page-08.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "08",
+      "lessonTitle": "Food and Drinks",
+      "subtitle": "食べ物と飲み物",
+      "page": 9,
+      "pageCount": 26,
+      "image": "assets/08/pages/page-09.jpg",
+      "audio": "assets/08/audio/page-09.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "08",
+      "lessonTitle": "Food and Drinks",
+      "subtitle": "食べ物と飲み物",
+      "page": 10,
+      "pageCount": 26,
+      "image": "assets/08/pages/page-10.jpg",
+      "audio": "assets/08/audio/page-10.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "08",
+      "lessonTitle": "Food and Drinks",
+      "subtitle": "食べ物と飲み物",
+      "page": 11,
+      "pageCount": 26,
+      "image": "assets/08/pages/page-11.jpg",
+      "audio": "assets/08/audio/page-11.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "08",
+      "lessonTitle": "Food and Drinks",
+      "subtitle": "食べ物と飲み物",
+      "page": 12,
+      "pageCount": 26,
+      "image": "assets/08/pages/page-12.jpg",
+      "audio": "assets/08/audio/page-12.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "08",
+      "lessonTitle": "Food and Drinks",
+      "subtitle": "食べ物と飲み物",
+      "page": 13,
+      "pageCount": 26,
+      "image": "assets/08/pages/page-13.jpg",
+      "audio": "assets/08/audio/page-13.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "08",
+      "lessonTitle": "Food and Drinks",
+      "subtitle": "食べ物と飲み物",
+      "page": 14,
+      "pageCount": 26,
+      "image": "assets/08/pages/page-14.jpg",
+      "audio": "assets/08/audio/page-14.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "08",
+      "lessonTitle": "Food and Drinks",
+      "subtitle": "食べ物と飲み物",
+      "page": 15,
+      "pageCount": 26,
+      "image": "assets/08/pages/page-15.jpg",
+      "audio": "assets/08/audio/page-15.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "08",
+      "lessonTitle": "Food and Drinks",
+      "subtitle": "食べ物と飲み物",
+      "page": 16,
+      "pageCount": 26,
+      "image": "assets/08/pages/page-16.jpg",
+      "audio": "assets/08/audio/page-16.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "08",
+      "lessonTitle": "Food and Drinks",
+      "subtitle": "食べ物と飲み物",
+      "page": 17,
+      "pageCount": 26,
+      "image": "assets/08/pages/page-17.jpg",
+      "audio": "assets/08/audio/page-17.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "08",
+      "lessonTitle": "Food and Drinks",
+      "subtitle": "食べ物と飲み物",
+      "page": 18,
+      "pageCount": 26,
+      "image": "assets/08/pages/page-18.jpg",
+      "audio": "assets/08/audio/page-18.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "08",
+      "lessonTitle": "Food and Drinks",
+      "subtitle": "食べ物と飲み物",
+      "page": 19,
+      "pageCount": 26,
+      "image": "assets/08/pages/page-19.jpg",
+      "audio": "assets/08/audio/page-19.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "08",
+      "lessonTitle": "Food and Drinks",
+      "subtitle": "食べ物と飲み物",
+      "page": 20,
+      "pageCount": 26,
+      "image": "assets/08/pages/page-20.jpg",
+      "audio": "assets/08/audio/page-20.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "08",
+      "lessonTitle": "Food and Drinks",
+      "subtitle": "食べ物と飲み物",
+      "page": 21,
+      "pageCount": 26,
+      "image": "assets/08/pages/page-21.jpg",
+      "audio": "assets/08/audio/page-21.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "08",
+      "lessonTitle": "Food and Drinks",
+      "subtitle": "食べ物と飲み物",
+      "page": 22,
+      "pageCount": 26,
+      "image": "assets/08/pages/page-22.jpg",
+      "audio": "assets/08/audio/page-22.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "08",
+      "lessonTitle": "Food and Drinks",
+      "subtitle": "食べ物と飲み物",
+      "page": 23,
+      "pageCount": 26,
+      "image": "assets/08/pages/page-23.jpg",
+      "audio": "assets/08/audio/page-23.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "08",
+      "lessonTitle": "Food and Drinks",
+      "subtitle": "食べ物と飲み物",
+      "page": 24,
+      "pageCount": 26,
+      "image": "assets/08/pages/page-24.jpg",
+      "audio": "assets/08/audio/page-24.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "08",
+      "lessonTitle": "Food and Drinks",
+      "subtitle": "食べ物と飲み物",
+      "page": 25,
+      "pageCount": 26,
+      "image": "assets/08/pages/page-25.jpg",
+      "audio": "assets/08/audio/page-25.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "08",
+      "lessonTitle": "Food and Drinks",
+      "subtitle": "食べ物と飲み物",
+      "page": 26,
+      "pageCount": 26,
+      "image": "assets/08/pages/page-26.jpg",
+      "audio": "assets/08/audio/page-26.mp3"
+    },
+    {
+      "kind": "review",
+      "lesson": "08",
+      "lessonTitle": "Food and Drinks",
+      "subtitle": "食べ物と飲み物",
+      "page": "Review",
+      "pageCount": 26,
+      "image": "assets/08/anime-review.png",
+      "reviewPdf": "assets/08/anime-decoding-review.pdf",
+      "answers": [
+        {
+          "number": "1",
+          "japanese": "パン、ご飯、魚、肉、卵、野菜、果物です。",
+          "reading": "（パン、ごはん、さかな、にく、たまご、やさい、くだものです。）",
+          "english": "Bread, rice, fish, meat, eggs, vegetables, and fruit.",
+          "romaji": "pan, gohan, sakana, niku, tamago, yasai, kudamonodesu"
+        },
+        {
+          "number": "2",
+          "japanese": "パンを食べます。",
+          "reading": "（パンをたべます。）",
+          "english": "I eat bread.",
+          "romaji": "panotabemasu"
+        },
+        {
+          "number": "3",
+          "japanese": "誕生日に何を食べますか。",
+          "reading": "（たんじょうびになにをたべますか。）",
+          "english": "What will you eat on your birthday?",
+          "romaji": "tanjoubininaniotabemasu ka"
+        },
+        {
+          "number": "4",
+          "japanese": "水、珈琲、紅茶、お茶、お酒、日本酒です。",
+          "reading": "（みず、コーヒー、こうちゃ、おちゃ、おさけ、にほんしゅです。）",
+          "english": "Water, coffee, black tea, green tea, alcohol, and sake.",
+          "romaji": "mizu, koohii, koucha, ocha, osake, nihonshudesu"
+        },
+        {
+          "number": "5",
+          "japanese": "はい、珈琲を飲みます。",
+          "reading": "（はい、コーヒーをのみます。）",
+          "english": "Yes, I drink coffee.",
+          "romaji": "hai, koohiionomimasu"
+        },
+        {
+          "number": "6",
+          "japanese": "いいえ、結構です。",
+          "reading": "（いいえ、けっこうです。）",
+          "english": "No, thank you.",
+          "romaji": "iie, kekkoudesu"
+        },
+        {
+          "number": "7",
+          "japanese": "飛行機で何を飲みますか。",
+          "reading": "（ひこうきでなにをのみますか。）",
+          "english": "What will you drink on the airplane?",
+          "romaji": "hikoukidenanionomimasu ka"
+        },
+        {
+          "number": "8",
+          "japanese": "食べ物を食べます。飲み物を飲みます。",
+          "reading": "（たべものをたべます。のみものをのみます。）",
+          "english": "We eat food and drink beverages.",
+          "romaji": "tabemonootabemasu . nomimonoonomimasu"
+        }
+      ],
+      "audio": null
+    },
+    {
+      "kind": "audioQuiz",
+      "lesson": "08",
+      "lessonTitle": "Food and Drinks",
+      "subtitle": "食べ物と飲み物",
+      "page": "Audio Cards",
+      "pageCount": 26,
+      "cards": [
+        {
+          "number": 1,
+          "audio": "assets/08/audio/page-01.mp3",
+          "image": "assets/08/pages/page-01.jpg",
+          "sentence": "なにがすきですか。",
+          "romaji": "nanigasuki desu ka"
+        },
+        {
+          "number": 2,
+          "audio": "assets/08/audio/page-02.mp3",
+          "image": "assets/08/pages/page-02.jpg",
+          "sentence": "たべもの。",
+          "romaji": "tabemono"
+        },
+        {
+          "number": 3,
+          "audio": "assets/08/audio/page-03.mp3",
+          "image": "assets/08/pages/page-03.jpg",
+          "sentence": "パン。ぱん。",
+          "romaji": "pan. pan"
+        },
+        {
+          "number": 4,
+          "audio": "assets/08/audio/page-04.mp3",
+          "image": "assets/08/pages/page-04.jpg",
+          "sentence": "ごはん。",
+          "romaji": "gohan"
+        },
+        {
+          "number": 5,
+          "audio": "assets/08/audio/page-05.mp3",
+          "image": "assets/08/pages/page-05.jpg",
+          "sentence": "さかな。魚。",
+          "romaji": "sakana. sakana"
+        },
+        {
+          "number": 6,
+          "audio": "assets/08/audio/page-06.mp3",
+          "image": "assets/08/pages/page-06.jpg",
+          "sentence": "にく。肉。",
+          "romaji": "niku. niku"
+        },
+        {
+          "number": 7,
+          "audio": "assets/08/audio/page-07.mp3",
+          "image": "assets/08/pages/page-07.jpg",
+          "sentence": "たまご。",
+          "romaji": "tamago"
+        },
+        {
+          "number": 8,
+          "audio": "assets/08/audio/page-08.mp3",
+          "image": "assets/08/pages/page-08.jpg",
+          "sentence": "やさい。",
+          "romaji": "yasai"
+        },
+        {
+          "number": 9,
+          "audio": "assets/08/audio/page-09.mp3",
+          "image": "assets/08/pages/page-09.jpg",
+          "sentence": "くだもの。",
+          "romaji": "kudamono"
+        },
+        {
+          "number": 10,
+          "audio": "assets/08/audio/page-10.mp3",
+          "image": "assets/08/pages/page-10.jpg",
+          "sentence": "くだものを。たべますか。",
+          "romaji": "kudamonoo. tabemasu ka"
+        },
+        {
+          "number": 11,
+          "audio": "assets/08/audio/page-11.mp3",
+          "image": "assets/08/pages/page-11.jpg",
+          "sentence": "はい、たべます。ありがとうございます。",
+          "romaji": "hai, tabemasu . arigatou gozaimasu"
+        },
+        {
+          "number": 12,
+          "audio": "assets/08/audio/page-12.mp3",
+          "image": "assets/08/pages/page-12.jpg",
+          "sentence": "たべます。パンをたべます。",
+          "romaji": "tabemasu . panotabemasu"
+        },
+        {
+          "number": 13,
+          "audio": "assets/08/audio/page-13.mp3",
+          "image": "assets/08/pages/page-13.jpg",
+          "sentence": "たべものをたべます。",
+          "romaji": "tabemonootabemasu"
+        },
+        {
+          "number": 14,
+          "audio": "assets/08/audio/page-14.mp3",
+          "image": "assets/08/pages/page-14.jpg",
+          "sentence": "たべものをたべます。きょうはあなたのたんじょうびです！。なにをたべますか。",
+          "romaji": "tabemonootabemasu . kyouhaanatanotanjoubidesu! . naniotabemasu ka"
+        },
+        {
+          "number": 15,
+          "audio": "assets/08/audio/page-15.mp3",
+          "image": "assets/08/pages/page-15.jpg",
+          "sentence": "のみもの。",
+          "romaji": "nomimono"
+        },
+        {
+          "number": 16,
+          "audio": "assets/08/audio/page-16.mp3",
+          "image": "assets/08/pages/page-16.jpg",
+          "sentence": "みず。水。",
+          "romaji": "mizu. mizu"
+        },
+        {
+          "number": 17,
+          "audio": "assets/08/audio/page-17.mp3",
+          "image": "assets/08/pages/page-17.jpg",
+          "sentence": "コーヒー。",
+          "romaji": "koohii"
+        },
+        {
+          "number": 18,
+          "audio": "assets/08/audio/page-18.mp3",
+          "image": "assets/08/pages/page-18.jpg",
+          "sentence": "こうちゃ。",
+          "romaji": "koucha"
+        },
+        {
+          "number": 19,
+          "audio": "assets/08/audio/page-19.mp3",
+          "image": "assets/08/pages/page-19.jpg",
+          "sentence": "おちゃ。",
+          "romaji": "ocha"
+        },
+        {
+          "number": 20,
+          "audio": "assets/08/audio/page-20.mp3",
+          "image": "assets/08/pages/page-20.jpg",
+          "sentence": "おさけ。にほんしゅ。",
+          "romaji": "osake. nihonshu"
+        },
+        {
+          "number": 21,
+          "audio": "assets/08/audio/page-21.mp3",
+          "image": "assets/08/pages/page-21.jpg",
+          "sentence": "コーヒーのみますか。",
+          "romaji": "koohiinomimasu ka"
+        },
+        {
+          "number": 22,
+          "audio": "assets/08/audio/page-22.mp3",
+          "image": "assets/08/pages/page-22.jpg",
+          "sentence": "はい、のみます。ありがとうございます。",
+          "romaji": "hai, nomimasu . arigatou gozaimasu"
+        },
+        {
+          "number": 23,
+          "audio": "assets/08/audio/page-23.mp3",
+          "image": "assets/08/pages/page-23.jpg",
+          "sentence": "いいえ、けっこうです。ありがとうございます。",
+          "romaji": "iie, kekkoudesu. arigatou gozaimasu"
+        },
+        {
+          "number": 24,
+          "audio": "assets/08/audio/page-24.mp3",
+          "image": "assets/08/pages/page-24.jpg",
+          "sentence": "のみます。コーヒーをのみます。",
+          "romaji": "nomimasu . koohiionomimasu"
+        },
+        {
+          "number": 25,
+          "audio": "assets/08/audio/page-25.mp3",
+          "image": "assets/08/pages/page-25.jpg",
+          "sentence": "のみものをのみます。",
+          "romaji": "nomimonoonomimasu"
+        },
+        {
+          "number": 26,
+          "audio": "assets/08/audio/page-26.mp3",
+          "image": "assets/08/pages/page-26.jpg",
+          "sentence": "のみものをのみます。ひこうきでなにをのみますか。",
+          "romaji": "nomimonoonomimasu . hikoukidenanionomimasu ka"
+        }
+      ],
+      "audio": null
+    },
+    {
+      "kind": "lesson",
+      "lesson": "09",
+      "lessonTitle": "Likes and Habits",
+      "subtitle": "好き・一番・いつも・よく・あまり",
+      "page": 1,
+      "pageCount": 31,
+      "image": "assets/09/pages/page-01.jpg",
+      "audio": "assets/09/audio/page-01.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "09",
+      "lessonTitle": "Likes and Habits",
+      "subtitle": "好き・一番・いつも・よく・あまり",
+      "page": 2,
+      "pageCount": 31,
+      "image": "assets/09/pages/page-02.jpg",
+      "audio": null
+    },
+    {
+      "kind": "lesson",
+      "lesson": "09",
+      "lessonTitle": "Likes and Habits",
+      "subtitle": "好き・一番・いつも・よく・あまり",
+      "page": 3,
+      "pageCount": 31,
+      "image": "assets/09/pages/page-03.jpg",
+      "audio": "assets/09/audio/page-03.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "09",
+      "lessonTitle": "Likes and Habits",
+      "subtitle": "好き・一番・いつも・よく・あまり",
+      "page": 4,
+      "pageCount": 31,
+      "image": "assets/09/pages/page-04.jpg",
+      "audio": "assets/09/audio/page-04.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "09",
+      "lessonTitle": "Likes and Habits",
+      "subtitle": "好き・一番・いつも・よく・あまり",
+      "page": 5,
+      "pageCount": 31,
+      "image": "assets/09/pages/page-05.jpg",
+      "audio": "assets/09/audio/page-05.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "09",
+      "lessonTitle": "Likes and Habits",
+      "subtitle": "好き・一番・いつも・よく・あまり",
+      "page": 6,
+      "pageCount": 31,
+      "image": "assets/09/pages/page-06.jpg",
+      "audio": "assets/09/audio/page-06.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "09",
+      "lessonTitle": "Likes and Habits",
+      "subtitle": "好き・一番・いつも・よく・あまり",
+      "page": 7,
+      "pageCount": 31,
+      "image": "assets/09/pages/page-07.jpg",
+      "audio": "assets/09/audio/page-07.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "09",
+      "lessonTitle": "Likes and Habits",
+      "subtitle": "好き・一番・いつも・よく・あまり",
+      "page": 8,
+      "pageCount": 31,
+      "image": "assets/09/pages/page-08.jpg",
+      "audio": "assets/09/audio/page-08.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "09",
+      "lessonTitle": "Likes and Habits",
+      "subtitle": "好き・一番・いつも・よく・あまり",
+      "page": 9,
+      "pageCount": 31,
+      "image": "assets/09/pages/page-09.jpg",
+      "audio": "assets/09/audio/page-09.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "09",
+      "lessonTitle": "Likes and Habits",
+      "subtitle": "好き・一番・いつも・よく・あまり",
+      "page": 10,
+      "pageCount": 31,
+      "image": "assets/09/pages/page-10.jpg",
+      "audio": "assets/09/audio/page-10.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "09",
+      "lessonTitle": "Likes and Habits",
+      "subtitle": "好き・一番・いつも・よく・あまり",
+      "page": 11,
+      "pageCount": 31,
+      "image": "assets/09/pages/page-11.jpg",
+      "audio": "assets/09/audio/page-11.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "09",
+      "lessonTitle": "Likes and Habits",
+      "subtitle": "好き・一番・いつも・よく・あまり",
+      "page": 12,
+      "pageCount": 31,
+      "image": "assets/09/pages/page-12.jpg",
+      "audio": "assets/09/audio/page-12.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "09",
+      "lessonTitle": "Likes and Habits",
+      "subtitle": "好き・一番・いつも・よく・あまり",
+      "page": 13,
+      "pageCount": 31,
+      "image": "assets/09/pages/page-13.jpg",
+      "audio": "assets/09/audio/page-13.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "09",
+      "lessonTitle": "Likes and Habits",
+      "subtitle": "好き・一番・いつも・よく・あまり",
+      "page": 14,
+      "pageCount": 31,
+      "image": "assets/09/pages/page-14.jpg",
+      "audio": "assets/09/audio/page-14.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "09",
+      "lessonTitle": "Likes and Habits",
+      "subtitle": "好き・一番・いつも・よく・あまり",
+      "page": 15,
+      "pageCount": 31,
+      "image": "assets/09/pages/page-15.jpg",
+      "audio": "assets/09/audio/page-15.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "09",
+      "lessonTitle": "Likes and Habits",
+      "subtitle": "好き・一番・いつも・よく・あまり",
+      "page": 16,
+      "pageCount": 31,
+      "image": "assets/09/pages/page-16.jpg",
+      "audio": "assets/09/audio/page-16.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "09",
+      "lessonTitle": "Likes and Habits",
+      "subtitle": "好き・一番・いつも・よく・あまり",
+      "page": 17,
+      "pageCount": 31,
+      "image": "assets/09/pages/page-17.jpg",
+      "audio": "assets/09/audio/page-17.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "09",
+      "lessonTitle": "Likes and Habits",
+      "subtitle": "好き・一番・いつも・よく・あまり",
+      "page": 18,
+      "pageCount": 31,
+      "image": "assets/09/pages/page-18.jpg",
+      "audio": "assets/09/audio/page-18.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "09",
+      "lessonTitle": "Likes and Habits",
+      "subtitle": "好き・一番・いつも・よく・あまり",
+      "page": 19,
+      "pageCount": 31,
+      "image": "assets/09/pages/page-19.jpg",
+      "audio": "assets/09/audio/page-19.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "09",
+      "lessonTitle": "Likes and Habits",
+      "subtitle": "好き・一番・いつも・よく・あまり",
+      "page": 20,
+      "pageCount": 31,
+      "image": "assets/09/pages/page-20.jpg",
+      "audio": "assets/09/audio/page-20.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "09",
+      "lessonTitle": "Likes and Habits",
+      "subtitle": "好き・一番・いつも・よく・あまり",
+      "page": 21,
+      "pageCount": 31,
+      "image": "assets/09/pages/page-21.jpg",
+      "audio": "assets/09/audio/page-21.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "09",
+      "lessonTitle": "Likes and Habits",
+      "subtitle": "好き・一番・いつも・よく・あまり",
+      "page": 22,
+      "pageCount": 31,
+      "image": "assets/09/pages/page-22.jpg",
+      "audio": "assets/09/audio/page-22.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "09",
+      "lessonTitle": "Likes and Habits",
+      "subtitle": "好き・一番・いつも・よく・あまり",
+      "page": 23,
+      "pageCount": 31,
+      "image": "assets/09/pages/page-23.jpg",
+      "audio": "assets/09/audio/page-23.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "09",
+      "lessonTitle": "Likes and Habits",
+      "subtitle": "好き・一番・いつも・よく・あまり",
+      "page": 24,
+      "pageCount": 31,
+      "image": "assets/09/pages/page-24.jpg",
+      "audio": "assets/09/audio/page-24.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "09",
+      "lessonTitle": "Likes and Habits",
+      "subtitle": "好き・一番・いつも・よく・あまり",
+      "page": 25,
+      "pageCount": 31,
+      "image": "assets/09/pages/page-25.jpg",
+      "audio": "assets/09/audio/page-25.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "09",
+      "lessonTitle": "Likes and Habits",
+      "subtitle": "好き・一番・いつも・よく・あまり",
+      "page": 26,
+      "pageCount": 31,
+      "image": "assets/09/pages/page-26.jpg",
+      "audio": "assets/09/audio/page-26.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "09",
+      "lessonTitle": "Likes and Habits",
+      "subtitle": "好き・一番・いつも・よく・あまり",
+      "page": 27,
+      "pageCount": 31,
+      "image": "assets/09/pages/page-27.jpg",
+      "audio": "assets/09/audio/page-27.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "09",
+      "lessonTitle": "Likes and Habits",
+      "subtitle": "好き・一番・いつも・よく・あまり",
+      "page": 28,
+      "pageCount": 31,
+      "image": "assets/09/pages/page-28.jpg",
+      "audio": "assets/09/audio/page-28.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "09",
+      "lessonTitle": "Likes and Habits",
+      "subtitle": "好き・一番・いつも・よく・あまり",
+      "page": 29,
+      "pageCount": 31,
+      "image": "assets/09/pages/page-29.jpg",
+      "audio": "assets/09/audio/page-29.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "09",
+      "lessonTitle": "Likes and Habits",
+      "subtitle": "好き・一番・いつも・よく・あまり",
+      "page": 30,
+      "pageCount": 31,
+      "image": "assets/09/pages/page-30.jpg",
+      "audio": "assets/09/audio/page-30.mp3"
+    },
+    {
+      "kind": "lesson",
+      "lesson": "09",
+      "lessonTitle": "Likes and Habits",
+      "subtitle": "好き・一番・いつも・よく・あまり",
+      "page": 31,
+      "pageCount": 31,
+      "image": "assets/09/pages/page-31.jpg",
+      "audio": "assets/09/audio/page-31.mp3"
+    },
+    {
+      "kind": "review",
+      "lesson": "09",
+      "lessonTitle": "Likes and Habits",
+      "subtitle": "好き・一番・いつも・よく・あまり",
+      "page": "Review",
+      "pageCount": 31,
+      "image": "assets/09/anime-review.png",
+      "reviewPdf": "assets/09/anime-decoding-review.pdf",
+      "answers": [
+        {
+          "number": "1",
+          "japanese": "私は野菜が好きです。",
+          "reading": "（わたしはやさいがすきです。）",
+          "english": "I like vegetables.",
+          "romaji": "watashi wayasaigasuki desu"
+        },
+        {
+          "number": "2",
+          "japanese": "人参は好きじゃないです。",
+          "reading": "（にんじんはすきじゃないです。）",
+          "english": "I do not like carrots.",
+          "romaji": "ninjinhasuki ja naidesu"
+        },
+        {
+          "number": "3",
+          "japanese": "ビールが一番好きです。",
+          "reading": "（ビールがいちばんすきです。）",
+          "english": "I like beer best.",
+          "romaji": "biirugaichibansuki desu"
+        },
+        {
+          "number": "4",
+          "japanese": "珈琲が大好きです。",
+          "reading": "（コーヒーがだいすきです。）",
+          "english": "I love coffee.",
+          "romaji": "koohiigadaisuki desu"
+        },
+        {
+          "number": "5",
+          "japanese": "朝、よくご飯を食べます。",
+          "reading": "（あさ、よくごはんをたべます。）",
+          "english": "I often eat rice in the morning.",
+          "romaji": "asa, yokugohanotabemasu"
+        },
+        {
+          "number": "6",
+          "japanese": "いつも朝ご飯を食べます。",
+          "reading": "（いつもあさごはんをたべます。）",
+          "english": "I always eat breakfast.",
+          "romaji": "itsumoasagohanotabemasu"
+        },
+        {
+          "number": "7",
+          "japanese": "あまりご飯を食べません。",
+          "reading": "（あまりごはんをたべません。）",
+          "english": "I do not eat rice very often.",
+          "romaji": "amarigohanotabemasen"
+        },
+        {
+          "number": "8",
+          "japanese": "あまり珈琲を飲みません。",
+          "reading": "（あまりコーヒーをのみません。）",
+          "english": "I do not drink coffee very often.",
+          "romaji": "amarikoohiionomimasen"
+        }
+      ],
+      "audio": null
+    },
+    {
+      "kind": "audioQuiz",
+      "lesson": "09",
+      "lessonTitle": "Likes and Habits",
+      "subtitle": "好き・一番・いつも・よく・あまり",
+      "page": "Audio Cards",
+      "pageCount": 31,
+      "cards": [
+        {
+          "number": 1,
+          "audio": "assets/09/audio/page-01.mp3",
+          "image": "assets/09/pages/page-01.jpg",
+          "sentence": "わさびは、すきじゃないです。",
+          "romaji": "wasabiha, suki ja naidesu"
+        },
+        {
+          "number": 3,
+          "audio": "assets/09/audio/page-03.mp3",
+          "image": "assets/09/pages/page-03.jpg",
+          "sentence": "たべものはなにがすきですか。",
+          "romaji": "tabemonohananigasuki desu ka"
+        },
+        {
+          "number": 4,
+          "audio": "assets/09/audio/page-04.mp3",
+          "image": "assets/09/pages/page-04.jpg",
+          "sentence": "わたしはやさいがすきです。",
+          "romaji": "watashi wayasaigasuki desu"
+        },
+        {
+          "number": 5,
+          "audio": "assets/09/audio/page-05.mp3",
+          "image": "assets/09/pages/page-05.jpg",
+          "sentence": "にんじんはすきですか。",
+          "romaji": "ninjinhasuki desu ka"
+        },
+        {
+          "number": 6,
+          "audio": "assets/09/audio/page-06.mp3",
+          "image": "assets/09/pages/page-06.jpg",
+          "sentence": "はい、すきです。",
+          "romaji": "hai, suki desu"
+        },
+        {
+          "number": 7,
+          "audio": "assets/09/audio/page-07.mp3",
+          "image": "assets/09/pages/page-07.jpg",
+          "sentence": "すきです。さかながすきです。",
+          "romaji": "suki desu. sakanagasuki desu"
+        },
+        {
+          "number": 8,
+          "audio": "assets/09/audio/page-08.mp3",
+          "image": "assets/09/pages/page-08.jpg",
+          "sentence": "いいえ、すきじゃないです。",
+          "romaji": "iie, suki ja naidesu"
+        },
+        {
+          "number": 9,
+          "audio": "assets/09/audio/page-09.mp3",
+          "image": "assets/09/pages/page-09.jpg",
+          "sentence": "すきじゃないです。さかなはすきじゃないです。",
+          "romaji": "suki ja naidesu. sakanahasuki ja naidesu"
+        },
+        {
+          "number": 10,
+          "audio": "assets/09/audio/page-10.mp3",
+          "image": "assets/09/pages/page-10.jpg",
+          "sentence": "たべものはなにがすきですか。",
+          "romaji": "tabemonohananigasuki desu ka"
+        },
+        {
+          "number": 11,
+          "audio": "assets/09/audio/page-11.mp3",
+          "image": "assets/09/pages/page-11.jpg",
+          "sentence": "たべものがすきです。",
+          "romaji": "tabemonogasuki desu"
+        },
+        {
+          "number": 12,
+          "audio": "assets/09/audio/page-12.mp3",
+          "image": "assets/09/pages/page-12.jpg",
+          "sentence": "たべものはすきじゃないです。",
+          "romaji": "tabemonohasuki ja naidesu"
+        },
+        {
+          "number": 13,
+          "audio": "assets/09/audio/page-13.mp3",
+          "image": "assets/09/pages/page-13.jpg",
+          "sentence": "のみものはなにがすきですか。",
+          "romaji": "nomimonohananigasuki desu ka"
+        },
+        {
+          "number": 14,
+          "audio": "assets/09/audio/page-14.mp3",
+          "image": "assets/09/pages/page-14.jpg",
+          "sentence": "のみものがすきです。",
+          "romaji": "nomimonogasuki desu"
+        },
+        {
+          "number": 15,
+          "audio": "assets/09/audio/page-15.mp3",
+          "image": "assets/09/pages/page-15.jpg",
+          "sentence": "のみものはすきじゃないです。",
+          "romaji": "nomimonohasuki ja naidesu"
+        },
+        {
+          "number": 16,
+          "audio": "assets/09/audio/page-16.mp3",
+          "image": "assets/09/pages/page-16.jpg",
+          "sentence": "ビールがいちばんすきです。",
+          "romaji": "biirugaichibansuki desu"
+        },
+        {
+          "number": 17,
+          "audio": "assets/09/audio/page-17.mp3",
+          "image": "assets/09/pages/page-17.jpg",
+          "sentence": "いちばん。ビールがいちばんすきです。",
+          "romaji": "ichiban. biirugaichibansuki desu"
+        },
+        {
+          "number": 18,
+          "audio": "assets/09/audio/page-18.mp3",
+          "image": "assets/09/pages/page-18.jpg",
+          "sentence": "だいすき。コーヒーがだいすきです。",
+          "romaji": "daisuki. koohiigadaisuki desu"
+        },
+        {
+          "number": 19,
+          "audio": "assets/09/audio/page-19.mp3",
+          "image": "assets/09/pages/page-19.jpg",
+          "sentence": "なにがいちばんすきですか。なにかがいちばんすきです。",
+          "romaji": "nanigaichibansuki desu ka. nanikagaichibansuki desu"
+        },
+        {
+          "number": 20,
+          "audio": "assets/09/audio/page-20.mp3",
+          "image": "assets/09/pages/page-20.jpg",
+          "sentence": "なにをよくたべますか。",
+          "romaji": "nanioyokutabemasu ka"
+        },
+        {
+          "number": 21,
+          "audio": "assets/09/audio/page-21.mp3",
+          "image": "assets/09/pages/page-21.jpg",
+          "sentence": "よくごはんをたべます。",
+          "romaji": "yokugohanotabemasu"
+        },
+        {
+          "number": 22,
+          "audio": "assets/09/audio/page-22.mp3",
+          "image": "assets/09/pages/page-22.jpg",
+          "sentence": "いつもごはんを。たべます。",
+          "romaji": "itsumogohano. tabemasu"
+        },
+        {
+          "number": 23,
+          "audio": "assets/09/audio/page-23.mp3",
+          "image": "assets/09/pages/page-23.jpg",
+          "sentence": "あまりごはんをたべません。",
+          "romaji": "amarigohanotabemasen"
+        },
+        {
+          "number": 24,
+          "audio": "assets/09/audio/page-24.mp3",
+          "image": "assets/09/pages/page-24.jpg",
+          "sentence": "わたしはよくヨーグルトをたべます。",
+          "romaji": "watashi wayokuyoogurutootabemasu"
+        },
+        {
+          "number": 25,
+          "audio": "assets/09/audio/page-25.mp3",
+          "image": "assets/09/pages/page-25.jpg",
+          "sentence": "わたしはあまりコーヒーをのみません。",
+          "romaji": "watashi waamarikoohiionomimasen"
+        },
+        {
+          "number": 26,
+          "audio": "assets/09/audio/page-26.mp3",
+          "image": "assets/09/pages/page-26.jpg",
+          "sentence": "あさごはんをたべますか。",
+          "romaji": "asagohanotabemasu ka"
+        },
+        {
+          "number": 27,
+          "audio": "assets/09/audio/page-27.mp3",
+          "image": "assets/09/pages/page-27.jpg",
+          "sentence": "はい、【いつも・よく】あさごはんをたべます。",
+          "romaji": "hai, 【itsumo・yoku】asagohanotabemasu"
+        },
+        {
+          "number": 28,
+          "audio": "assets/09/audio/page-28.mp3",
+          "image": "assets/09/pages/page-28.jpg",
+          "sentence": "いいえ、あまりあさごはんをたべません。",
+          "romaji": "iie, amariasagohanotabemasen"
+        },
+        {
+          "number": 29,
+          "audio": "assets/09/audio/page-29.mp3",
+          "image": "assets/09/pages/page-29.jpg",
+          "sentence": "コーヒーをのみますか。",
+          "romaji": "koohiionomimasu ka"
+        },
+        {
+          "number": 30,
+          "audio": "assets/09/audio/page-30.mp3",
+          "image": "assets/09/pages/page-30.jpg",
+          "sentence": "はい、【いつも・よく】コーヒーをのみます。",
+          "romaji": "hai, 【itsumo・yoku】koohiionomimasu"
+        },
+        {
+          "number": 31,
+          "audio": "assets/09/audio/page-31.mp3",
+          "image": "assets/09/pages/page-31.jpg",
+          "sentence": "いいえ、あまりコーヒーをのみません。",
+          "romaji": "iie, amarikoohiionomimasen"
+        }
+      ],
+      "audio": null
+    },
+    {
+      "kind": "culture",
+      "lesson": "C01",
+      "lessonTitle": "Japanese-Inspired Foods at Trader Joe’s",
+      "subtitle": "Food and cultural adaptation",
+      "page": 1,
+      "pageCount": 12,
+      "image": "assets/C01/pages/page-01.jpg",
+      "sourcePdf": "assets/C01/original.pdf",
+      "audio": null
+    },
+    {
+      "kind": "culture",
+      "lesson": "C01",
+      "lessonTitle": "Japanese-Inspired Foods at Trader Joe’s",
+      "subtitle": "Food and cultural adaptation",
+      "page": 2,
+      "pageCount": 12,
+      "image": "assets/C01/pages/page-02.jpg",
+      "sourcePdf": "assets/C01/original.pdf",
+      "audio": null
+    },
+    {
+      "kind": "culture",
+      "lesson": "C01",
+      "lessonTitle": "Japanese-Inspired Foods at Trader Joe’s",
+      "subtitle": "Food and cultural adaptation",
+      "page": 3,
+      "pageCount": 12,
+      "image": "assets/C01/pages/page-03.jpg",
+      "sourcePdf": "assets/C01/original.pdf",
+      "audio": null
+    },
+    {
+      "kind": "culture",
+      "lesson": "C01",
+      "lessonTitle": "Japanese-Inspired Foods at Trader Joe’s",
+      "subtitle": "Food and cultural adaptation",
+      "page": 4,
+      "pageCount": 12,
+      "image": "assets/C01/pages/page-04.jpg",
+      "sourcePdf": "assets/C01/original.pdf",
+      "audio": null
+    },
+    {
+      "kind": "culture",
+      "lesson": "C01",
+      "lessonTitle": "Japanese-Inspired Foods at Trader Joe’s",
+      "subtitle": "Food and cultural adaptation",
+      "page": 5,
+      "pageCount": 12,
+      "image": "assets/C01/pages/page-05.jpg",
+      "sourcePdf": "assets/C01/original.pdf",
+      "audio": null
+    },
+    {
+      "kind": "culture",
+      "lesson": "C01",
+      "lessonTitle": "Japanese-Inspired Foods at Trader Joe’s",
+      "subtitle": "Food and cultural adaptation",
+      "page": 6,
+      "pageCount": 12,
+      "image": "assets/C01/pages/page-06.jpg",
+      "sourcePdf": "assets/C01/original.pdf",
+      "audio": null
+    },
+    {
+      "kind": "culture",
+      "lesson": "C01",
+      "lessonTitle": "Japanese-Inspired Foods at Trader Joe’s",
+      "subtitle": "Food and cultural adaptation",
+      "page": 7,
+      "pageCount": 12,
+      "image": "assets/C01/pages/page-07.jpg",
+      "sourcePdf": "assets/C01/original.pdf",
+      "audio": null
+    },
+    {
+      "kind": "culture",
+      "lesson": "C01",
+      "lessonTitle": "Japanese-Inspired Foods at Trader Joe’s",
+      "subtitle": "Food and cultural adaptation",
+      "page": 8,
+      "pageCount": 12,
+      "image": "assets/C01/pages/page-08.jpg",
+      "sourcePdf": "assets/C01/original.pdf",
+      "audio": null
+    },
+    {
+      "kind": "culture",
+      "lesson": "C01",
+      "lessonTitle": "Japanese-Inspired Foods at Trader Joe’s",
+      "subtitle": "Food and cultural adaptation",
+      "page": 9,
+      "pageCount": 12,
+      "image": "assets/C01/pages/page-09.jpg",
+      "sourcePdf": "assets/C01/original.pdf",
+      "audio": null
+    },
+    {
+      "kind": "culture",
+      "lesson": "C01",
+      "lessonTitle": "Japanese-Inspired Foods at Trader Joe’s",
+      "subtitle": "Food and cultural adaptation",
+      "page": 10,
+      "pageCount": 12,
+      "image": "assets/C01/pages/page-10.jpg",
+      "sourcePdf": "assets/C01/original.pdf",
+      "audio": null
+    },
+    {
+      "kind": "culture",
+      "lesson": "C01",
+      "lessonTitle": "Japanese-Inspired Foods at Trader Joe’s",
+      "subtitle": "Food and cultural adaptation",
+      "page": 11,
+      "pageCount": 12,
+      "image": "assets/C01/pages/page-11.jpg",
+      "sourcePdf": "assets/C01/original.pdf",
+      "audio": null
+    },
+    {
+      "kind": "culture",
+      "lesson": "C01",
+      "lessonTitle": "Japanese-Inspired Foods at Trader Joe’s",
+      "subtitle": "Food and cultural adaptation",
+      "page": 12,
+      "pageCount": 12,
+      "image": "assets/C01/pages/page-12.jpg",
+      "sourcePdf": "assets/C01/original.pdf",
+      "audio": null
+    },
+    {
+      "kind": "culture",
+      "lesson": "C02",
+      "lessonTitle": "Frozen Foods in Japan",
+      "subtitle": "冷凍食品（れいとうしょくひん）",
+      "page": 1,
+      "pageCount": 7,
+      "image": "assets/C02/pages/page-1.jpg",
+      "sourcePdf": "assets/C02/original.pdf",
+      "audio": null
+    },
+    {
+      "kind": "culture",
+      "lesson": "C02",
+      "lessonTitle": "Frozen Foods in Japan",
+      "subtitle": "冷凍食品（れいとうしょくひん）",
+      "page": 2,
+      "pageCount": 7,
+      "image": "assets/C02/pages/page-2.jpg",
+      "sourcePdf": "assets/C02/original.pdf",
+      "audio": null
+    },
+    {
+      "kind": "culture",
+      "lesson": "C02",
+      "lessonTitle": "Frozen Foods in Japan",
+      "subtitle": "冷凍食品（れいとうしょくひん）",
+      "page": 3,
+      "pageCount": 7,
+      "image": "assets/C02/pages/page-3.jpg",
+      "sourcePdf": "assets/C02/original.pdf",
+      "audio": null
+    },
+    {
+      "kind": "culture",
+      "lesson": "C02",
+      "lessonTitle": "Frozen Foods in Japan",
+      "subtitle": "冷凍食品（れいとうしょくひん）",
+      "page": 4,
+      "pageCount": 7,
+      "image": "assets/C02/pages/page-4.jpg",
+      "sourcePdf": "assets/C02/original.pdf",
+      "audio": null
+    },
+    {
+      "kind": "culture",
+      "lesson": "C02",
+      "lessonTitle": "Frozen Foods in Japan",
+      "subtitle": "冷凍食品（れいとうしょくひん）",
+      "page": 5,
+      "pageCount": 7,
+      "image": "assets/C02/pages/page-5.jpg",
+      "sourcePdf": "assets/C02/original.pdf",
+      "audio": null
+    },
+    {
+      "kind": "culture",
+      "lesson": "C02",
+      "lessonTitle": "Frozen Foods in Japan",
+      "subtitle": "冷凍食品（れいとうしょくひん）",
+      "page": 6,
+      "pageCount": 7,
+      "image": "assets/C02/pages/page-6.jpg",
+      "sourcePdf": "assets/C02/original.pdf",
+      "audio": null
+    },
+    {
+      "kind": "culture",
+      "lesson": "C02",
+      "lessonTitle": "Frozen Foods in Japan",
+      "subtitle": "冷凍食品（れいとうしょくひん）",
+      "page": 7,
+      "pageCount": 7,
+      "image": "assets/C02/pages/page-7.jpg",
+      "sourcePdf": "assets/C02/original.pdf",
+      "audio": null
+    },
+    {
+      "kind": "culture",
+      "lesson": "C03",
+      "lessonTitle": "The Story of Punch-kun",
+      "subtitle": "Japanese snow-monkey culture",
+      "page": 1,
+      "pageCount": 7,
+      "image": "assets/C03/pages/page-1.jpg",
+      "sourcePdf": "assets/C03/original.pdf",
+      "audio": null
+    },
+    {
+      "kind": "culture",
+      "lesson": "C03",
+      "lessonTitle": "The Story of Punch-kun",
+      "subtitle": "Japanese snow-monkey culture",
+      "page": 2,
+      "pageCount": 7,
+      "image": "assets/C03/pages/page-2.jpg",
+      "sourcePdf": "assets/C03/original.pdf",
+      "audio": null
+    },
+    {
+      "kind": "culture",
+      "lesson": "C03",
+      "lessonTitle": "The Story of Punch-kun",
+      "subtitle": "Japanese snow-monkey culture",
+      "page": 3,
+      "pageCount": 7,
+      "image": "assets/C03/pages/page-3.jpg",
+      "sourcePdf": "assets/C03/original.pdf",
+      "audio": null
+    },
+    {
+      "kind": "culture",
+      "lesson": "C03",
+      "lessonTitle": "The Story of Punch-kun",
+      "subtitle": "Japanese snow-monkey culture",
+      "page": 4,
+      "pageCount": 7,
+      "image": "assets/C03/pages/page-4.jpg",
+      "sourcePdf": "assets/C03/original.pdf",
+      "audio": null
+    },
+    {
+      "kind": "culture",
+      "lesson": "C03",
+      "lessonTitle": "The Story of Punch-kun",
+      "subtitle": "Japanese snow-monkey culture",
+      "page": 5,
+      "pageCount": 7,
+      "image": "assets/C03/pages/page-5.jpg",
+      "sourcePdf": "assets/C03/original.pdf",
+      "audio": null
+    },
+    {
+      "kind": "culture",
+      "lesson": "C03",
+      "lessonTitle": "The Story of Punch-kun",
+      "subtitle": "Japanese snow-monkey culture",
+      "page": 6,
+      "pageCount": 7,
+      "image": "assets/C03/pages/page-6.jpg",
+      "sourcePdf": "assets/C03/original.pdf",
+      "audio": null
+    },
+    {
+      "kind": "culture",
+      "lesson": "C03",
+      "lessonTitle": "The Story of Punch-kun",
+      "subtitle": "Japanese snow-monkey culture",
+      "page": 7,
+      "pageCount": 7,
+      "image": "assets/C03/pages/page-7.jpg",
+      "sourcePdf": "assets/C03/original.pdf",
+      "audio": null
+    },
+    {
+      "kind": "culture",
+      "lesson": "C04",
+      "lessonTitle": "Japan in April",
+      "subtitle": "School, business, and renewal",
+      "page": 1,
+      "pageCount": 11,
+      "image": "assets/C04/pages/page-01.jpg",
+      "sourcePdf": "assets/C04/original.pdf",
+      "audio": null
+    },
+    {
+      "kind": "culture",
+      "lesson": "C04",
+      "lessonTitle": "Japan in April",
+      "subtitle": "School, business, and renewal",
+      "page": 2,
+      "pageCount": 11,
+      "image": "assets/C04/pages/page-02.jpg",
+      "sourcePdf": "assets/C04/original.pdf",
+      "audio": null
+    },
+    {
+      "kind": "culture",
+      "lesson": "C04",
+      "lessonTitle": "Japan in April",
+      "subtitle": "School, business, and renewal",
+      "page": 3,
+      "pageCount": 11,
+      "image": "assets/C04/pages/page-03.jpg",
+      "sourcePdf": "assets/C04/original.pdf",
+      "audio": null
+    },
+    {
+      "kind": "culture",
+      "lesson": "C04",
+      "lessonTitle": "Japan in April",
+      "subtitle": "School, business, and renewal",
+      "page": 4,
+      "pageCount": 11,
+      "image": "assets/C04/pages/page-04.jpg",
+      "sourcePdf": "assets/C04/original.pdf",
+      "audio": null
+    },
+    {
+      "kind": "culture",
+      "lesson": "C04",
+      "lessonTitle": "Japan in April",
+      "subtitle": "School, business, and renewal",
+      "page": 5,
+      "pageCount": 11,
+      "image": "assets/C04/pages/page-05.jpg",
+      "sourcePdf": "assets/C04/original.pdf",
+      "audio": null
+    },
+    {
+      "kind": "culture",
+      "lesson": "C04",
+      "lessonTitle": "Japan in April",
+      "subtitle": "School, business, and renewal",
+      "page": 6,
+      "pageCount": 11,
+      "image": "assets/C04/pages/page-06.jpg",
+      "sourcePdf": "assets/C04/original.pdf",
+      "audio": null
+    },
+    {
+      "kind": "culture",
+      "lesson": "C04",
+      "lessonTitle": "Japan in April",
+      "subtitle": "School, business, and renewal",
+      "page": 7,
+      "pageCount": 11,
+      "image": "assets/C04/pages/page-07.jpg",
+      "sourcePdf": "assets/C04/original.pdf",
+      "audio": null
+    },
+    {
+      "kind": "culture",
+      "lesson": "C04",
+      "lessonTitle": "Japan in April",
+      "subtitle": "School, business, and renewal",
+      "page": 8,
+      "pageCount": 11,
+      "image": "assets/C04/pages/page-08.jpg",
+      "sourcePdf": "assets/C04/original.pdf",
+      "audio": null
+    },
+    {
+      "kind": "culture",
+      "lesson": "C04",
+      "lessonTitle": "Japan in April",
+      "subtitle": "School, business, and renewal",
+      "page": 9,
+      "pageCount": 11,
+      "image": "assets/C04/pages/page-09.jpg",
+      "sourcePdf": "assets/C04/original.pdf",
+      "audio": null
+    },
+    {
+      "kind": "culture",
+      "lesson": "C04",
+      "lessonTitle": "Japan in April",
+      "subtitle": "School, business, and renewal",
+      "page": 10,
+      "pageCount": 11,
+      "image": "assets/C04/pages/page-10.jpg",
+      "sourcePdf": "assets/C04/original.pdf",
+      "audio": null
+    },
+    {
+      "kind": "culture",
+      "lesson": "C04",
+      "lessonTitle": "Japan in April",
+      "subtitle": "School, business, and renewal",
+      "page": 11,
+      "pageCount": 11,
+      "image": "assets/C04/pages/page-11.jpg",
+      "sourcePdf": "assets/C04/original.pdf",
+      "audio": null
+    },
+    {
+      "kind": "culture",
+      "lesson": "C05",
+      "lessonTitle": "Cherry Blossoms: U.S. and Japan",
+      "subtitle": "桜（さくら） cultural exchange",
+      "page": 1,
+      "pageCount": 12,
+      "image": "assets/C05/pages/page-01.jpg",
+      "sourcePdf": "assets/C05/original.pdf",
+      "audio": null
+    },
+    {
+      "kind": "culture",
+      "lesson": "C05",
+      "lessonTitle": "Cherry Blossoms: U.S. and Japan",
+      "subtitle": "桜（さくら） cultural exchange",
+      "page": 2,
+      "pageCount": 12,
+      "image": "assets/C05/pages/page-02.jpg",
+      "sourcePdf": "assets/C05/original.pdf",
+      "audio": null
+    },
+    {
+      "kind": "culture",
+      "lesson": "C05",
+      "lessonTitle": "Cherry Blossoms: U.S. and Japan",
+      "subtitle": "桜（さくら） cultural exchange",
+      "page": 3,
+      "pageCount": 12,
+      "image": "assets/C05/pages/page-03.jpg",
+      "sourcePdf": "assets/C05/original.pdf",
+      "audio": null
+    },
+    {
+      "kind": "culture",
+      "lesson": "C05",
+      "lessonTitle": "Cherry Blossoms: U.S. and Japan",
+      "subtitle": "桜（さくら） cultural exchange",
+      "page": 4,
+      "pageCount": 12,
+      "image": "assets/C05/pages/page-04.jpg",
+      "sourcePdf": "assets/C05/original.pdf",
+      "audio": null
+    },
+    {
+      "kind": "culture",
+      "lesson": "C05",
+      "lessonTitle": "Cherry Blossoms: U.S. and Japan",
+      "subtitle": "桜（さくら） cultural exchange",
+      "page": 5,
+      "pageCount": 12,
+      "image": "assets/C05/pages/page-05.jpg",
+      "sourcePdf": "assets/C05/original.pdf",
+      "audio": null
+    },
+    {
+      "kind": "culture",
+      "lesson": "C05",
+      "lessonTitle": "Cherry Blossoms: U.S. and Japan",
+      "subtitle": "桜（さくら） cultural exchange",
+      "page": 6,
+      "pageCount": 12,
+      "image": "assets/C05/pages/page-06.jpg",
+      "sourcePdf": "assets/C05/original.pdf",
+      "audio": null
+    },
+    {
+      "kind": "culture",
+      "lesson": "C05",
+      "lessonTitle": "Cherry Blossoms: U.S. and Japan",
+      "subtitle": "桜（さくら） cultural exchange",
+      "page": 7,
+      "pageCount": 12,
+      "image": "assets/C05/pages/page-07.jpg",
+      "sourcePdf": "assets/C05/original.pdf",
+      "audio": null
+    },
+    {
+      "kind": "culture",
+      "lesson": "C05",
+      "lessonTitle": "Cherry Blossoms: U.S. and Japan",
+      "subtitle": "桜（さくら） cultural exchange",
+      "page": 8,
+      "pageCount": 12,
+      "image": "assets/C05/pages/page-08.jpg",
+      "sourcePdf": "assets/C05/original.pdf",
+      "audio": null
+    },
+    {
+      "kind": "culture",
+      "lesson": "C05",
+      "lessonTitle": "Cherry Blossoms: U.S. and Japan",
+      "subtitle": "桜（さくら） cultural exchange",
+      "page": 9,
+      "pageCount": 12,
+      "image": "assets/C05/pages/page-09.jpg",
+      "sourcePdf": "assets/C05/original.pdf",
+      "audio": null
+    },
+    {
+      "kind": "culture",
+      "lesson": "C05",
+      "lessonTitle": "Cherry Blossoms: U.S. and Japan",
+      "subtitle": "桜（さくら） cultural exchange",
+      "page": 10,
+      "pageCount": 12,
+      "image": "assets/C05/pages/page-10.jpg",
+      "sourcePdf": "assets/C05/original.pdf",
+      "audio": null
+    },
+    {
+      "kind": "culture",
+      "lesson": "C05",
+      "lessonTitle": "Cherry Blossoms: U.S. and Japan",
+      "subtitle": "桜（さくら） cultural exchange",
+      "page": 11,
+      "pageCount": 12,
+      "image": "assets/C05/pages/page-11.jpg",
+      "sourcePdf": "assets/C05/original.pdf",
+      "audio": null
+    },
+    {
+      "kind": "culture",
+      "lesson": "C05",
+      "lessonTitle": "Cherry Blossoms: U.S. and Japan",
+      "subtitle": "桜（さくら） cultural exchange",
+      "page": 12,
+      "pageCount": 12,
+      "image": "assets/C05/pages/page-12.jpg",
+      "sourcePdf": "assets/C05/original.pdf",
+      "audio": null
+    }
+  ]
+}
